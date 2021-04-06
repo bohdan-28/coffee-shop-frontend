@@ -1,10 +1,7 @@
-import './App.css';
-import Route from './configs/route/'
+import Route from "./configs/router/MainRoute";
 
 function App() {
-  return (
-    <Route />
-  );
+  return <Route />;
 }
 
 export default App;
