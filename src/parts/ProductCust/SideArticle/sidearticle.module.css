@@ -1,0 +1,18 @@
+.side-article{
+    text-align: center;
+    margin-bottom: 3em;
+}
+.side-article > h5 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: .5em;
+    color: #6A4029;
+    
+}
+.side-article > p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0;
+}
