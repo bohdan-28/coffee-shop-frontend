@@ -1,4 +1,4 @@
-import Route from "./configs/router/MainRoute";
+import Route from "../src/configs/router/MainRoute";
 
 function App() {
   return <Route />;
