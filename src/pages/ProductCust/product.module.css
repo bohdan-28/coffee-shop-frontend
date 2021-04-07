@@ -1,0 +1,23 @@
+
+.side-section{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #9F9F9F;
+}
+.main-section{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #9F9F9F;
+    border-left: 1px solid #9F9F9F;
+    padding: 2em 0;
+}
+.card-section{
+    padding: 2em 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+.main-section > p {
+    color: #6A4029;
+    font-size: 17px;
+}

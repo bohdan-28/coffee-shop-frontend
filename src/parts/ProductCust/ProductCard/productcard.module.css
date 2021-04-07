@@ -1,0 +1,27 @@
+.card{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
+    height: 200px;
+    width: 170px;
+    text-align: center;
+}
+.card > img {
+    border-radius: 100%;
+    width: 140px;
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: 30px;
+    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
+    
+}
+.card > h4 {
+    font-weight: 900;
+    color: black;
+    font-size: 22px;
+}
+.card > h5 {
+    font-weight: 700;
+    font-size: 17px;
+    color: #6A4029;
+}

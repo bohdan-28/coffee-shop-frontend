@@ -1,19 +1,11 @@
-import './App.css';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Home from './pages/Home/index'
+import Route from "./configs/router/MainRoute";
 
 function App() {
   return (
 
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      
-
-    </Switch>
-  </BrowserRouter>
+      <Route />
    
   );
 }
 
-export default App;
+export default App
