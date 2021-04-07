@@ -118,7 +118,7 @@ label {
     color: #9F9F9F;
 }
 
-input {
+.card-profile-right input {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -140,7 +140,7 @@ input {
     left: 490px;
 }
 
-.input-mobile-number {
+.card-profile-right .input-mobile-number {
     width: 201.03px;
     position: absolute;
     top: 110px;
@@ -153,7 +153,7 @@ input {
     left: 490px;
 }
 
-.input-dateOfBirth {
+.card-profile-right .input-dateOfBirth {
     width: 201.03px;
     position: absolute;
     top: 407px;

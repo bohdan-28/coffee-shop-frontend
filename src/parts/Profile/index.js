@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import style from './profile.module.css'
 // import { Card, Nav, Form, Dropdown } from 'react-bootstrap';
 import Button from '../../components/Button'
@@ -33,7 +33,7 @@ const PartProfile = (props) => {
                         <p className={style['title-profile']}>User Profile</p>
 
                         {/* v.mobile */}
-                        <img className={style['back-page']} src={backPage} onClick="" />
+                        <img className={style['back-page']} src={backPage} onClick="" alt="" />
                         <p className={style['title-profile-mobile']}>My profile</p>
                         {/* v.mobile */}
 
@@ -41,7 +41,7 @@ const PartProfile = (props) => {
                             <div className="row">
                                 <div className="col-12 col-lg-3">
                                     <div className={style['big-circle']}>
-                                        <img className={style['img-user']} src="https://uploads.disquscdn.com/images/dc368ebd907dfb3c40406ed0c842b10023f20651969cbd4bf77e524b3bf29ce7.jpg" />
+                                        <img className={style['img-user']} src="https://uploads.disquscdn.com/images/dc368ebd907dfb3c40406ed0c842b10023f20651969cbd4bf77e524b3bf29ce7.jpg" alt="" />
                                     </div>
                                     <h2 className={style['name-profile']}>Zulaikha</h2>
                                     <h2 className={style['email-profile']}>Zulaikha@gmail.com</h2>
@@ -64,7 +64,7 @@ const PartProfile = (props) => {
                                     <div className={style['card-profile-right']}>
                                         <p className={style['text-title-right']}>Contact</p>
                                         <div className={style['circle-btnProfile']}>
-                                            <img src={btnProfile} onClick="" />
+                                            <img src={btnProfile} onClick="" alt="" />
                                         </div>
                                         <label htmlFor="email">Email adress :</label><br />
                                         <input id="email" type="text" name="email" placeholder="zulaikha@gmail.com"></input>
