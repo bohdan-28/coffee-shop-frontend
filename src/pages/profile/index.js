@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Footer } from '../../components'
+import Navbar from '../../components/Navbar'
 import PartProfile from '../../parts/Profile'
 
 class Profile extends Component {
@@ -35,6 +36,7 @@ class Profile extends Component {
 
         return (
             <Fragment>
+                <Navbar />
                 <PartProfile
                     changePicture={this.handleChangePicture}
                 />
