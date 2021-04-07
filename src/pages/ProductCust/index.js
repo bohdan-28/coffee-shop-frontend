@@ -55,8 +55,8 @@ function ProductCustomer() {
                 </div>
             </div>
         </div>
-
-    )
+        
+  );
 }
 
-export default ProductCustomer
+export default ProductCustomer;
