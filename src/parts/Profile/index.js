@@ -4,7 +4,7 @@ import style from './profile.module.css'
 import Button from '../../components/Button'
 import { withRouter } from "react-router-dom";
 import btnProfile from '../../assets/images/btnProfile.png'
-
+import backPage from '../../assets/images/backProfile.png'
 
 const PartProfile = (props) => {
     // const [isPasswordShow, setisPasswordShow] = useState(false)
@@ -29,13 +29,19 @@ const PartProfile = (props) => {
         <Fragment>
             <div className={style['cards-profile']}>
                 <div className="container">
-                    <div class="row">
+                    <div className="row">
                         <p className={style['title-profile']}>User Profile</p>
+
+                        {/* v.mobile */}
+                        <img className={style['back-page']} src={backPage} onClick="" />
+                        <p className={style['title-profile-mobile']}>My profile</p>
+                        {/* v.mobile */}
+
                         <div className={style['card-profile']}>
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-12 col-lg-3">
                                     <div className={style['big-circle']}>
-                                        <img class={style['img-user']} src="https://uploads.disquscdn.com/images/dc368ebd907dfb3c40406ed0c842b10023f20651969cbd4bf77e524b3bf29ce7.jpg" />
+                                        <img className={style['img-user']} src="https://uploads.disquscdn.com/images/dc368ebd907dfb3c40406ed0c842b10023f20651969cbd4bf77e524b3bf29ce7.jpg" />
                                     </div>
                                     <h2 className={style['name-profile']}>Zulaikha</h2>
                                     <h2 className={style['email-profile']}>Zulaikha@gmail.com</h2>
@@ -91,73 +97,6 @@ const PartProfile = (props) => {
                                 </div>
                             </div>
                         </div>
-
-
-
-                        {/* <div class="col-12 col-lg-8">
-                            <div className={style['info-profile-right']}>
-                                <Card className={style['card-account']}>
-                                    <Card.Header>
-                                        <Nav variant="tabs" defaultActiveKey="#first">
-                                            <Nav.Item>
-                                                <Nav.Link href="#first">Account Settings</Nav.Link>
-                                            </Nav.Item>
-                                            <Nav.Item>
-                                                <Nav.Link href="/history">Order History</Nav.Link>
-                                            </Nav.Item>
-                                        </Nav>
-                                    </Card.Header>
-                                    <Card.Body  >
-                                        <Card.Title className={style['detail-title']} id="#first" >Details Information</Card.Title>
-                                        <hr />
-
-                                        <div className={style['form-profile']}>
-                                            <Form className={style['form-profile-firstname']}>
-                                                <label htmlFor="firstName">First Name</label><br />
-                                                <input className={style['input-firstname']} id="firstName" name="firstName" type="text" value={props.first} placeholder={props.first} onChange={props.change} />
-                                            </Form>
-                                            <Form className={style['form-profile-lastName']}>
-                                                <label htmlFor="lastName">Last Name</label><br />
-                                                <input className={style['input-lastName']} id="lastName" name="lastName" type="text" value={props.last} placeholder={props.last} onChange={props.change} />
-                                            </Form>
-                                        </div>
-                                        <div className={style['form-profile']}>
-                                            <Form className={style['form-profile-email']}>
-                                                <label htmlFor="email">Email</label><br />
-                                                <input className={style['input-email']} id="email" name="email" type="text" value={props.mail} placeholder={props.mail} onChange={props.change} />
-                                            </Form>
-                                            <Form className={style['form-profile-phone']}>
-                                                <label htmlFor="phone">Phone Number</label><br />
-                                                <input className={style['input-phone']} id="phone" name="phone" type="text" value={props.phonenumber} placeholder={props.phonenumber} onChange={props.change} />
-                                            </Form>
-                                        </div>
-
-                                        <Card.Title className={style['detail-title2']}>Account and Privacy</Card.Title>
-                                        <hr />
-                                        <div className={style['form-profile']}>
-                                            <Form className={style['form-profile-password']}>
-                                                <label htmlFor="password">New Password</label><br />
-                                                <input className={style['input-password']} id="password" name="password" value={props.pass}
-                                                    type={(isPasswordShow) ? "text" : "password"} placeholder="Write your password" onChange={props.change} />
-                                                <i className={`fa ${isPasswordShow ? "fa-eye-slash" : "fa-eye"}  password-icon`} onClick={tooglePasswordVisibility} />
-
-                                            </Form>
-                                            <Form className={style['form-profile-passwords']}>
-                                                <label htmlFor="password">Confirm your password</label><br />
-                                                <input className={style['input-password']} id="confirmPassword" name="password" value={props.pass}
-                                                    type={(isPasswordShow2) ? "text" : "password"} placeholder="Confirm your password" onChange={props.change} />
-                                                <i className={`fa ${isPasswordShow2 ? "fa-eye-slash" : "fa-eye"}  password-icon`} onClick={tooglePasswordVisibility2} />
-                                            </Form>
-                                        </div>
-                                        <Button title="Update changes" type="submit" btn="btn-update-changes" color="purple" onClick={props.update} />
-
-                                    </Card.Body>
-
-
-
-                                </Card>
-                            </div>
-                        </div> */}
 
                     </div>
                 </div>
