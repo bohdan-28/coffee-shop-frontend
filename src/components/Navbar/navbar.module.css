@@ -1,0 +1,54 @@
+.navbar-style{
+  height: 129px;
+  background-color: white;
+}
+
+.navbar-brand{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0B132A;
+  margin-left: 15px;
+}
+
+.coffee-icon{
+  background-image: url(./assets/coffe-icon.png);
+  width: 30px;
+  height: 33px;
+}
+
+
+.nav-item{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4F5665;
+  margin-left: 40px;
+}
+
+.nav-signin{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0B132A;
+  margin-right: 40px;
+}
+
+button.nav-btn-signup{
+  background: #FFBA33;
+  border-radius: 50px;
+  width: 150px;
+  height: 45px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #6A4029;
+}
