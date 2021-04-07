@@ -1,0 +1,50 @@
+div.jumbotron-team-work{
+  background-color: rgb(255, 255, 255);
+  margin-top: -30px;
+}
+
+.img-team-work{
+  background-image: url(./assets/teamwork.png);
+  width: 573px;
+  height: 457px;
+  margin-top: 152px;
+}
+
+.teamwork-title{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 50px;
+  color: #0B132A;
+  margin-top: 201px;
+}
+
+.teamwork-detail{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4F5665;
+  margin-top: 15px;
+}
+
+.img-checklist{
+  background-image: url(./assets/img-checklist.png);
+  width: 20px;
+  height: 21px;
+  margin-top: 15px;
+}
+.checklist-teks{
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4F5665;
+  position: absolute;
+  /* top: 25px; */
+  left: 50px;
+  margin-top: -25px;
+}

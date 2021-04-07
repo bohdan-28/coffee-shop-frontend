@@ -1,7 +1,11 @@
-import Route from "./configs/router/MainRoute";
+import Route from "../src/configs/router/MainRoute";
 
 function App() {
-  return <Route />;
+  return (
+
+      <Route />
+   
+  );
 }
 
-export default App;
+export default App

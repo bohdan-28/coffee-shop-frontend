@@ -1,0 +1,74 @@
+.btn-choose-picture {
+    width: 207px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    border: none;
+    margin-left: 30px;
+}
+
+.btn-remove-photo {
+    margin-top: 20px;
+    width: 207px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    border: none;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+.btn-outline {
+    width: 207px;
+    height: 60px;
+    border: 1px solid #9F9F9F;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #6A4029;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.btn-fill {
+    width: 207px;
+    height: 60px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    border-radius: 20px;
+    border: none;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.yellow {
+    background: #FFBA33;
+    color: #6A4029;
+}
+
+.chocolate {
+    background: #6A4029;
+    color: #FFFFFF;
+}
+
+.white {
+    color: #6A4029;
+    background: #FFFFFF;
+}
