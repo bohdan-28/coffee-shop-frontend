@@ -22,7 +22,7 @@ function ProductCustomer() {
     }, [type])
 
     const routeChangeById = (id) => {
-        history.push(`/moviedetails/${id}`) /*route need to be change as route*/
+        history.push(`/product-detail/${id}`) /*route need to be change as route*/
     }
 
     return (

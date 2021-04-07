@@ -17,7 +17,7 @@ function App() {
         <PublicRoute path="/sign-up" component={SignUp} />
         <PublicRoute path="/login" component={Login} />
         <Route exact path="/" component={Home} />
-        <PrivateRoute path="/product-detail" component={ProductDetail} />
+        <PrivateRoute path="/product-detail/:id" component={ProductDetail} />
         <PrivateRoute path="/product-cust/" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
       </Switch>
