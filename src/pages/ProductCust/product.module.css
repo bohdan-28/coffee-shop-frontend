@@ -2,22 +2,55 @@
 .side-section{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-top: 1px solid #9F9F9F;
+    padding: 2em 0;
 }
 .main-section{
     display: flex;
     flex-direction: column;
     border-top: 1px solid #9F9F9F;
     border-left: 1px solid #9F9F9F;
-    padding: 2em 0;
+    padding: 2em 4em;
 }
 .card-section{
-    padding: 2em 2em;
+    padding: 4em 2em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2em;
+    grid-gap: 50px;
 }
 .main-section > p {
     color: #6A4029;
     font-size: 17px;
 }
+.tab-card{
+    display: flex;
+    justify-content: space-evenly;
+}
+#btn-tab{
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    color: #9F9F9F;
+    flex-grow: 1;
+    padding: .5em;
+}
+.btn-tab-active{
+    border: none;
+    background-color: white;
+    font-weight: 700;
+    color: #9F9F9F;
+    color: #6A4029;
+    border-bottom: 3px solid #6A4029;
+}
+#btn-tab:hover{
+    color: #6A4029;
+    border-bottom: 3px solid #6A4029;
+}
+#btn-tab:focus {
+    outline: none;
+    box-shadow: none;
+    color: #6A4029;
+    border-bottom: 3px solid #6A4029;
+
+  }
