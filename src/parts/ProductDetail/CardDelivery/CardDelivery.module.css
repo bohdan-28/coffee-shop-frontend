@@ -1,0 +1,54 @@
+.img-product {
+    height: 285px;
+    width: 280px;
+    border-radius: 100%;
+    margin-left: 80px;
+}
+
+.card-delivery {
+    margin-top: 80px;
+    padding-top: 25px;
+    padding-left: 45px;
+    height: 381px;
+    width: 488px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+}
+
+.title-card-delivery {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 37px;
+    color: #000000;
+    margin-left: -19px;
+}
+
+.subtitle-card-delivery {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-right: 66px;
+    margin-top: 7px;
+}
+
+.card-delivery input {
+    width: 256px;
+    height: 47px;
+    background: #F4F4F8;
+    border: 1px solid rgba(186, 186, 186, 0.35);
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    color: #9F9F9F;
+    padding-left: 10px;
+}

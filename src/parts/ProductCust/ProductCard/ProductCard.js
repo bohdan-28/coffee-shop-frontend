@@ -1,13 +1,16 @@
 import React from 'react'
-import {hazelnutlatte} from '../../../assets/images/'
+import { hazelnutlatte } from '../../../assets/images/'
 import style from './productcard.module.css'
 
-function ProductCard() {
+function ProductCard({ title, price, discount, routeChange }) {
     return (
-        <div className={style.card}>
-            <img src={hazelnutlatte} alt="product"/>
-            <h4>Hazelnut Latte</h4>
-            <h5>IDR 25.000</h5>
+        <div className={style['card-none']} onClick={routeChange}>
+            <div className={style.disc}>
+                <h4>10%</h4>
+            </div>
+            <img src={hazelnutlatte} alt="product" />
+            <h4>hazelnut latte hazzelnut </h4>
+            <h5>{price}</h5>
         </div>
     )
 }
