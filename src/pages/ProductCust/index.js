@@ -45,6 +45,7 @@ function ProductCustomer() {
                         <button type={["button"]} id={style["btn-tab"]} className="btn btn-outline-primary" onClick={() => setType('todos')}>Foods</button>
                         <button type={["button"]} id={style["btn-tab"]} className="btn btn-outline-primary" onClick={() => setType('todos')}>Add-on</button>
                     </div>
+                    <h1>{type}</h1>
                     
                     <div className={style['card-section']}>
                         {item.splice(0, 12).map((product, index) => {

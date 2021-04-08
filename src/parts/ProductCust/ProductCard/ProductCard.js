@@ -4,7 +4,7 @@ import style from './productcard.module.css'
 
 function ProductCard({ title, price, discount, routeChange }) {
     return (
-        <div className={style['card-none']} onClick={routeChange}>
+        <div className={style['card-disc']} onClick={routeChange}>
             <div className={style.disc}>
                 <h4>10%</h4>
             </div>

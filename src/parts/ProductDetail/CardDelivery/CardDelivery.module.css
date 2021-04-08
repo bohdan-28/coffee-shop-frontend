@@ -4,7 +4,9 @@
     border-radius: 100%;
     margin-left: 80px;
 }
-
+.div-flex{
+    justify-content: space-evenly !important;
+}
 .card-delivery {
     margin-top: 80px;
     padding-top: 25px;
@@ -52,3 +54,34 @@
     color: #9F9F9F;
     padding-left: 10px;
 }
+
+.radio {
+
+}
+.radio input{
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+.radio label{
+    background-color: #F4F4F8;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    padding: 8px 16px;
+    margin-right: -1px;
+    border: 1px solid rgba(186, 186, 186, 0.35);
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+.radio label:hover{
+    cursor: pointer;
+}
+.radio input:checked + label {
+    background-color: #6A4029;
+    color: white;
+    box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+  }

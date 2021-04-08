@@ -4,7 +4,7 @@ import { React, Fragment } from "react";
 import style from './ProductDetail.module.css'
 import CardCheckout from './CardCheckout';
 
-export default function DetailProduct() {
+export default function DetailProduct({ count, setCount, title, desc, price }) {
     return (
         <Fragment>
             <div className="container">
@@ -16,10 +16,10 @@ export default function DetailProduct() {
                             <CardDelivery />
                         </div>
                         <div className="col-lg-6 pt-5">
-                            <AsideRight />
+                            <AsideRight count={count} setCount={setCount} title={title} desc={desc} price={price} />
                         </div>
                     </div>
-                    <CardCheckout />
+                    <CardCheckout count={count}  title={title}/>
 
                 </div>
 
