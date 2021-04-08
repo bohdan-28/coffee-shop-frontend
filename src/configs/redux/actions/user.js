@@ -108,20 +108,6 @@ export const update = (data, id) => (dispatch) => {
   });
 };
 
-export const confirm = ({ email }) => (dispatch) => {
-  return new Promise((resolve, reject) => {
-    const Url = process.env.REACT_APP_API_URL;
-    axios
-      .post(`${Url}/users/auth/check-email`, { email })
-      .then((res) => {
-        resolve(res.data.message);
-      })
-      .catch((err) => {
-        reject(new Error(err.response.data.message));
-      });
-  });
-};
-
 export const activate = ({ email }) => (dispatch) => {
   return new Promise((resolve, reject) => {
     const Url = process.env.REACT_APP_API_URL;
@@ -134,7 +120,7 @@ export const activate = ({ email }) => (dispatch) => {
       })
       .catch((err) => {
         dispatch(resetFailure(err.response.data.message));
-        reject(err.response.data.message);
+        reject(new Error(err.response.data.message));
       });
   });
 };

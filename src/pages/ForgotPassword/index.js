@@ -1,5 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React, Fragment, useState, useEffect } from "react";
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { activate, reset } from "../../configs/redux/actions/user";
+import Swal from "sweetalert2";
 
 import style from "./forgot-password.module.css";
 import Logo from "../../assets/images/logo.png";
@@ -7,7 +10,108 @@ import Facebook from "../../assets/images/facebook.png";
 import Twitter from "../../assets/images/twitter.png";
 import Instagram from "../../assets/images/instagram.png";
 
-export default function index() {
+export default function Index() {
+  const useQuery = () => new URLSearchParams(useLocation().search);
+
+  const query = useQuery();
+  let email = query.get("email");
+  let token = query.get("token");
+
+  const dispatch = useDispatch();
+
+  const history = useHistory();
+
+  const { loading } = useSelector((state) => state.user);
+
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const [step, setStep] = useState("send");
+
+  const handleFormChange = (event) => {
+    const dataNew = { ...data };
+    dataNew[event.target.name] = event.target.value;
+    setData(dataNew);
+  };
+
+  const handleSend = (event) => {
+    event.preventDefault();
+    dispatch(activate(data))
+      .then((res) => {
+        setData({
+          email: "",
+          password: "",
+        });
+        setStep("reset");
+        Swal.fire({
+          title: "Success!",
+          text: res,
+          icon: "success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#ffba33",
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#6a4029",
+        });
+      });
+  };
+
+  const handleReset = (event) => {
+    event.preventDefault();
+    if (email !== null && token !== null) {
+      dispatch(reset(email, token, data))
+        .then((res) => {
+          setData({
+            email: "",
+            password: "",
+          });
+          Swal.fire({
+            title: "Success!",
+            text: res,
+            icon: "success",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#ffba33",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              history.push("/login");
+            } else {
+              history.push("/login");
+            }
+          });
+        })
+        .catch((err) => {
+          Swal.fire({
+            title: "Error!",
+            text: err.message,
+            icon: "error",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#6a4029",
+          });
+        });
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "Something wrong",
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#6a4029",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (email !== null && token !== null) {
+      setStep("reset");
+    }
+  }, [dispatch, email, token]);
+
   return (
     <div>
       <main>
@@ -30,37 +134,73 @@ export default function index() {
           <div className="d-flex justify-content-center mt-3">
             <form className="mt-5">
               <div className="form-group">
-                <input
-                  type="email"
-                  className={[
-                    ["form-control mt-1"],
-                    style["form-control"],
-                  ].join(" ")}
-                  name="email"
-                  id="email"
-                  placeholder="Enter your email adress to get link"
-                />
+                {step === "send" && (
+                  <input
+                    type="email"
+                    className={[
+                      ["form-control mt-1"],
+                      style["form-control"],
+                    ].join(" ")}
+                    name="email"
+                    id="email"
+                    value={data.email}
+                    placeholder="Enter your email address to get link"
+                    onChange={handleFormChange}
+                  />
+                )}
+                {step === "reset" && (
+                  <input
+                    type="password"
+                    className={[
+                      ["form-control mt-1"],
+                      style["form-control"],
+                    ].join(" ")}
+                    name="password"
+                    id="password"
+                    value={data.password}
+                    placeholder="Enter your new password"
+                    onChange={handleFormChange}
+                  />
+                )}
               </div>
               <div>
-                <button
-                  type="submit"
-                  className={[["mt-4 btn"], style["btn-auth"]].join(" ")}
-                >
-                  Send
-                </button>
+                {step === "send" && (
+                  <button
+                    type="submit"
+                    className={[["mt-4 btn"], style["btn-auth"]].join(" ")}
+                    onClick={handleSend}
+                  >
+                    {!loading ? "Send" : "Please wait..."}
+                  </button>
+                )}
+                {step === "reset" && (
+                  <button
+                    type="submit"
+                    className={[["mt-4 btn"], style["btn-auth"]].join(" ")}
+                    onClick={handleReset}
+                  >
+                    Reset
+                  </button>
+                )}
               </div>
-              <div className={[["text-center"], style["time"]].join(" ")}>
-                <p>Click here if you didn’t receive any link in 2 minutes</p>
-                <span>01:52</span>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className={[["btn"], style["btn-auth-here"]].join(" ")}
-                >
-                  Resend Link
-                </button>
-              </div>
+              {step === "send" && (
+                <Fragment>
+                  <div className={[["text-center"], style["time"]].join(" ")}>
+                    <p>
+                      Click here if you didn’t receive any link in 2 minutes
+                    </p>
+                    <span>01:52</span>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className={[["btn"], style["btn-auth-here"]].join(" ")}
+                    >
+                      Resend Link
+                    </button>
+                  </div>
+                </Fragment>
+              )}
             </form>
           </div>
           <div className={[["d-flex"], style["footer-auth"]].join(" ")}>
