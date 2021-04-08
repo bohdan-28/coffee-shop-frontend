@@ -52,3 +52,18 @@ button.nav-btn-signup{
   line-height: 19px;
   color: #6A4029;
 }
+
+img.navsearch{
+  margin-right: 40px;
+}
+
+img.navchat{
+  margin-right: 40px;
+}
+
+img.profile-img{
+  margin-right: 40px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
