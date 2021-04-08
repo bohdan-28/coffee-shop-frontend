@@ -4,6 +4,7 @@ import PublicRoute from "./module/PublicRoute";
 import PrivateRoute from "./module/PrivateRoute";
 
 import Home from "../../pages/Home";
+import History from "../../pages/History";
 import ProductCustomer from "../../pages/ProductCust";
 import ProductDetail from "../../pages/ProductDetail";
 import Profile from "../../pages/Profile";
@@ -20,6 +21,8 @@ function App() {
         <PrivateRoute path="/product-detail" component={ProductDetail} />
         <PrivateRoute path="/product-cust/" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/history" component={History} />
+
       </Switch>
     </Router >
   );
