@@ -118,12 +118,33 @@
     background: #FFFFFF;
 }
 
-.smoke-white {
-    background: #FFFFFF;
-    color: #9F9F9F;
+.btn-download-report{
+    width: 720px;
+    height: 67px;
+    box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
+    border-radius: 20px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 41px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 25px;
 }
 
-.blue {
-    background: #0B132A;
+.btn-share-report{
+    width: 315px;
+    height: 67px;
+    box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
+    border-radius: 20px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 41px;
+    text-align: center;
     color: #FFFFFF;
+    margin-top: 25px;
 }
+

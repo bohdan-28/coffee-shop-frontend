@@ -58,8 +58,7 @@
   font-size: 16px;
   line-height: 50px;
   color: #000000;
-  margin-left: 57px;
-  margin-top: -20px;
+  text-align: center;
 }
 
 .text-left-profile {
@@ -238,11 +237,9 @@ label {
     padding-top: 5px;
   }
 
-  .name-profile {
-  }
+  .name-profile {}
 
-  .email-profile {
-  }
+  .email-profile {}
 
   .title-profile {
     display: none;
@@ -256,8 +253,7 @@ label {
     display: none;
   }
 
-  .card-profile-right {
-  }
+  .card-profile-right {}
 
   .text-title-right {
     display: none;

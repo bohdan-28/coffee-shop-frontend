@@ -12,6 +12,8 @@ import usericon from './user-icon.png'
 import navchat from './nav-chat.png'
 import navsearch from './nav-search.png'
 import navuser from './nav-user.png'
+import more from './more.png'
+import adminIMG from './admin-img.png'
 
 export {
     motherCC,
@@ -28,5 +30,7 @@ export {
     navchat,
     navsearch,
     navuser,
+    more,
+    adminIMG,
 
 }

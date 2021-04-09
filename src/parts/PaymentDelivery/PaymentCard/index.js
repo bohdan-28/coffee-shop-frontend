@@ -91,19 +91,19 @@ function PaymentCard({picture, productname, qty, size, price, subtotal, tax, shi
                 <h4 className={style['payment-title']}>Payment Method</h4>
                 <div className={style['card-payment']}>
                   <div className="row">
-                    <button type="button" class={style['btn-card-payment']}>
+                    <button type="button" className={style['btn-card-payment']}>
                       <img src={cardpayment} alt=""/>
                       <h5>{cardmethod}</h5>
                     </button>
                   </div>
                   <div className="row">
-                    <button type="button" class={style['btn-card-payment']}>
+                    <button type="button" className={style['btn-card-payment']}>
                       <img src={bankpayment} alt=""/>
                       <h5>{bankmethod}</h5>
                     </button>
                   </div>
                   <div className="row">
-                    <button type="button" class={style['btn-card-payment']}>
+                    <button type="button" className={style['btn-card-payment']}>
                       <img src={codpayment} alt=""/>
                       <h5>{codmethod}</h5>
                     </button>
@@ -112,7 +112,7 @@ function PaymentCard({picture, productname, qty, size, price, subtotal, tax, shi
               </div>
             </div>
             {/* Akhir Payment Method */}
-            <button type="button" class={[['btn'], style['btn-confirm-pay']].join(' ')}>Confirm and Pay</button>
+            <button type="button" className={[['btn'], style['btn-confirm-pay']].join(' ')}>Confirm and Pay</button>
           </div>
         </div>
     </div>
