@@ -7,12 +7,15 @@ import PrivateRoute from "./module/PrivateRoute";
 import PaymentDelivery from "../../pages/PaymentDelivery";
 import Chat from "../../pages/Chat";
 import Home from "../../pages/Home";
+import History from "../../pages/History";
 import ProductCustomer from "../../pages/ProductCust";
 import ProductDetail from "../../pages/ProductDetail";
 import Profile from "../../pages/Profile";
 import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
 import ForgotPassword from "../../pages/ForgotPassword";
+
+import NewProduct from "../../pages/NewProduct"
 
 function App() {
   return (
@@ -27,6 +30,10 @@ function App() {
         <PrivateRoute path="/product-detail/:id" component={ProductDetail} />
         <PrivateRoute path="/product-cust" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/history" component={History} />
+
+        {/* admin */}
+        <PrivateRoute path="/new-product" component={NewProduct} />
       </Switch>
     </Router>
   );

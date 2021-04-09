@@ -1,29 +1,156 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { update, getUser, findUser } from "../../configs/redux/actions/user";
+import Swal from "sweetalert2";
 import style from "./profile.module.css";
-// import { Card, Nav, Form, Dropdown } from 'react-bootstrap';
 import Button from "../../components/Button";
-import { withRouter } from "react-router-dom";
 import btnProfile from "../../assets/images/btnProfile.png";
 import backPage from "../../assets/images/backProfile.png";
 
-const PartProfile = (props) => {
-  // const [isPasswordShow, setisPasswordShow] = useState(false)
-  // const [isPasswordShow2, setisPasswordShow2] = useState(false)
+const PartProfile = () => {
+  const ImgUrl = process.env.REACT_APP_API_IMG;
 
-  // const tooglePasswordVisibility = (e) => {
-  //     e.preventDefault();
-  //     setisPasswordShow(!isPasswordShow);
-  // }
+  const history = useHistory();
 
-  // const tooglePasswordVisibility2 = (e) => {
-  //     e.preventDefault();
-  //     setisPasswordShow2(!isPasswordShow2);
-  // }
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
 
-  const hiddenFileInput = React.useRef(null);
+  const [data, setData] = useState({
+    email: "",
+    phoneNumber: "",
+    username: "",
+    firstname: "",
+    lastname: "",
+    address: "",
+    gender: "",
+    dateOfBirth: "",
+  });
+  const [dataImage, setDataImage] = useState({
+    image: {},
+  });
+  const [status, setStatus] = useState(false);
+  const [imgUrl, setImgUrl] = useState(`${ImgUrl}${user.image}`);
+  const [disabled, setDisabled] = useState(true);
+
+  const handleFormChange = (event) => {
+    const userNew = { ...data };
+    userNew[event.target.name] = event.target.value;
+    setData(userNew);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("email", data.email);
+    formData.append("phoneNumber", data.phoneNumber);
+    formData.append("username", data.username);
+    formData.append("firstname", data.firstname);
+    formData.append("lastname", data.lastname);
+    formData.append("address", data.address);
+    formData.append("gender", data.gender);
+    formData.append("dateOfBirth", data.dateOfBirth);
+    if (status === true) {
+      formData.append("image", dataImage.image);
+    }
+    dispatch(update(formData, user.id))
+      .then((res) => {
+        setDisabled(true);
+        Swal.fire({
+          title: "Success!",
+          text: res,
+          icon: "success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#ffba33",
+        }).then(() => {
+          dispatch(findUser()).then((res) => {
+            dispatch(getUser());
+            setData(res);
+          });
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#6a4029",
+        });
+      });
+  };
+
+  const handleChangeImage = (event) => {
+    setDataImage({
+      image: event.target.files[0],
+    });
+    setStatus(true);
+    setImgUrl(URL.createObjectURL(event.target.files[0]));
+  };
+
+  const handleRemoveImage = () => {
+    dispatch(getUser());
+    setDataImage({
+      image: {},
+    });
+    setStatus(false);
+    setImgUrl(`${ImgUrl}${user.image}`);
+  };
+
+  const handleDisabledFalse = () => {
+    setDisabled(false);
+  };
+
+  const handleDisabledTrue = () => {
+    setDisabled(true);
+    dispatch(findUser()).then((res) => {
+      setData(res);
+    });
+    dispatch(getUser());
+    setImgUrl(`${ImgUrl}${user.image}`);
+  };
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure you want to logout?",
+      showDenyButton: true,
+      confirmButtonText: `Logout!`,
+      confirmButtonColor: "#6a4029",
+      denyButtonText: "Cancel",
+      denyButtonColor: `#ffba33`,
+      focusDeny: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        history.push("/");
+      } else {
+        Swal.fire({
+          title: "Logout canceled",
+          text: "",
+          icon: "info",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#6a4029",
+        });
+      }
+    });
+  };
+
+  const hiddenFileInput = useRef(null);
   const handleClick = (e) => {
     hiddenFileInput.current.click();
   };
+
+  useEffect(() => {
+    dispatch(getUser());
+    setImgUrl(`${ImgUrl}${user.image}`);
+  }, [dispatch, ImgUrl, user.image]);
+
+  useEffect(() => {
+    dispatch(findUser()).then((res) => {
+      setData(res);
+    });
+  }, [dispatch]);
 
   return (
     <Fragment>
@@ -31,30 +158,24 @@ const PartProfile = (props) => {
         <div className="container">
           <div className="row">
             <p className={style["title-profile"]}>User Profile</p>
-
-            {/* v.mobile */}
-            <img
-              className={style["back-page"]}
-              src={backPage}
-              onClick=""
-              alt="Img"
-            />
+            <img className={style["back-page"]} src={backPage} alt="Img" />
             <p className={style["title-profile-mobile"]}>My profile</p>
-            {/* v.mobile */}
-
             <div className={style["card-profile"]}>
               <div className="row">
                 <div className="col-12 col-lg-3">
                   <div className={style["big-circle"]}>
-                    <img
-                      className={style["img-user"]}
-                      src="https://uploads.disquscdn.com/images/dc368ebd907dfb3c40406ed0c842b10023f20651969cbd4bf77e524b3bf29ce7.jpg"
-                      alt="ImgUser"
-                    />
+                    {user.image === undefined ? (
+                      ""
+                    ) : (
+                      <img
+                        className={style["img-user"]}
+                        src={imgUrl}
+                        alt="ImgUser"
+                      />
+                    )}
                   </div>
-                  <h2 className={style["name-profile"]}>Zulaikha</h2>
-                  <h2 className={style["email-profile"]}>Zulaikha@gmail.com</h2>
-
+                  <h2 className={style["name-profile"]}>{data.username}</h2>
+                  <h2 className={style["email-profile"]}>{data.email}</h2>
                   <Button
                     title="Choose photo"
                     btn="btn-choose-picture"
@@ -63,59 +184,65 @@ const PartProfile = (props) => {
                   />
                   <input
                     type="file"
+                    name="image"
                     ref={hiddenFileInput}
-                    onChange={props.changePicture}
+                    onChange={(event) => handleChangeImage(event)}
                     style={{ display: "none" }}
                   />
                   <Button
                     title="Remove photo"
                     btn="btn-remove-photo"
                     color="chocolate"
-                    onClick=""
+                    onClick={() => handleRemoveImage()}
                   />
                   <Button
                     title="Edit Password "
                     btn="btn-outline"
                     color="white"
-                    onClick=""
                   />
                   <p className={style["text-left-profile"]}>
                     Do you want to save the change?
                   </p>
                   <Button
-                    title="Save Change "
+                    title="Save Changes"
                     btn="btn-fill"
                     color="chocolate"
-                    onClick=""
+                    onClick={handleSubmit}
                   />
                   <Button
-                    title="Cancel "
+                    title="Cancel"
                     btn="btn-fill"
                     color="yellow"
-                    onClick=""
+                    onClick={() => handleDisabledTrue()}
                   />
                   <Button
-                    title="Log out "
+                    title="Log out"
                     btn="btn-outline"
                     color="white"
-                    onClick=""
+                    onClick={() => handleLogout()}
                   />
                 </div>
                 <div className="col-12 col-lg-9">
                   <div className={style["card-profile-right"]}>
                     <p className={style["text-title-right"]}>Contact</p>
                     <div className={style["circle-btnProfile"]}>
-                      <img src={btnProfile} onClick="" alt="ImgProfile" />
+                      <img
+                        src={btnProfile}
+                        alt="ImgProfile"
+                        onClick={() => handleDisabledFalse()}
+                      />
                     </div>
                     <label htmlFor="email">Email adress :</label>
                     <br />
                     <input
-                      id="email"
                       type="text"
+                      id="email"
                       name="email"
                       placeholder="zulaikha@gmail.com"
+                      value={data.email}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
-
                     <label
                       className={style["mobile-number"]}
                       htmlFor="phoneNumber"
@@ -126,30 +253,36 @@ const PartProfile = (props) => {
                     <input
                       className={style["input-mobile-number"]}
                       id="phoneNumber"
-                      type="number"
+                      type="text"
                       name="phoneNumber"
                       placeholder="08392391319"
+                      value={data.phoneNumber}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
-
-                    <label htmlFor="address">Delivery adress :</label>
+                    <label htmlFor="address">Delivery address :</label>
                     <br />
                     <input
                       id="address"
                       type="text"
                       name="address"
                       placeholder="Iskandar Street no. 67 Block A Near Bus Stop"
+                      value={data.address}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
-
                     <p className={style["text-title-right"]}>Details</p>
-                    <label htmlFor="userName">Display name :</label>
+                    <label htmlFor="username">Display name :</label>
                     <br />
                     <input
-                      id="userName"
+                      id="username"
                       type="text"
-                      name="userName"
+                      name="username"
                       placeholder="zulaikha"
+                      value={data.username}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
-
                     <label
                       className={style["dateOfBirth"]}
                       htmlFor="dateOfBirth"
@@ -162,43 +295,56 @@ const PartProfile = (props) => {
                       id="dateOfBirth"
                       type="date"
                       name="dateOfBirth"
-                      placeholder="03/04/90"
+                      placeholder="2000-05-20"
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
-
-                    <label htmlFor="firstName">First name :</label>
+                    <label htmlFor="firstname">First name :</label>
                     <br />
                     <input
-                      id="firstName"
+                      id="firstname"
                       type="text"
-                      name="firstName"
+                      name="firstname"
                       placeholder="zulaikha"
+                      value={data.firstname}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
                     <br />
-
-                    <label htmlFor="lastName">Last name :</label>
+                    <label htmlFor="lastname">Last name :</label>
                     <br />
                     <input
-                      id="lastName"
+                      id="lastname"
                       type="text"
-                      name="lastName"
+                      name="lastname"
                       placeholder="Nirmala"
+                      value={data.lastname}
+                      onChange={handleFormChange}
+                      disabled={disabled}
                     ></input>
                     <br />
-
                     <input
                       className={style.gender}
                       id="gendermale"
                       type="radio"
                       name="gender"
+                      value="male"
+                      onChange={handleFormChange}
+                      checked={data.gender === "male" && true}
+                      disabled={disabled}
                     ></input>
-                    <label for="gendermale">Male</label>
+                    <label htmlFor="gendermale">Male</label>
                     <input
                       className={style.gender}
                       id="genderfemale"
                       type="radio"
                       name="gender"
+                      value="female"
+                      checked={data.gender === "female" && true}
+                      disabled={disabled}
+                      onChange={handleFormChange}
                     ></input>
-                    <label for="genderfemale">Female</label>
+                    <label htmlFor="genderfemale">Female</label>
                     <div className={style["card-footer"]}></div>
                   </div>
                 </div>
@@ -211,4 +357,4 @@ const PartProfile = (props) => {
   );
 };
 
-export default withRouter(PartProfile);
+export default PartProfile;
