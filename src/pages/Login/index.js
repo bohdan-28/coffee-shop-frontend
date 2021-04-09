@@ -111,7 +111,7 @@ export default function Index() {
               />
             </div>
             <div>
-              <Link to="#" className={style["forgot"]}>
+              <Link to="/forgot-password" className={style["forgot"]}>
                 Forgot Password
               </Link>
             </div>
