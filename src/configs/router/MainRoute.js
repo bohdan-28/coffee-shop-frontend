@@ -25,7 +25,7 @@ function App() {
         <PrivateRoute path="/payment-delivery" component={PaymentDelivery} />
         <PrivateRoute path="/chat" component={Chat} />
         <PrivateRoute path="/product-detail/:id" component={ProductDetail} />
-        <PrivateRoute path="/product-cust/" component={ProductCustomer} />
+        <PrivateRoute path="/product-cust" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
       </Switch>
     </Router>

@@ -5,11 +5,13 @@ import Main from '../../parts/ProductDetail'
 
 function ProductDetail() {
     const [count, setCount] = useState(0)
+    const [cart, setCart] = useState([])
+
 
     return (
         <div>
             <Navbar />
-            <Main count={count} setCount={setCount} title="Cold asd" desc="Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours." price="30.000"></Main>
+            <Main count={count} setCount={setCount} title="Cold asd" desc="Cold brewing is a method of brewing" price="30000" cart={cart} setCart={setCart}></Main>
             <Footer />
         </div>
     )

@@ -1,9 +1,14 @@
 import React, { Fragment, useState } from 'react'
 import style from './CardCheckout.module.css'
-import { withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 
-const CardCheckout = ({title, count }) => {
+const CardCheckout = ({ title, count, sumPrice }) => {
+    const history = useHistory();
     const [size, setSize] = useState('')
+
+    const routeChange = () => {
+        history.push('/payment-delivery')
+    }
 
     return (
         <Fragment>
@@ -13,9 +18,9 @@ const CardCheckout = ({title, count }) => {
                         <div className={style.size}>
                             <p className={style['title-size']}>Choose size</p>
                             <div className="d-flex pl-5">
-                                <button className={style['circle-size']} onClick={()=>setSize('Regular')}>R</button>
-                                <button className={style['circle-size']} onClick={()=>setSize('Large')}>L</button>
-                                <button className={style['circle-size']} onClick={()=>setSize('Extra Large')}>XL</button>
+                                <button className={style['circle-size']} onClick={() => setSize('Regular')}>R</button>
+                                <button className={style['circle-size']} onClick={() => setSize('Large')}>L</button>
+                                <button className={style['circle-size']} onClick={() => setSize('Extra Large')}>XL</button>
                             </div>
 
                         </div>
@@ -29,7 +34,7 @@ const CardCheckout = ({title, count }) => {
                                     <p className={style['subtitle-checkout']}>{count === 0 ? '' : `X${count}\u00A0\u00A0(${size})`}</p>
                                 </div>
                                 <p className={style['title-btn-checkout']}>Checkout</p>
-                                <button className={style['circle-checkout']}><i className="fa fa-arrow-right" /></button>
+                                <button className={style['circle-checkout']} onClick={routeChange}><i className="fa fa-arrow-right" /></button>
                             </div>
                         </div>
                     </div>

@@ -1,10 +1,12 @@
 import CardDelivery from './CardDelivery'
 import AsideRight from './AsideRight'
-import { React, Fragment } from "react";
+import { React, Fragment, useState } from "react";
 import style from './ProductDetail.module.css'
 import CardCheckout from './CardCheckout';
 
-export default function DetailProduct({ count, setCount, title, desc, price }) {
+export default function DetailProduct({ count, setCount, title, desc, price, cart, setCart }) {
+    const [sumPrice, setSumPrice] = useState(count)
+
     return (
         <Fragment>
             <div className="container">
@@ -16,10 +18,10 @@ export default function DetailProduct({ count, setCount, title, desc, price }) {
                             <CardDelivery />
                         </div>
                         <div className="col-lg-6 pt-5">
-                            <AsideRight count={count} setCount={setCount} title={title} desc={desc} price={price} />
+                            <AsideRight count={count} setCount={setCount} title={title} desc={desc} price={price} sumPrice={sumPrice} setSumPrice={setSumPrice} cart={cart} setCart={setCart} />
                         </div>
                     </div>
-                    <CardCheckout count={count}  title={title}/>
+                    <CardCheckout count={count} title={title} sumPrice={sumPrice} />
 
                 </div>
 

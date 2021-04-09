@@ -3,7 +3,8 @@ import style from './aside.module.css'
 import Button from '../Button/Button'
 import { withRouter } from "react-router-dom";
 
-const AsideRight = ({ count, setCount, title, desc, price }) => {
+const AsideRight = ({ count, setCount, title, desc, price, setSumPrice }) => {
+
 
     const increment = () => {
         setCount(count + 1)
@@ -14,6 +15,10 @@ const AsideRight = ({ count, setCount, title, desc, price }) => {
         }
         return count
     }
+    const addToCart = () => {
+        setSumPrice(price * count)
+    }
+
     return (
         <Fragment>
             <div className="container">
@@ -27,7 +32,7 @@ const AsideRight = ({ count, setCount, title, desc, price }) => {
                     <Button title="+" btn="btn-plus" onClick={increment} />
                     <p className={style['text-price']}>IDR {price}</p>
                 </div>
-                <Button title="Add to Cart" btn="btn-addCart" />
+                <Button title="Add to Cart" btn="btn-addCart" onClick={() => addToCart()} />
                 <Button title="Ask a Staff" btn="btn-askStaff" />
 
             </div>

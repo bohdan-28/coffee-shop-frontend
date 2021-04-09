@@ -149,7 +149,7 @@ function Navbar() {
               >
                 Home <span className="sr-only">(current)</span>
               </Link>
-              <Link className={Style["nav-item"]} to="#">
+              <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
               <Link className={Style["nav-item"]} to="#">

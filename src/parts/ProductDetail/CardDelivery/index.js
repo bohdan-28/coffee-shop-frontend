@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import style from './CardDelivery.module.css'
-import Button from '../Button/Button'
 import { withRouter } from "react-router-dom";
 
 const CardDelivery = (props) => {
