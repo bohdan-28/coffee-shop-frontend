@@ -7,7 +7,8 @@ import Button from '../../parts/ProductCust/Button/Button'
 import TermCondition from '../../parts/ProductCust/TermCondition/TermCondition'
 import ProductCard from '../../parts/ProductCust/ProductCard/ProductCard'
 import { dadCC, motherCC, pirateCC } from '../../assets/images'
-
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 function ProductCustomer() {
     const history = useHistory();
@@ -27,6 +28,7 @@ function ProductCustomer() {
 
     return (
         <div className="container-fluid">
+            <Navbar />
             <div className="row">
                 <div className={[["col-4"], style['side-section']].join(' ')}>
                     <SideArticle />
@@ -55,6 +57,7 @@ function ProductCustomer() {
                     <p>*The price has been cutted by discount appears</p>
                 </div>
             </div>
+            <Footer />
         </div>
         
   );
