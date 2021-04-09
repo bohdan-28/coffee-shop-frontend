@@ -2,6 +2,7 @@ import React from 'react'
 import CardProgress from '../CardProgress'
 import style from './main.module.css'
 import CardAsideRight from '../CardAsideRight'
+import CardAsideRightProgress from '../CardAsideRightProgress'
 import Button from '../../../components/Button'
 
 function Main() {
@@ -18,30 +19,30 @@ function Main() {
             <div className="col">
               <div className="row">
                 <div className="col">
-                 <CardAsideRight />
+                  <CardAsideRight />
                 </div>
               </div>
               <div className="row mt-5">
                 <div className="col">
-                 <CardAsideRight />
+                  <CardAsideRightProgress />
                 </div>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col">
-              <Button 
-                title="Download Report" 
+              <Button
+                title="Download Report"
                 btn="btn-download-report"
                 color="chocolate"
               />
             </div>
             <div className="col">
-             <Button 
-              title="Share Report"
-              btn="btn-share-report"
-              color="chocolate"
-             />
+              <Button
+                title="Share Report"
+                btn="btn-share-report"
+                color="chocolate"
+              />
             </div>
           </div>
         </div>
