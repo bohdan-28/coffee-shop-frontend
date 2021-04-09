@@ -25,7 +25,7 @@ function PeopleFavorite() {
                 <h5 className={Style['product-top']}>Sliced Banana on Top</h5>
                 {/* Akhir Topping */}
                 <h3 className={Style['product-price']}>IDR 25.000</h3>
-                <button type="button" class={[['btn'], Style['btn-product']].join(' ')}>Order Now</button>
+                <button type="button" className={[['btn'], Style['btn-product']].join(' ')}>Order Now</button>
               </div>
             </div>
             <div className="col">
@@ -45,7 +45,7 @@ function PeopleFavorite() {
                 <h5 className={Style['product-top']}>Sliced strawberry on Top</h5>
                 {/* Akhir Topping */}
                 <h3 className={Style['product-price']}>IDR 30.000</h3>
-                <button type="button" class={[['btn'], Style['btn-product']].join(' ')}>Select</button>
+                <button type="button" className={[['btn'], Style['btn-product']].join(' ')}>Select</button>
               </div>
             </div>
             <div className="col">
@@ -67,7 +67,7 @@ function PeopleFavorite() {
                 <h5 className={Style['product-top']}>Buy 1 Get 1 only for Dine in</h5>
                 {/* Akhir Topping */}
                 <h3 className={Style['product-price']}>IDR 40.000</h3>
-                <button type="button" class={[['btn'], Style['btn-product-2']].join(' ')}>Order Now</button>
+                <button type="button" className={[['btn'], Style['btn-product-2']].join(' ')}>Order Now</button>
               </div>
             </div>
           </div>

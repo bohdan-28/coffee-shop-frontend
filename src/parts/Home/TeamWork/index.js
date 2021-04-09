@@ -4,8 +4,8 @@ import Style from './teamwork.module.css'
 function TeamWork() {
   return (
     <div>
-      <div class={[['jumbotron'], ['jumbotron-fluid'], Style['jumbotron-team-work']].join(' ')}>
-        <div class="container">
+      <div className={[['jumbotron'], ['jumbotron-fluid'], Style['jumbotron-team-work']].join(' ')}>
+        <div className="container">
           <div className="row">
             <div className="col">
               <div className={Style['img-team-work']}></div>

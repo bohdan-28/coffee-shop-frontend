@@ -1,0 +1,62 @@
+.card-aside-right{
+    width: 315px;
+    height: 317px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 6px 20px rgba(65, 60, 57, 0.6);
+}
+
+.card-aside-right img{
+    margin-top: 15px;
+    border-radius: 50%;
+    margin-left: 25px ;
+}
+
+.card-aside-right h5.admin-name{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 30px;
+    color: #000000;
+    margin-left: -50px;
+    margin-top: 15px;
+}
+
+.card-aside-right h5.quotes{
+    font-style: 300;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 20px;
+    color: #000000;
+    margin-left: -50px;
+    margin-top: 15px;
+}
+
+.card-aside-right .line{
+    width: 240px;
+    border: 1px solid #D6D9DC;
+    margin: 10px auto;
+}
+
+.card-aside-right h4.best-teks{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+    text-align: center;
+}
+
+.card-aside-right h4.achive-teks{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #7C828A;
+    
+}
+

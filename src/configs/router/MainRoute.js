@@ -12,6 +12,7 @@ import ProductDetail from "../../pages/ProductDetail";
 import Profile from "../../pages/Profile";
 import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
+import Dashboard from '../../pages/Dashboard'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <PublicRoute path="/login" component={Login} />
         <Route exact path="/" component={Home} />
 
+        <Route path="/dashboard" component={Dashboard} />
         <Route path="/payment-delivery" component={PaymentDelivery} />
         <Route path="/chat" component={Chat} />
         <PrivateRoute path="/product-detail/:id" component={ProductDetail} />

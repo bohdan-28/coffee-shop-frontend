@@ -77,7 +77,7 @@ function Navbar() {
                 </Link>
               </div>
               <div className="col">
-                  <Link className="" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <Link className="" to="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img className={Style['profile-img']} src={navuser} alt=""/>
                   </Link>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
