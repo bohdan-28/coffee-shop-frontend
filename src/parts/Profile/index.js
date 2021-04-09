@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import style from "./profile.module.css";
 // import { Card, Nav, Form, Dropdown } from 'react-bootstrap';
 import Button from "../../components/Button";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import btnProfile from "../../assets/images/btnProfile.png";
 import backPage from "../../assets/images/backProfile.png";
 
@@ -71,13 +71,11 @@ const PartProfile = (props) => {
                     title="Remove photo"
                     btn="btn-remove-photo"
                     color="chocolate"
-                    onClick=""
                   />
                   <Button
                     title="Edit Password "
                     btn="btn-outline"
                     color="white"
-                    onClick=""
                   />
                   <p className={style["text-left-profile"]}>
                     Do you want to save the change?
@@ -86,19 +84,16 @@ const PartProfile = (props) => {
                     title="Save Change "
                     btn="btn-fill"
                     color="chocolate"
-                    onClick=""
                   />
                   <Button
                     title="Cancel "
                     btn="btn-fill"
                     color="yellow"
-                    onClick=""
                   />
                   <Button
                     title="Log out "
                     btn="btn-outline"
                     color="white"
-                    onClick=""
                   />
                 </div>
                 <div className="col-12 col-lg-9">
@@ -191,14 +186,14 @@ const PartProfile = (props) => {
                       type="radio"
                       name="gender"
                     ></input>
-                    <label for="gendermale">Male</label>
+                    <label htmlFor="gendermale">Male</label>
                     <input
                       className={style.gender}
                       id="genderfemale"
                       type="radio"
                       name="gender"
                     ></input>
-                    <label for="genderfemale">Female</label>
+                    <label htmlFor="genderfemale">Female</label>
                     <div className={style["card-footer"]}></div>
                   </div>
                 </div>
@@ -211,4 +206,4 @@ const PartProfile = (props) => {
   );
 };
 
-export default withRouter(PartProfile);
+export default PartProfile;

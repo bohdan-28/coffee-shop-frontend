@@ -15,6 +15,8 @@ import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
 import ForgotPassword from "../../pages/ForgotPassword";
 
+import NewProduct from "../../pages/NewProduct"
+
 function App() {
   return (
     <Router>
@@ -30,6 +32,8 @@ function App() {
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/history" component={History} />
 
+        {/* admin */}
+        <PrivateRoute path="/new-product" component={NewProduct} />
       </Switch>
     </Router>
   );
