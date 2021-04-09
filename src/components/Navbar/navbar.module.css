@@ -1,47 +1,50 @@
-.navbar-style{
+.navbar-style {
   height: 129px;
   background-color: white;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-family: Rubik;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #0B132A;
+  color: #0b132a;
   margin-left: 15px;
 }
 
-.coffee-icon{
+.coffee-icon {
   background-image: url(./assets/coffe-icon.png);
   width: 30px;
   height: 33px;
 }
 
+.dropdown-item:active {
+  background-color: #ffba33;
+}
 
-.nav-item{
+.nav-item {
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #4F5665;
+  color: #4f5665;
   margin-left: 40px;
 }
 
-.nav-signin{
+.nav-signin {
   font-family: Rubik;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #0B132A;
+  color: #0b132a;
   margin-right: 40px;
 }
 
-button.nav-btn-signup{
-  background: #FFBA33;
+button.nav-btn-signup {
+  background: #ffba33;
   border-radius: 50px;
   width: 150px;
   height: 45px;
@@ -50,18 +53,18 @@ button.nav-btn-signup{
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #6A4029;
+  color: #6a4029;
 }
 
-img.navsearch{
+img.navsearch {
   margin-right: 40px;
 }
 
-img.navchat{
+img.navchat {
   margin-right: 40px;
 }
 
-img.profile-img{
+img.profile-img {
   margin-right: 40px;
   width: 32px;
   height: 32px;

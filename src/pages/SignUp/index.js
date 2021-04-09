@@ -65,16 +65,6 @@ export default function Index() {
         });
       })
       .catch((err) => {
-        setData({
-          email: "",
-          password: "",
-          phoneNumber: "",
-          firstname: "your firstname",
-          lastname: "your lastname",
-          address: "your address",
-          gender: "male",
-          dateOfBirth: new Date(),
-        });
         Swal.fire({
           title: "Error!",
           text: err.message,

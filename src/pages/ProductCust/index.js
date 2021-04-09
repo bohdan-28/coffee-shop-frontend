@@ -7,7 +7,8 @@ import Button from '../../parts/ProductCust/Button/Button'
 import TermCondition from '../../parts/ProductCust/TermCondition/TermCondition'
 import ProductCard from '../../parts/ProductCust/ProductCard/ProductCard'
 import { dadCC, motherCC, pirateCC } from '../../assets/images'
-
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 function ProductCustomer() {
     const history = useHistory();
@@ -27,6 +28,7 @@ function ProductCustomer() {
 
     return (
         <div className="container-fluid">
+            <Navbar />
             <div className="row">
                 <div className={[["col-4"], style['side-section']].join(' ')}>
                     <SideArticle />
@@ -45,6 +47,7 @@ function ProductCustomer() {
                         <button type={["button"]} id={style["btn-tab"]} className="btn btn-outline-primary" onClick={() => setType('todos')}>Foods</button>
                         <button type={["button"]} id={style["btn-tab"]} className="btn btn-outline-primary" onClick={() => setType('todos')}>Add-on</button>
                     </div>
+                    <h1>{type}</h1>
                     
                     <div className={style['card-section']}>
                         {item.splice(0, 12).map((product, index) => {
@@ -54,6 +57,7 @@ function ProductCustomer() {
                     <p>*The price has been cutted by discount appears</p>
                 </div>
             </div>
+            <Footer />
         </div>
         
   );

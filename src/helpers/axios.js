@@ -20,7 +20,7 @@ axiosApiInstance.interceptors.response.use(
   },
   async function (error) {
     if (error.response.status === 401) {
-      if (error.response.data.message === "Token is expired") {
+      if (error.response.data.message === "Token expired") {
         localStorage.removeItem("token");
       }
       if (error.response.data.message === "Invalid signature") {
