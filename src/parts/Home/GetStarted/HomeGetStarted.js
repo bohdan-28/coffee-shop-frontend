@@ -1,7 +1,15 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 import Style from "./home.module.css";
 
 function HomeGetStarted() {
+  const history = useHistory();
+
+  const handleClickStarted = () => {
+    history.push("/login");
+  };
+
   return (
     <div>
       <div
@@ -26,6 +34,7 @@ function HomeGetStarted() {
               ["btn-warning"],
               Style["btn-get-started"],
             ].join(" ")}
+            onClick={() => handleClickStarted()}
           >
             Get Started
           </button>

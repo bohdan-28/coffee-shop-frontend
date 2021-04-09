@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import PublicRoute from "./module/PublicRoute";
 import PrivateRoute from "./module/PrivateRoute";
+import AdminRoute from "./module/AdminRoute";
 
 import PaymentDelivery from "../../pages/PaymentDelivery";
 import Chat from "../../pages/Chat";
@@ -15,7 +16,6 @@ import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
 import Dashboard from "../../pages/Dashboard";
 import ForgotPassword from "../../pages/ForgotPassword";
-
 import NewProduct from "../../pages/NewProduct";
 
 function App() {
@@ -32,8 +32,8 @@ function App() {
         <PrivateRoute path="/product-cust/" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/history" component={History} />
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/new-product" component={NewProduct} />
+        <AdminRoute path="/dashboard" component={Dashboard} />
+        <AdminRoute path="/new-product" component={NewProduct} />
       </Switch>
     </Router>
   );

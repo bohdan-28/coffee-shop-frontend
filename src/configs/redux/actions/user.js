@@ -108,6 +108,20 @@ export const update = (data, id) => (dispatch) => {
   });
 };
 
+export const updatePassword = (data, id) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const Url = process.env.REACT_APP_API_URL;
+    axiosApiInstance
+      .put(`${Url}/users/edit-password/${id}`, data)
+      .then((res) => {
+        resolve(res.data.message);
+      })
+      .catch((err) => {
+        reject(new Error(err.response.data.message));
+      });
+  });
+};
+
 export const activate = ({ email }) => (dispatch) => {
   return new Promise((resolve, reject) => {
     const Url = process.env.REACT_APP_API_URL;

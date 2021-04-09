@@ -2,7 +2,12 @@ import React, { Fragment, useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { update, getUser, findUser } from "../../configs/redux/actions/user";
+import {
+  update,
+  getUser,
+  findUser,
+  updatePassword,
+} from "../../configs/redux/actions/user";
 import Swal from "sweetalert2";
 import style from "./profile.module.css";
 import Button from "../../components/Button";
@@ -30,6 +35,10 @@ const PartProfile = () => {
   const [dataImage, setDataImage] = useState({
     image: {},
   });
+  const [dataPassword, setDataPassword] = useState({
+    password: "",
+    confirmPassword: "",
+  });
   const [status, setStatus] = useState(false);
   const [imgUrl, setImgUrl] = useState(`${ImgUrl}${user.image}`);
   const [disabled, setDisabled] = useState(true);
@@ -38,6 +47,12 @@ const PartProfile = () => {
     const userNew = { ...data };
     userNew[event.target.name] = event.target.value;
     setData(userNew);
+  };
+
+  const handleFormChangePassword = (event) => {
+    const passwordNew = { ...dataPassword };
+    passwordNew[event.target.name] = event.target.value;
+    setDataPassword(passwordNew);
   };
 
   const handleSubmit = (event) => {
@@ -67,6 +82,35 @@ const PartProfile = () => {
           dispatch(findUser()).then((res) => {
             dispatch(getUser());
             setData(res);
+          });
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#6a4029",
+        });
+      });
+  };
+
+  const handleSubmitPassword = (event) => {
+    event.preventDefault();
+    dispatch(updatePassword(dataPassword, user.id))
+      .then((res) => {
+        setDisabled(true);
+        Swal.fire({
+          title: "Success!",
+          text: res,
+          icon: "success",
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#ffba33",
+        }).then(() => {
+          setDataPassword({
+            password: "",
+            confirmPassword: "",
           });
         });
       })
@@ -199,6 +243,8 @@ const PartProfile = () => {
                     title="Edit Password "
                     btn="btn-outline"
                     color="white"
+                    toggle="modal"
+                    target="#exampleModal"
                   />
                   <p className={style["text-left-profile"]}>
                     Do you want to save the change?
@@ -232,7 +278,7 @@ const PartProfile = () => {
                         onClick={() => handleDisabledFalse()}
                       />
                     </div>
-                    <label htmlFor="email">Email adress :</label>
+                    <label htmlFor="email">Email address :</label>
                     <br />
                     <input
                       type="text"
@@ -349,6 +395,72 @@ const PartProfile = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal fade"
+        id="exampleModal"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Edit Password
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="password"
+                    id="password"
+                    value={dataPassword.password}
+                    onChange={handleFormChangePassword}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="confirmPassword">Confirm Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    value={dataPassword.confirmPassword}
+                    onChange={handleFormChangePassword}
+                  />
+                </div>
+              </form>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-warning"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline-warning"
+                onClick={(event) => handleSubmitPassword(event)}
+              >
+                Save changes
+              </button>
             </div>
           </div>
         </div>
