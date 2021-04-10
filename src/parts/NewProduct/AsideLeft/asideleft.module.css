@@ -1,92 +1,91 @@
 .cards-profile {
-    height: 1400px;
+  height: 1500px;
 }
 
 .big-circle {
-    height: 300px;
-    width: 300px;
-    left: 196px;
-    background: rgba(186, 186, 186, 0.35);
-    border-radius: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
+  height: 300px;
+  width: 300px;
+  left: 196px;
+  background: rgba(186, 186, 186, 0.35);
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-product {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.img-product-valen {
+  height: 290px;
+  width: 290px;
+  clip-path: circle();
+}
+
+.input-hour {
+  height: 83px;
+  width: 391px;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: start;
+  padding-left: 40px;
+  line-height: 138.84%;
+  letter-spacing: 0.03em;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.smoke-white {
+  background: #ffffff;
+  color: #9f9f9f;
 }
 
 .big-circle i {
-    padding-top: 120px;
-    padding-left: 115px;
-    color: #ccc6c6;
+  padding-top: 120px;
+  padding-left: 120px;
+  color: #ccc6c6;
+}
+
+.textSize {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #9f9f9f;
 }
 
 .title {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    color: #6A4029;
-    margin-top: 80px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #6a4029;
+  margin-top: 20px;
 }
-
-.titleExpire {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    color: #6A4029;
-    margin-top: 5px;
-}
-
-.btn-select {
-    height: 83px;
-    width: 391px;
-    border-radius: 20px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    text-align: start;
-    padding-left: 40px;
-    line-height: 138.84%;
-    letter-spacing: 0.03em;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    margin-bottom: 30px;
-}
-
-.dropdown-disc{
-    width: 390px;
-
-}
-
-
-
-
-
 
 @media only screen and (max-width: 600px) {
+  .cards-profile {
+    background: #f5f5f8;
+    height: 1200px;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 30px;
+  }
 
-    .cards-profile {
-        background: #F5F5F8;
-        height: 1200px;
-        padding-top: 40px;
-        padding-right: 20px;
-        padding-left: 30px;
-    }
-
-    .big-circle,
-    .img-product {
-        height: 132px;
-        width: 132px;
-    }
-
-
+  .big-circle,
+  .img-product {
+    height: 132px;
+    width: 132px;
+  }
 }

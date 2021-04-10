@@ -16,10 +16,10 @@ import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
 import Dashboard from "../../pages/Dashboard";
 import ForgotPassword from "../../pages/ForgotPassword";
-
-import NewPromo from '../../pages/NewPromo'
-import EditPromo from '../../pages/EditPromo'
+import NewPromo from "../../pages/NewPromo";
+import EditPromo from "../../pages/EditPromo";
 import NewProduct from "../../pages/NewProduct";
+import EditProduct from "../../pages/EditProduct";
 
 function App() {
   return (
@@ -35,12 +35,11 @@ function App() {
         <PrivateRoute path="/product-cust/" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/history" component={History} />
-
-        <Route path="/edit-promo" component={EditPromo} />
-        <Route path="/new-promo" component={NewPromo} />
+        <AdminRoute path="/edit-promo" component={EditPromo} />
+        <AdminRoute path="/new-promo" component={NewPromo} />
         <AdminRoute path="/dashboard" component={Dashboard} />
-        <Route path="/new-product" component={NewProduct} />
-
+        <AdminRoute path="/new-product" component={NewProduct} />
+        <AdminRoute path="/edit-product" component={EditProduct} />
       </Switch>
     </Router>
   );
