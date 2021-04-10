@@ -1,177 +1,175 @@
 .btn-choose-picture {
-    width: 207px;
-    height: 44px;
-    border-radius: 10px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 22px;
-    text-align: center;
-    border: none;
-    margin-left: 30px;
+  width: 207px;
+  height: 44px;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+  margin-left: 30px;
 }
 
-.btn-edit-pict{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    opacity: 0.8;
-    background-color: rgba(106, 64, 41, 1);
-    margin-left: 250px;
-    position: relative;
-    top: -10px;
-    border: none;
+.btn-edit-pict {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.8;
+  background-color: rgba(106, 64, 41, 1);
+  margin-left: 250px;
+  position: relative;
+  top: -10px;
+  border: none;
 }
-
-
 
 .btn-choose-picture-high {
-    height: 88px;
-    width: 391px;
-    border-radius: 20px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    color: #6A4029;
-    text-align: center;
-    border: none;
+  height: 88px;
+  width: 391px;
+  border-radius: 20px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #6a4029;
+  text-align: center;
+  border: none;
 }
 
 .btn-remove-photo {
-    margin-top: 20px;
-    width: 207px;
-    height: 44px;
-    border-radius: 10px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 22px;
-    text-align: center;
-    border: none;
-    margin-left: 30px;
-    margin-bottom: 40px;
+  margin-top: 20px;
+  width: 207px;
+  height: 44px;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 40px;
 }
 
 .btn-outline {
-    width: 207px;
-    height: 60px;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    border-radius: 20px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 27px;
-    color: #6A4029;
-    margin-left: 30px;
-    margin-bottom: 5px;
+  width: 207px;
+  height: 60px;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #6a4029;
+  margin-left: 30px;
+  margin-bottom: 5px;
 }
 
 .btn-fill {
-    width: 207px;
-    height: 60px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 27px;
-    border-radius: 20px;
-    border: none;
-    margin-left: 30px;
-    margin-bottom: 30px;
+  width: 207px;
+  height: 60px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
 .btn-take-a-picture {
-    height: 88px;
-    width: 391px;
-    border-radius: 20px;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 30px;
-    color: #FFFFFF;
-    border: none;
-    margin-bottom: 20px;
+  height: 88px;
+  width: 391px;
+  border-radius: 20px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  border: none;
+  margin-bottom: 20px;
 }
 
 .btn-select {
-    height: 83px;
-    width: 391px;
-    border-radius: 20px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    text-align: start;
-    padding-left: 40px;
-    line-height: 138.84%;
-    letter-spacing: 0.03em;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    margin-bottom: 30px;
+  height: 83px;
+  width: 391px;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: start;
+  padding-left: 40px;
+  line-height: 138.84%;
+  letter-spacing: 0.03em;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
 .yellow {
-    background: #FFBA33;
-    color: #6A4029;
+  background: #ffba33;
+  color: #6a4029;
 }
 
 .chocolate {
-    background: #6A4029;
-    color: #FFFFFF;
+  background: #6a4029;
+  color: #ffffff;
 }
 
 .white {
-    color: #6A4029;
-    background: #FFFFFF;
+  color: #6a4029;
+  background: #ffffff;
 }
 
-.btn-download-report{
-    width: 720px;
-    height: 67px;
-    box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
-    border-radius: 20px;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 41px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 25px;
+.btn-download-report {
+  width: 720px;
+  height: 67px;
+  box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
+  border-radius: 20px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 41px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 25px;
 }
 
-.btn-share-report{
-    width: 315px;
-    height: 67px;
-    box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
-    border-radius: 20px;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 41px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 25px;
+.btn-share-report {
+  width: 315px;
+  height: 67px;
+  box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.6);
+  border-radius: 20px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 41px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 25px;
 }
 
-.drowdown-box{
-    width: 391px;
-    font-family: Nunito Sans;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: start;
-    padding-left: 40px;
-    line-height: 138.84%;
-    letter-spacing: 0.03em;
-    border-radius: 20px;
+.drowdown-box {
+  width: 391px;
+  font-family: Nunito Sans;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: start;
+  padding-left: 40px;
+  line-height: 138.84%;
+  letter-spacing: 0.03em;
+  border-radius: 20px;
 }
