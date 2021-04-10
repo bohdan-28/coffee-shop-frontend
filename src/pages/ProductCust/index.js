@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import style from "./product.module.css";
 import SideArticle from "../../parts/ProductCust/SideArticle/SideArticle";
@@ -14,8 +14,6 @@ import { getProduct } from "../../configs/redux/actions/product";
 import Swal from "sweetalert2";
 
 function ProductCustomer() {
-  const history = useHistory();
-
   const dispatch = useDispatch();
 
   const [togglestate, setToggleState] = useState(1);
@@ -36,10 +34,6 @@ function ProductCustomer() {
           confirmButtonColor: "#6a4029",
         });
       });
-  };
-
-  const routeChangeById = (id) => {
-    history.push(`/product-detail/${id}`);
   };
 
   useEffect(() => {
@@ -163,7 +157,7 @@ function ProductCustomer() {
                   title={item.name}
                   price={item.price}
                   key={index}
-                  routeChange={() => routeChangeById(item.id)}
+                  idProduct={item.id}
                 />
               );
             })}
@@ -182,7 +176,7 @@ function ProductCustomer() {
                   title={item.name}
                   price={item.price}
                   key={index}
-                  routeChange={() => routeChangeById(item.id)}
+                  idProduct={item.id}
                 />
               );
             })}
@@ -201,7 +195,7 @@ function ProductCustomer() {
                   title={item.name}
                   price={item.price}
                   key={index}
-                  routeChange={() => routeChangeById(item.id)}
+                  idProduct={item.id}
                 />
               );
             })}
@@ -220,7 +214,7 @@ function ProductCustomer() {
                   title={item.name}
                   price={item.price}
                   key={index}
-                  routeChange={() => routeChangeById(item.id)}
+                  idProduct={item.id}
                 />
               );
             })}
@@ -239,7 +233,7 @@ function ProductCustomer() {
                   title={item.name}
                   price={item.price}
                   key={index}
-                  routeChange={() => routeChangeById(item.id)}
+                  idProduct={item.id}
                 />
               );
             })}
