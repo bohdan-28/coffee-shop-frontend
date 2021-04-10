@@ -47,28 +47,21 @@ const AsideLeft = (props) => {
                                 style={{ display: "none" }}
                             />
                             
-                            <p className={style.title}>Enter the discount:</p>
-                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input discount</button>
+                            <p className={style.title}>Delivery Hour:</p>
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start hour</button>
                             <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
-                                <Link className="dropdown-item" to="#">Disconnt ?</Link>
+                                <Link className="dropdown-item" to="#">Hour ?</Link>
                             </div>
-                            
-                            <p className={style.titleExpire}>Expire date:</p>
-                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start date</button>
+
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select end hour</button>
                             <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
                                 <Link className="dropdown-item" to="#">Tanggal</Link>
                             </div>
-
-                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select end date</button>
-                            <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
-                                <Link className="dropdown-item" to="#">Tanggal</Link>
-                            </div>
-
                             
-                            <p className={style.titleExpire}>Input coupon code:</p>
+                            <p className={style.titleExpire}>Input Stock:</p>
                             <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input stock</button>
                             <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
-                                <Link className="dropdown-item" to="#">Tanggal</Link>
+                                <Link className="dropdown-item" to="#">Stock</Link>
                             </div>
 
                             {/* <p className={style.title}>Delivery Hour:</p>
