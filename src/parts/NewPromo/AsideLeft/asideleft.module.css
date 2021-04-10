@@ -1,0 +1,70 @@
+.cards-profile {
+    height: 1400px;
+}
+
+.big-circle {
+    height: 300px;
+    width: 300px;
+    left: 196px;
+    background: rgba(186, 186, 186, 0.35);
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.img-product {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.big-circle i {
+    padding-top: 120px;
+    padding-left: 115px;
+    color: #ccc6c6;
+}
+
+.title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 50px;
+}
+
+.titleExpire {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .cards-profile {
+        background: #F5F5F8;
+        height: 1200px;
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-left: 30px;
+    }
+
+    .big-circle,
+    .img-product {
+        height: 132px;
+        width: 132px;
+    }
+
+
+}

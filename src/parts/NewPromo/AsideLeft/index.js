@@ -45,24 +45,33 @@ const AsideLeft = (props) => {
                                 onChange={props.changePicture}
                                 style={{ display: "none" }}
                             />
-                            
 
-                            <p className={style.title}>Delivery Hour:</p>
+
+                            <p className={style.title}>Enter the discount:</p>
                             <Button
-                                title="Select start hour"
+                                title="Input discount"
+                                btn="btn-select"
+                                color="smoke-white"
+                                datatoggle="dropdown"
+                                type="button"
+                            />
+
+                            <p className={style.titleExpire}>Expire date:</p>
+                            <Button
+                                title="Select start date"
                                 btn="btn-select"
                                 color="smoke-white"
                                 datatoggle="dropdown"
                                 type="button"
                             />
                             <Button
-                                title="Select end hour"
+                                title="Select end date"
                                 btn="btn-select"
                                 color="smoke-white"
                                 datatoggle="dropdown"
                                 type="button"
                             />
-                            <p className={style.title}>Input Stock:</p>
+                            <p className={style.titleExpire}>Input coupon code:</p>
                             <Button
                                 title="Input stock"
                                 btn="btn-select"

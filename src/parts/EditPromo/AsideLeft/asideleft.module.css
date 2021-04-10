@@ -1,0 +1,149 @@
+.cards-profile {
+    height: 1400px;
+}
+
+.product-box{
+    width: 390px;
+    height: 771px;
+    background-color: rgba(255, 203, 101, 1);
+    border-radius: 20px;
+}
+
+.img-product {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 40px;
+}
+
+p.product-title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+}
+
+p.disc{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+    margin-top: 5px;
+}
+
+p.promo-detail{
+    font-style: normal;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+    margin-top: 70px;
+}
+
+.line{
+    width: 390px;
+    border: 1px dashed #000000;
+    margin-top: 100px;
+}
+
+p.coupon-teks{
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px;
+}
+
+p.coupon-code{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+    margin-top: 35px;
+}
+
+.promo-end{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 101.34%;
+    text-align: center;
+    color: #000000;
+}
+
+.title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 50px;
+}
+
+.titleExpire {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 35px;
+}
+
+.formData .label-promo{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 5px;
+}
+
+input.input-promo-code{
+    width: 390px;
+    height: 50px;
+    background-color:transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .cards-profile {
+        background: #F5F5F8;
+        height: 1200px;
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-left: 30px;
+    }
+
+    .big-circle,
+    .img-product {
+        height: 132px;
+        width: 132px;
+    }
+
+
+}

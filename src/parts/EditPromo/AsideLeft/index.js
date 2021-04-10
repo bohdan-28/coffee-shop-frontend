@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import style from "./asideleft.module.css";
 import Button from "../../../components/Button";
 // import { withRouter } from "react-router-dom";
+import {hazelnutlatte} from '../../../assets/images'
 
 const AsideLeft = (props) => {
 
@@ -17,27 +18,34 @@ const AsideLeft = (props) => {
                     <div className="row">
                         <div className={style.asideLeft}>
 
-                            <div className={style["big-circle"]}>
-                                <i className="fa fa-camera fa-4x" />
-                                {/* <img
-                            // className={style["img-product"]}
-                            // src=""
-                            // alt="ImgProduct"
-                            /> */}
-                            </div>
+                            {/* <div className={style["big-circle"]}> */}
+                          <div className={style['product-box']}>
+
+                            <img
+                            className={style["img-product"]}
+                            src={hazelnutlatte}
+                            alt="ImgProduct"
+                            /> 
+                            {/* </div> */}
 
                             <Button
-                                title="Take a picture"
-                                btn="btn-take-a-picture"
+                                title=" "
+                                btn="btn-edit-pict"
                                 color="blue"
                                 onClick={handleClick}
                             />
-                            <Button
-                                title="Choose from gallery"
-                                btn="btn-choose-picture-high"
-                                color="yellow"
-                                onClick={handleClick}
-                            />
+                          <p className={style['product-title']}>Beef Spaghetti</p>
+                          <p className={style['disc']}>20 % OFF</p>
+
+                          <p className={style['promo-detail']}>Buy 1 Choco Oreo and get 20% off for Beef Spaghetti</p>
+                          <div className={style['line']}></div>
+                          <p className={style['coupon-teks']}>COUPON CODE</p>
+
+                          <p className={style['coupon-code']}>KFAP01ALP</p>
+                          <p className={style['promo-end']}>Valid until March 15 2021</p>
+                          </div>
+
+                            
 
                             <input
                                 type="file"
@@ -45,33 +53,35 @@ const AsideLeft = (props) => {
                                 onChange={props.changePicture}
                                 style={{ display: "none" }}
                             />
-                            
 
-                            <p className={style.title}>Delivery Hour:</p>
+
+                            <p className={style.titleExpire}>Expire date:</p>
                             <Button
-                                title="Select start hour"
+                                title="Select start date"
                                 btn="btn-select"
                                 color="smoke-white"
                                 datatoggle="dropdown"
                                 type="button"
                             />
                             <Button
-                                title="Select end hour"
+                                title="Select end date"
                                 btn="btn-select"
                                 color="smoke-white"
-                                datatoggle="dropdown"
-                                type="button"
-                            />
-                            <p className={style.title}>Input Stock:</p>
-                            <Button
-                                title="Input stock"
-                                btn="btn-select"
-                                color="smoke-white"
-                                onClick=""
                                 datatoggle="dropdown"
                                 type="button"
                             />
 
+                            <div className={style.formData}>
+                                <label className={style['label-promo']} htmlFor="name">Input promo code:</label>
+                                <br />
+                                <input
+                                    className={style['input-promo-code']}
+                                    id="name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Code Promo here"
+                                ></input>
+                            </div>
                      
 
                         </div>

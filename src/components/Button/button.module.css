@@ -12,6 +12,20 @@
     margin-left: 30px;
 }
 
+.btn-edit-pict{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.8;
+    background-color: rgba(106, 64, 41, 1);
+    margin-left: 250px;
+    position: relative;
+    top: -10px;
+    border: none;
+}
+
+
+
 .btn-choose-picture-high {
     height: 88px;
     width: 391px;
@@ -148,3 +162,16 @@
     margin-top: 25px;
 }
 
+.drowdown-box{
+    width: 391px;
+    font-family: Nunito Sans;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: start;
+    padding-left: 40px;
+    line-height: 138.84%;
+    letter-spacing: 0.03em;
+    border-radius: 20px;
+}

@@ -17,6 +17,8 @@ import Dashboard from '../../pages/Dashboard'
 import ForgotPassword from "../../pages/ForgotPassword";
 
 import NewProduct from "../../pages/NewProduct"
+import NewPromo from '../../pages/NewPromo'
+import EditPromo from '../../pages/EditPromo'
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
 
         {/* admin */}
         <PrivateRoute path="/new-product" component={NewProduct} />
+        <PrivateRoute path="/new-promo" component={NewPromo} />
+        <Route path="/edit-promo" component={EditPromo} />
       </Switch>
     </Router>
   );
