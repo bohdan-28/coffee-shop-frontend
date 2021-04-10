@@ -13,11 +13,15 @@
     border-left: 1px solid #9F9F9F;
     padding: 2em 4em;
 }
-.card-section{
+.cardSection{
     padding: 4em 2em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 50px;
+    display: none;
+}
+.activeContent{
+    display: grid;
 }
 .main-section > p {
     color: #6A4029;
@@ -27,30 +31,21 @@
     display: flex;
     justify-content: space-evenly;
 }
-#btn-tab{
+.btn{
+    border: none ;
+    background-color: white ;
+    font-weight: 700 ;
+    color: #9F9F9F ;
+    flex-grow: 1 ;
+    padding: .5em ;
+}
+.btnactive{
     border: none;
     background-color: white;
     font-weight: 700;
     color: #9F9F9F;
-    flex-grow: 1;
-    padding: .5em;
-}
-.btn-tab-active{
-    border: none;
-    background-color: white;
-    font-weight: 700;
-    color: #9F9F9F;
     color: #6A4029;
     border-bottom: 3px solid #6A4029;
 }
-#btn-tab:hover{
-    color: #6A4029;
-    border-bottom: 3px solid #6A4029;
-}
-#btn-tab:focus {
-    outline: none;
-    box-shadow: none;
-    color: #6A4029;
-    border-bottom: 3px solid #6A4029;
 
-  }
+

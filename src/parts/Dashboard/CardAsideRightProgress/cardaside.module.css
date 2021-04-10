@@ -1,4 +1,5 @@
 .card-aside-right {
+    padding-top: 30px;
     width: 315px;
     height: 317px;
     background-color: white;
@@ -6,69 +7,35 @@
     box-shadow: 0px 6px 20px rgba(65, 60, 57, 0.6);
 }
 
-.card-aside-right img {
-    margin-top: 15px;
-    border-radius: 50%;
-    margin-left: 25px;
-}
-
-.card-aside-right h5.admin-name {
-    font-family: Poppins;
+.title-card {
+    font-family: Nunito Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 22px;
     line-height: 30px;
-    color: #000000;
-    margin-left: -50px;
-    margin-top: 15px;
-}
-
-.card-aside-right h5.quotes {
-    font-style: 300;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 20px;
-    color: #000000;
-    margin-left: -50px;
-    margin-top: 15px;
-}
-
-.card-aside-right .line {
-    width: 240px;
-    border: 1px solid #D6D9DC;
-    margin: 10px auto;
-}
-
-.card-aside-right h4.best-teks {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 27px;
-    color: #000000;
     text-align: center;
+    color: #000000;
 }
 
-.card-aside-right h4.achive-teks {
-    font-family: Poppins;
+.best-teks {
+    font-family: Nunito Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 22px;
     text-align: center;
     color: #7C828A;
-
 }
 
 .progress {
-    height: 74px;
-    width: 74px;
+    height: 145px;
+    width: 145px;
     line-height: 60px;
     background: none;
     margin: 0 auto;
     box-shadow: none;
     position: relative;
-    color: #4A8E07;
+    color: #FFBA33;
 }
 
 .progress:after {
@@ -76,7 +43,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 6px solid rgba(115, 136, 169, 0.353283);
+    border: 11px solid #6A4029;
     position: absolute;
     top: 0;
     left: 0;
@@ -99,7 +66,7 @@
     width: 100%;
     height: 100%;
     background: none;
-    border-width: 6px;
+    border-width: 12px;
     border-style: solid;
     position: absolute;
     top: 0;
@@ -132,7 +99,6 @@
     width: 90%;
     height: 90%;
     border-radius: 50%;
-    background: #fff;
     color: #000000;
     position: absolute;
     top: 5%;
@@ -143,12 +109,20 @@
     font-size: 22px;
     line-height: 33px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 50px;
 }
 
 
 .progress .progress-left .progress-bar {
-    animation: loading-2 1.5s linear forwards 1.8s;
+    animation: loading-3 1.5s linear forwards 1.8s;
+}
+
+.circle {
+    height: 8px;
+    width: 8px;
+    margin-right: 8px;
+    border-radius: 100%;
+    background: rgba(115, 136, 169, 0.353283);
 }
 
 

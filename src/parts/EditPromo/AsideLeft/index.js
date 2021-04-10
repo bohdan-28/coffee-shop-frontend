@@ -3,6 +3,7 @@ import style from "./asideleft.module.css";
 import Button from "../../../components/Button";
 // import { withRouter } from "react-router-dom";
 import {hazelnutlatte} from '../../../assets/images'
+import {Link} from 'react-router-dom'
 
 const AsideLeft = (props) => {
 
@@ -54,22 +55,17 @@ const AsideLeft = (props) => {
                                 style={{ display: "none" }}
                             />
 
-
                             <p className={style.titleExpire}>Expire date:</p>
-                            <Button
-                                title="Select start date"
-                                btn="btn-select"
-                                color="smoke-white"
-                                datatoggle="dropdown"
-                                type="button"
-                            />
-                            <Button
-                                title="Select end date"
-                                btn="btn-select"
-                                color="smoke-white"
-                                datatoggle="dropdown"
-                                type="button"
-                            />
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start date</button>
+                            <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Tanggal ?</Link>
+                            </div>
+
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select end date</button>
+                            <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Tanggal ?</Link>
+                            </div>
+
 
                             <div className={style.formData}>
                                 <label className={style['label-promo']} htmlFor="name">Input promo code:</label>

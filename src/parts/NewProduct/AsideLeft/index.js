@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import style from "./asideleft.module.css";
 import Button from "../../../components/Button";
 // import { withRouter } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 const AsideLeft = (props) => {
 
@@ -46,8 +47,31 @@ const AsideLeft = (props) => {
                                 style={{ display: "none" }}
                             />
                             
+                            <p className={style.title}>Enter the discount:</p>
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input discount</button>
+                            <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Disconnt ?</Link>
+                            </div>
+                            
+                            <p className={style.titleExpire}>Expire date:</p>
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start date</button>
+                            <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Tanggal</Link>
+                            </div>
 
-                            <p className={style.title}>Delivery Hour:</p>
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select end date</button>
+                            <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Tanggal</Link>
+                            </div>
+
+                            
+                            <p className={style.titleExpire}>Input coupon code:</p>
+                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input stock</button>
+                            <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
+                                <Link className="dropdown-item" to="#">Tanggal</Link>
+                            </div>
+
+                            {/* <p className={style.title}>Delivery Hour:</p>
                             <Button
                                 title="Select start hour"
                                 btn="btn-select"
@@ -70,7 +94,7 @@ const AsideLeft = (props) => {
                                 onClick=""
                                 datatoggle="dropdown"
                                 type="button"
-                            />
+                            /> */}
 
                      
 

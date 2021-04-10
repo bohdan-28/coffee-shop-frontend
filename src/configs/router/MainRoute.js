@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import PublicRoute from "./module/PublicRoute";
 import PrivateRoute from "./module/PrivateRoute";
+import AdminRoute from "./module/AdminRoute";
 
 import PaymentDelivery from "../../pages/PaymentDelivery";
 import Chat from "../../pages/Chat";
@@ -13,12 +14,12 @@ import ProductDetail from "../../pages/ProductDetail";
 import Profile from "../../pages/Profile";
 import SignUp from "../../pages/SignUp";
 import Login from "../../pages/Login";
-import Dashboard from '../../pages/Dashboard'
+import Dashboard from "../../pages/Dashboard";
 import ForgotPassword from "../../pages/ForgotPassword";
 
-import NewProduct from "../../pages/NewProduct"
 import NewPromo from '../../pages/NewPromo'
 import EditPromo from '../../pages/EditPromo'
+import NewProduct from "../../pages/NewProduct";
 
 function App() {
   return (
@@ -28,21 +29,18 @@ function App() {
         <PublicRoute path="/login" component={Login} />
         <PublicRoute path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/" component={Home} />
-
-
-      
-        <Route path="/dashboard" component={Dashboard} />
         <PrivateRoute path="/payment-delivery" component={PaymentDelivery} />
         <PrivateRoute path="/chat" component={Chat} />
         <PrivateRoute path="/product-detail/:id" component={ProductDetail} />
-        <PrivateRoute path="/product-cust" component={ProductCustomer} />
+        <PrivateRoute path="/product-cust/" component={ProductCustomer} />
         <PrivateRoute path="/profile" component={Profile} />
         <PrivateRoute path="/history" component={History} />
 
-        {/* admin */}
-        <PrivateRoute path="/new-product" component={NewProduct} />
-        <PrivateRoute path="/new-promo" component={NewPromo} />
         <Route path="/edit-promo" component={EditPromo} />
+        <Route path="/new-promo" component={NewPromo} />
+        <AdminRoute path="/dashboard" component={Dashboard} />
+        <Route path="/new-product" component={NewProduct} />
+
       </Switch>
     </Router>
   );

@@ -35,6 +35,38 @@
     margin-top: 80px;
 }
 
+.titleExpire {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #6A4029;
+    margin-top: 5px;
+}
+
+.btn-select {
+    height: 83px;
+    width: 391px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: start;
+    padding-left: 40px;
+    line-height: 138.84%;
+    letter-spacing: 0.03em;
+    border: 1px solid #9F9F9F;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.dropdown-disc{
+    width: 390px;
+
+}
+
 
 
 
