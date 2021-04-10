@@ -10,6 +10,7 @@ const initialState = {
     hourEnd: "00:00",
     stock: "1",
   },
+  getProduct: {},
   loading: false,
   message: "",
 };
@@ -25,6 +26,21 @@ const productAdminReducer = (state = initialState, action) => {
         },
         loading: false,
       };
+    case "GET_PRODUCT_SUCCESS":
+      return {
+        ...state,
+        getProduct: {
+          ...state.getProduct,
+          ...action.payload,
+        },
+        loading: false,
+      };
+    case "GET_PRODUCT_SUCCESS":
+      return {
+        ...state,
+        getProduct: {},
+        loading: false,
+      };
     case "ONCHANGE_INSERT_PRODUCT":
       return {
         ...state,
@@ -33,10 +49,23 @@ const productAdminReducer = (state = initialState, action) => {
           ...action.payload,
         },
       };
-    case "INSERT_PRODUCT_REQUEST":
+    case "ONCHANGE_GET_PRODUCT":
+      return {
+        ...state,
+        getProduct: {
+          ...state.getProduct,
+          ...action.payload,
+        },
+      };
+    case "PRODUCT_REQUEST":
       return {
         ...state,
         loading: true,
+      };
+    case "PRODUCT_FAILURE":
+      return {
+        ...state,
+        loading: false,
       };
     default:
       return state;

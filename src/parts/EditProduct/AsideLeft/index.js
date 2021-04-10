@@ -1,88 +1,135 @@
 import React, { Fragment } from "react";
 import style from "./asideleft.module.css";
 import Button from "../../../components/Button";
-// import { withRouter } from "react-router-dom";
-import {hazelnutlatte} from '../../../assets/images'
-import {Link} from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { hazelnutlatte } from "../../../assets/images";
+import { Link } from "react-router-dom";
 
 const AsideLeft = (props) => {
+  const hiddenFileInput = React.useRef(null);
+  const { getProduct } = useSelector((state) => state.productAdmin);
+  const ImgUrl = process.env.REACT_APP_API_IMG;
+  const dispatch = useDispatch();
+  const handleClick = (e) => {
+    hiddenFileInput.current.click();
+  };
+  const optionsCategory = [
+    {
+      label: "Add-on",
+      value: "4",
+    },
+    {
+      label: "Foods",
+      value: "3",
+    },
+    {
+      label: "Non-Coffee",
+      value: "2",
+    },
+    {
+      label: "Coffee",
+      value: "1",
+    },
+  ];
+  const handleChangeUpdate = (event) => {
+    dispatch({
+      type: "ONCHANGE_GET_PRODUCT",
+      action: (getProduct[event.target.name] = event.target.value),
+    });
+  };
+  return (
+    <Fragment>
+      <div className={style["cards-profile"]}>
+        <div className="container">
+          <div className="row">
+            <div className={style.asideLeft}>
+              {/* <div className={style["big-circle"]}> */}
+              <div className={style["product-box"]}>
+                <img
+                  className={style["img-product"]}
+                  src={`${ImgUrl}${getProduct.image}`}
+                  alt="ImgProduct"
+                />
+                {/* </div> */}
 
-    const hiddenFileInput = React.useRef(null);
-    const handleClick = (e) => {
-        hiddenFileInput.current.click();
-    };
+                <Button
+                  title=" "
+                  btn="btn-edit-pict"
+                  color="blue"
+                  onClick={handleClick}
+                />
+              </div>
 
-    return (
-        <Fragment>
-            <div className={style["cards-profile"]}>
-                <div className="container">
-                    <div className="row">
-                        <div className={style.asideLeft}>
+              <input
+                type="file"
+                ref={hiddenFileInput}
+                onChange={props.changePicture}
+                style={{ display: "none" }}
+              />
 
-                            {/* <div className={style["big-circle"]}> */}
-                          <div className={style['product-box']}>
+              <div className={`mt-5 ${style.formData}`}>
+                <label className={style["label-product"]} htmlFor="name">
+                  Edit delivery hour:
+                </label>
+                <br />
+                <input
+                  className={style["input-product-code"]}
+                  id="startHour"
+                  type="time"
+                  name="hourStart"
+                  placeholder="Edit stock here"
+                  value={getProduct.hourStart}
+                  onChange={handleChangeUpdate}
+                ></input>
+                <input
+                  className={style["input-product-code"]}
+                  id="startHour"
+                  type="time"
+                  name="hourEnd"
+                  value={getProduct.hourEnd}
+                  placeholder="Edit stock here"
+                  onChange={handleChangeUpdate}
+                ></input>
+              </div>
+              <div className={`mt-5 ${style.formData}`}>
+                <label className={style["label-product"]} htmlFor="stock">
+                  Edit stock:
+                </label>
+                <br />
+                <input
+                  className={style["input-product-code"]}
+                  id="stock"
+                  type="number"
+                  name="stock"
+                  value={getProduct.stock}
+                  placeholder="Edit stock here"
+                  onChange={handleChangeUpdate}
+                ></input>
+              </div>
+            </div>
+            <div className={`mt-5 ${style.formData}`}>
+              <label className={style["label-product"]} htmlFor="stock">
+                Edit Category:
+              </label>
+              <br />
+              <select
+                className={`${style.formData}`}
+                name="categoryID"
+                onChange={handleChangeUpdate}
+              >
+                {optionsCategory.map((option, index) => (
+                  <option
+                    value={option.value}
+                    selected
+                    className={style["input-product-code"]}
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-                            <img
-                            className={style["img-product"]}
-                            src={hazelnutlatte}
-                            alt="ImgProduct"
-                            /> 
-                            {/* </div> */}
-
-                            <Button
-                                title=" "
-                                btn="btn-edit-pict"
-                                color="blue"
-                                onClick={handleClick}
-                            />
-                          <p className={style['product-title']}>Beef Spaghetti</p>
-                          <p className={style['product']}>70.000</p>
-
-                          <p className={style['product-detail']}>Beef Spaghetti tapi gambar minuman</p>
-                          <div className={style['line']}></div>
-                          <p className={style['product-teks']}>PRODUCT SIZE</p>
-
-                          <p className={style['product-size']}>L XL</p>
-                          <p className={style['product-stock']}>Stock ??</p>
-                          </div>
-
-                            
-
-                            <input
-                                type="file"
-                                ref={hiddenFileInput}
-                                onChange={props.changePicture}
-                                style={{ display: "none" }}
-                            />
-
-                            <p className={style.titleExpire}>Expire date:</p>
-                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start date</button>
-                            <div className={[['dropdown-menu'], style['dropdown-product']].join(' ')}>
-                                <Link className="dropdown-item" to="#">Tanggal ?</Link>
-                            </div>
-
-                            <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select end date</button>
-                            <div className={[['dropdown-menu'], style['dropdown-product']].join(' ')}>
-                                <Link className="dropdown-item" to="#">Tanggal ?</Link>
-                            </div>
-
-
-                            <div className={style.formData}>
-                                <label className={style['label-product']} htmlFor="name">Edit stock:</label>
-                                <br />
-                                <input
-                                    className={style['input-product-code']}
-                                    id="name"
-                                    type="text"
-                                    name="name"
-                                    placeholder="Edit stock here"
-                                ></input>
-                            </div>
-                     
-
-                        </div>
-
-                        {/* <div className="col-12 col-lg-6">
+            {/* <div className="col-12 col-lg-6">
                                 <p className={style["text-title-right"]}>Contact</p>
 
                                 <label htmlFor="email">Email adress :</label>
@@ -98,11 +145,11 @@ const AsideLeft = (props) => {
 
 
                             </div> */}
-                    </div>
-                </div>
-            </div>
-        </Fragment >
-    );
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
 };
 
 export default AsideLeft;
