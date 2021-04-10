@@ -1,10 +1,5 @@
 const initialState = {
-  product: {
-    name: "",
-    price: 0,
-    size: "",
-    description: "",
-  },
+  product: [],
   allProducts: [],
 };
 
@@ -15,7 +10,7 @@ const productReducer = (state = initialState, action) => {
         ...state,
         allProducts: action.payload,
       };
-    case "GET_PRODUCT_ID":
+    case "GET_PRODUCT_DETAIL":
       return {
         ...state,
         product: action.payload,

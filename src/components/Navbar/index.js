@@ -84,17 +84,17 @@ function Navbar() {
               <div className="navbar-nav m-lg-auto ">
                 <Link
                   className={[Style["nav-item"], ["active"]].join(" ")}
-                  to="#"
+                  to="/"
                 >
                   Home <span className="sr-only">(current)</span>
                 </Link>
-                <Link className={Style["nav-item"]} to="#">
+                <Link className={Style["nav-item"]} to="/product-cust">
                   Product
                 </Link>
-                <Link className={Style["nav-item"]} to="#">
+                <Link className={Style["nav-item"]} to="/payment-delivery">
                   Your Cart
                 </Link>
-                <Link className={Style["nav-item"]} to="#">
+                <Link className={Style["nav-item"]} to="/history">
                   History
                 </Link>
               </div>
@@ -145,17 +145,17 @@ function Navbar() {
             <div className="navbar-nav m-lg-auto ">
               <Link
                 className={[Style["nav-item"], ["active"]].join(" ")}
-                to="#"
+                to="/"
               >
                 Home <span className="sr-only">(current)</span>
               </Link>
               <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
-              <Link className={Style["nav-item"]} to="#">
+              <Link className={Style["nav-item"]} to="/payment-delivery">
                 Your Cart
               </Link>
-              <Link className={Style["nav-item"]} to="#">
+              <Link className={Style["nav-item"]} to="/history">
                 History
               </Link>
             </div>
