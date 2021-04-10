@@ -22,7 +22,7 @@ function ProductCard({ image, title, price, discount, idProduct }) {
       <img src={`${ImgUrl}${image}`} alt="product" />
       <h4>{title}</h4>
       <h5 className="pb-2">IDR {price}</h5>
-      {role == 1 ? (
+      {role === 1 ? (
         <span
           onClick={(e) => routeChangeToUpdate(idProduct)}
           className={style["icon-edit-menus"]}
