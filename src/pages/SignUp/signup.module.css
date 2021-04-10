@@ -181,3 +181,95 @@ main aside.auth .footer-auth nav a {
 main aside.auth .footer-auth .detail-footer {
   margin-top: -35px;
 }
+
+@media only screen and (max-width: 600px) {
+  main {
+    height: 1000px !important;
+  }
+
+  .logoCoffe,
+  main aside.auth p.coffee,
+  main aside.auth .footer-auth {
+    display: none !important;
+  }
+
+  main aside.auth a.auth {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 65px;
+    line-height: 86.84%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+
+
+  main aside.auth {
+    width: 429px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    bottom: -450px;
+    padding-top: 250px;
+    background-image: url(../../assets/images/bgSignUpMobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  main aside.auth form input.form-control {
+    width: 352px;
+    background: transparent;
+    margin-left: 38px !important;
+    margin-right: 38px !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-bottom: 1px solid #FFFFFF;
+    color: #fff;
+  }
+
+  main aside.auth form input.form-control::-webkit-input-placeholder {
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  main aside.auth form button.btn-auth,
+  main aside.auth form button.btn-google,
+  main aside.auth form button.btn-auth-here {
+    width: 352px;
+    margin-left: 38px !important;
+    margin-right: 38px !important;
+  }
+
+  main aside.auth form button.btn-auth {
+    color: #fff;
+    background: #6a4029;
+    box-shadow: none;
+
+  }
+
+
+
+
+  main aside.auth form hr {
+    display: none;
+  }
+
+  main aside.auth form p.already {
+    display: none;
+    color: #fff;
+    margin-left: 30px;
+    margin-right: auto;
+  }
+
+  main aside.auth form button.btn-auth-here {
+    background: #ffba33;
+    margin-top: -45px;
+  }
+}

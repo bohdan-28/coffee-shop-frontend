@@ -10,6 +10,7 @@ import Google from "../../assets/images/google.png";
 import Facebook from "../../assets/images/facebook.png";
 import Twitter from "../../assets/images/twitter.png";
 import Instagram from "../../assets/images/instagram.png";
+// import bgSignUpMobile from "../../assets/images/bgSignUpMobile.png"
 
 export default function Index() {
   const history = useHistory();
@@ -115,7 +116,7 @@ export default function Index() {
       <aside className={[["m-5"], style["auth"]].join(" ")}>
         <div className="d-flex">
           <div>
-            <img src={Logo} alt="LogoCoffee" width="30" />
+            <img className={style.logoCoffe} src={Logo} alt="LogoCoffee" width="30" />
           </div>
           <div className="mt-2 ml-3">
             <p className={style["coffee"]}>Coffee Shop</p>
