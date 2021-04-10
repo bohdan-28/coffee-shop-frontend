@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import Style from "./favorite.module.css";
+import FavoriteProduct from './FavoriteProduct'
+import Promo from './Promo'
+import LeftScrollProduct from './LeftScrollProduct'
+import LeftScrollPromo from './LeftScrollPromo'
+import { hazelnutlatte } from "../../../assets/images";
+
 
 function PeopleFavorite() {
+  const [show, setShow] = useState(false)
+  const [showPromo, setShowPromo] = useState(false)
   return (
     <div>
       <div
@@ -11,14 +19,59 @@ function PeopleFavorite() {
           Style["jumbotron-favorite"],
         ].join(" ")}
       >
-        <div className="container">
+        <div className={[['container'], Style['mobile-contain']].join(' ')}>
           <h4 className={Style["favorite-title"]}>Here is People's Favorite</h4>
           <p className={Style["favorite-description"]}>
             Let’s choose and have a bit taste of poeple’s favorite. It might be
             yours too!
           </p>
+          
+          {/*======== Mobile ONLY ======== */}
+          <div className="favorite-product-list">
+            <h4 className={Style["title-mobile"]}>A good coffee is <br/> a good day</h4>
+            <p className={Style['favorite-teks-mobile']}>Favorite Products</p>
+            <button className={Style['seemore']} onClick={()=>setShow(!show)} >See more</button>
+              <>
+              {show ? 
+                <FavoriteProduct 
+                  img={`${hazelnutlatte}`}
+                  productname="Coffee Whipped Cream"
+                  price="IDR 44.000"
+                /> 
+                : 
+                <LeftScrollProduct 
+                  img={`${hazelnutlatte}`}
+                  productname="Hazelnut Latte"
+                  price="IDR 25.000"
+                />
+              }
+              </>
+          </div>
+          <div className="promo-for-you">
+            <p className={Style['favorite-teks-mobile']}>Promo for you</p>
+            <button className={Style['seemore']} onClick={()=>setShowPromo(!showPromo)} >See more</button>
+              <>
+              {showPromo ? 
+                <Promo 
+                 imgproduct={`${hazelnutlatte}`}
+                 productname="Coffee Whipped Cream"
+                 pricewithdisc="24.000"
+                 normalprice="44.000"
+                /> 
+                : 
+                <LeftScrollPromo 
+                  imgproduct={`${hazelnutlatte}`}
+                  productname="Coffee Whipped Cream"
+                  pricewithdisc="24.000"
+                /> 
+              } 
+              </>
+          </div>
+          {/*======= TUTUP MOBILE ONLY======== */}
 
-          <div className="row">
+
+
+          <div className={[['row'], Style['product-list']].join(' ')}>
             <div className="col">
               <div className={Style["favorite-product"]}>
                 <div className={Style["img-product"]}></div>

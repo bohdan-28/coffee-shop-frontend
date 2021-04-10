@@ -22,6 +22,7 @@ import EditPromo from '../../pages/EditPromo'
 import NewProduct from "../../pages/NewProduct";
 import EditProduct from '../../pages/EditProduct'
 
+
 function App() {
   return (
     <Router>
