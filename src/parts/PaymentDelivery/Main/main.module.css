@@ -63,4 +63,43 @@ h5.titleline{
   margin-left: 166px;
   margin-top: 30px;
 }
+.card{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.head-payment{
+  background-color: #362115;
+  height: 65vh;
+  display: none;
+}
+.pay-top > h5{
+  color: white;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.pay-bot > p{
+  color: white;
+  font-weight: 400;
+  margin-left: 40px ;
+}
+.arrow {
+  margin-top: 30px;
+  margin-left: 45px;
+  border: 3px solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+@media (max-width: 575.98px) {
+ div.payment-bg{
+   display: none;
+ }
+ .head-payment{
+   display: block;
+ }
+
+}
 

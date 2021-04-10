@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import { Footer } from '../../components'
-import PartHistory from '../../parts/History'
+import PartHistory from '../../parts/History/HistoryPart/HistoryPart'
 
 function History() {
     return (
