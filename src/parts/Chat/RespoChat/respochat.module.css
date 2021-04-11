@@ -1,0 +1,129 @@
+/* MOBILE ONLY */
+@media (max-width: 992px) {
+  
+  h4.title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    text-align: center;
+  }
+  .btn-back{
+    background-color:transparent;
+    border: transparent;
+    margin-top: -65px;
+  }
+
+  input.search-chat-respo{
+    background: rgba(239, 238, 238, 1);
+    border-radius: 40px;
+    border: none;
+    width: 348px;
+    height: 60px;
+    padding-left: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h5.chat-title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+
+  img.staff-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+
+  p.staff-name{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .line-chat{
+    width: 100%;
+    border: 2px solid #E0E0E2;
+    margin-top: 50px;
+  }
+
+  p.title-msg{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 3%;
+  }
+
+  p.staff-name-msg{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+  }
+
+  p.text-msg{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-bottom: 50px;
+  }
+
+  p.no-msg{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 15px;
+    color: #9A9A9D;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/* DESKTOP ONLY */
+@media (min-width: 992px) {
+  .respo-chat{
+    display: none;
+  }
+
+}

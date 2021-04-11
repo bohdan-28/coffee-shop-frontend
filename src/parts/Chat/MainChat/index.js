@@ -1,6 +1,8 @@
 import React from 'react'
 import style from './mainchat.module.css'
 import {usericon} from '../../../assets/images'
+import RespoChat from '../RespoChat'
+
 
 function MainChat() {
   return (
@@ -15,7 +17,7 @@ function MainChat() {
                   <h5 className={style['chat-title']} >Choose a staff you want to talk with</h5>
                 </form>
                 <div className="row">
-                  <div className="col-4 mt-5">
+                  <div className="col-lg-4 mt-5">
                     <img className={style['icon-user']} src={usericon} alt=""/>
                   </div>
                   <div className="col-lg-6 mt-5 mr-5">
@@ -32,7 +34,7 @@ function MainChat() {
               <div className={style['main-chat']}>
                 <h4>Room Chat</h4>
                 <div className="row">
-                  <div className="col-4 mt-5">
+                  <div className="col-lg-4 mt-5">
                     <img className={style['icon-user']} src={usericon} alt=""/>
                   </div>
                   <div className="col-lg-6 mt-5 mr-5">
@@ -47,7 +49,20 @@ function MainChat() {
               </div>
             </div>
           </div>
+          <div className="row">
+            <div className="col">
+             {/* Mobile only */}
+             <RespoChat 
+              staffname ="Jason"
+              msgvalue="What is pinky promise? Is it made from coffee or strawberry?"
+              staffprofile={`${usericon}`}
+             />
+             
+            {/* =========== */}
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   )

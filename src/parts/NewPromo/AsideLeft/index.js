@@ -47,12 +47,12 @@ const AsideLeft = (props) => {
                                 style={{ display: "none" }}
                             />
                             
-                            <p className={style.title}>Enter the discount:</p>
+                            {/* <p className={style.title}>Enter the discount:</p>
                             <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input discount</button>
                             <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
                                 <Link className="dropdown-item" to="#">Disconnt ?</Link>
-                            </div>
-                            
+                            </div> */}
+
                             <p className={style.titleExpire}>Expire date:</p>
                             <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select start date</button>
                             <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
@@ -64,15 +64,31 @@ const AsideLeft = (props) => {
                                 <Link className="dropdown-item" to="#">Tanggal</Link>
                             </div>
 
+                            <div className={style.formData}>
+                                <label htmlFor="name">Enter the discount:</label>
+                                <br />
+                                <input
+                                    id="name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Input discount"
+                                ></input>
+
+                                <label htmlFor="name">Input coupon code:</label>
+                                <br />
+                                <input
+                                    id="name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Input stock"
+                                ></input>
+                            </div>
                             
-                            <p className={style.titleExpire}>Input coupon code:</p>
+                            {/* <p className={style.titleExpire}>Input coupon code:</p>
                             <button className={style['btn-select']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Input stock</button>
                             <div className={[['dropdown-menu'], style['dropdown-date']].join(' ')}>
                                 <Link className="dropdown-item" to="#">Tanggal</Link>
-                            </div>
-
-
-                     
+                            </div> */}
 
                         </div>
 
