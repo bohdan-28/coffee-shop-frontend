@@ -10,6 +10,10 @@ function HomeGetStarted() {
     history.push("/login");
   };
 
+  const handleClickStartedProduct = () => {
+    history.push("/product-cust");
+  };
+
   return (
     <div>
       <div
@@ -27,18 +31,31 @@ function HomeGetStarted() {
             We provide high quality beans, good taste, and healthy meals made by
             love just for you. Start your day with us for a bigger smile!
           </h5>
-          <button
-            type="button"
-            className={[
-              ["btn"],
-              ["btn-warning"],
-              Style["btn-get-started"],
-            ].join(" ")}
-            onClick={() => handleClickStarted()}
-          >
-            Get Started
-          </button>
-
+          {localStorage.getItem("token") ? (
+            <button
+              type="button"
+              className={[
+                ["btn"],
+                ["btn-warning"],
+                Style["btn-get-started"],
+              ].join(" ")}
+              onClick={() => handleClickStartedProduct()}
+            >
+              Get Started
+            </button>
+          ) : (
+            <button
+              type="button"
+              className={[
+                ["btn"],
+                ["btn-warning"],
+                Style["btn-get-started"],
+              ].join(" ")}
+              onClick={() => handleClickStarted()}
+            >
+              Get Started
+            </button>
+          )}
           <div className={Style["card-staff-store"]}>
             <div className={Style["card-shadow"]}></div>
             <div className="row">
