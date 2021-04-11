@@ -88,7 +88,7 @@ function Navbar() {
                 >
                   Home <span className="sr-only">(current)</span>
                 </Link>
-                <Link className={Style["nav-item"]} to="#">
+                <Link className={Style["nav-item"]} to="/product-cust">
                   Product
                 </Link>
                 <Link className={Style["nav-item"]} to="#">
@@ -145,7 +145,7 @@ function Navbar() {
             <div className="navbar-nav m-lg-auto ">
               <Link
                 className={[Style["nav-item"], ["active"]].join(" ")}
-                to="#"
+                to="/"
               >
                 Home <span className="sr-only">(current)</span>
               </Link>
@@ -175,7 +175,7 @@ function Navbar() {
                   <img
                     className={Style["navchat"]}
                     src={navchat}
-                    alt="NavSearch"
+                    alt="NavChat"
                   />
                 </Link>
               </div>
