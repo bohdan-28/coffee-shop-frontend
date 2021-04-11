@@ -63,3 +63,9 @@ export const getProductById = (id) => (dispatch) => {
       });
     });
 };
+
+export const searchProduct = (data) => {
+  return (dispatch) => {
+    dispatch({ type: "SEARCH_PRODUCT", payload: data });
+  };
+};
