@@ -208,4 +208,90 @@
     color: #FFFFFF;
     margin-top: 70px;
   }
+  .btn-com-pay{
+    display: none;
+  }
 
+  @media (max-width: 575.98px) {
+    .order-card{
+      height: min-content;
+      margin: 0;
+      padding: 20px;
+      width: 90%;
+      margin: auto;
+      position: relative;
+      z-index: -1;
+    }
+    .order-card h5.title-sum{
+      margin: 0;
+      padding-top: 40px;
+      font-size: 20px;
+    }
+    .column{
+      margin: 0;
+      padding: 0;
+    }
+    .order-card img{
+    margin-left: 15px;
+    border: 20px;
+    width: 60px;
+    height: 70px;
+    }
+    .order-card h5.product-name{
+      font-size: 14px;
+      margin: 0;
+      line-height: 20px;
+      font-weight: 400;
+     }
+     .column-title{
+       flex-grow: 2;
+       margin-left: 5px;
+     }
+     .order-card h5.price{
+      margin: 0;
+      margin-top: 20px;
+    }
+    .map-card{
+      margin-bottom: 1em;
+    }
+    .body-resp{
+      display: none;
+    }
+    .order-card .line{
+      width: 78vw;
+      margin-left: 0;
+    }
+    .payment-title h6{
+      margin-left: 0px;
+    }
+    .order-card h4.total{
+      margin-left: 0;
+    }
+    .bot-btn button{
+      width: 200px;
+    }
+    .bottom-detail{
+      margin-top: 5em;
+      position: static;
+    }
+    .btn-com-pay{
+      display: block;
+      margin: auto;
+      width: 80%;
+      height: 60px;
+      color: white;
+      background-color: #362115;
+      border-radius: 30px;
+      box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+      position: relative;
+      top: 50px;
+    }
+    .btn-com-pay > h3{
+      text-align: center;
+      font-size: 18px;
+      line-height: 60px;
+    }
+    .btn-com-pay:hover{
+      cursor: pointer;
+    }
+  }

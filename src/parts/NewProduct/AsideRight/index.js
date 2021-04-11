@@ -2,14 +2,15 @@ import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { insertProductProcess } from "../../../configs/redux/actions/productAdmin";
 import { isUndefined } from "util";
-// import { update, getUser, findUser } from "../../configs/redux/actions/user";
 import Swal from "sweetalert2";
 import style from "./asideright.module.css";
 import Button from "../Button/Button";
-// import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const AsideRight = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const { insertProduct, loading } = useSelector((state) => state.productAdmin);
 
   const handleFormChange = (event) => {
@@ -51,9 +52,7 @@ const AsideRight = (props) => {
       const formData = new FormData();
       formData.append("name", insertProduct.name);
       formData.append("price", insertProduct.price);
-
       formData.append("image", insertProduct.image);
-
       formData.append("categoryID", insertProduct.categoryID);
       formData.append("deliveryMethod", insertProduct.deliveryMethod);
       formData.append("description", insertProduct.description);
@@ -93,6 +92,9 @@ const AsideRight = (props) => {
       });
     }
   };
+  const handleBtnCancel = (event) => {
+    history.goBack();
+  };
 
   return (
     <Fragment>
@@ -107,7 +109,7 @@ const AsideRight = (props) => {
                 type="text"
                 name="name"
                 value={insertProduct.name}
-                placeholder="Type product name min. 50 characters"
+                placeholder="Type product name min. 50 characters."
                 onChange={handleFormChange}
               ></input>
 
@@ -124,107 +126,51 @@ const AsideRight = (props) => {
 
               <label htmlFor="description">Description :</label>
               <br />
-              <input
+              <textarea
                 id="description"
                 type="text"
                 name="description"
                 value={insertProduct.description}
-                placeholder="Describe your product min. 150 characters"
+                placeholder="Describe your product min. 150 characters."
                 onChange={handleFormChange}
-              ></input>
+              ></textarea>
 
               <label htmlFor="description">Input product size :</label>
               <p className={style.textSize}>
-                Click size you want to use for this product
+                Write size you want to use for this product
               </p>
+              <input
+                id="size"
+                type="text"
+                name="size"
+                value={insertProduct.size}
+                placeholder="X, L, XL, 250 gr, 300 gr, etc."
+                onChange={handleFormChange}
+              ></input>
 
-              <div className={style.size}>
-                <div className="d-flex pl-5">
-                  <button
-                    name="size"
-                    value="R"
-                    className={style["circle-size"]}
-                    onClick={handleFormChange}
-                  >
-                    R
-                  </button>
-                  <button
-                    name="size"
-                    value="L"
-                    className={style["circle-size"]}
-                    onClick={handleFormChange}
-                  >
-                    L
-                  </button>
-                  <button
-                    name="size"
-                    value="Xl"
-                    className={style["circle-size"]}
-                    onClick={handleFormChange}
-                  >
-                    XL
-                  </button>
-                  <button
-                    name="size"
-                    value="250 gr"
-                    className={style["circle-size-litle"]}
-                    onClick={handleFormChange}
-                  >
-                    250 gr
-                  </button>
-                  <button
-                    name="size"
-                    value="300 gr"
-                    className={style["circle-size-litle"]}
-                    onClick={handleFormChange}
-                  >
-                    300 gr
-                  </button>
-                  <button
-                    name="size"
-                    value="500 gr"
-                    className={style["circle-size-litle"]}
-                    onClick={handleFormChange}
-                  >
-                    500 gr
-                  </button>
-                </div>
-              </div>
-
-              <label htmlFor="description">Input delivery methods :</label>
+              <label htmlFor="deliveryMethod">Input delivery methods :</label>
               <p className={style.textSize}>
-                Click methods you want to use for this product
+                Write methods you want to use for this product
               </p>
-              <div className="row flex-nowrap">
-                <Button
-                  title="Home Delivery"
-                  btn="btn-HomeDelivery"
-                  name="deliveryMethod"
-                  value="Home Delivery"
-                  onClick={handleFormChange}
-                />
-                <Button
-                  title="Dine In"
-                  btn="btn-dineIn"
-                  name="deliveryMethod"
-                  value="Dine In"
-                  onClick={handleFormChange}
-                />
-                <Button
-                  title="Take Away"
-                  btn="btn-pickUp"
-                  name="deliveryMethod"
-                  value="Take Away"
-                  onClick={handleFormChange}
-                />
-              </div>
+              <input
+                id="deliveryMethod"
+                type="text"
+                name="deliveryMethod"
+                value={insertProduct.deliveryMethod}
+                placeholder="Home Delvery, Dine In, Take Away, etc."
+                onChange={handleFormChange}
+              ></input>
 
               <Button
                 title={!loading ? "Save Product" : "Please wait..."}
                 btn="btn-save"
                 onClick={handleSubmit}
               />
-              <Button title="Cancel" btn="btn-cancel" />
+              <Button
+                title="Cancel"
+                btn="btn-cancel"
+                onClick={handleBtnCancel}
+              />
             </div>
           </div>
         </div>

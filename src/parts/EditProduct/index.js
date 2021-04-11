@@ -1,40 +1,49 @@
-import AsideLeft from './AsideLeft'
-import AsideRight from './AsideRight'
+import AsideLeft from "./AsideLeft";
+import AsideRight from "./AsideRight";
 import { React, Fragment } from "react";
-import style from './editproduct.module.css'
+import { useHistory, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import style from "./editproduct.module.css";
 
-export default function NewProduct() {
-    const handleChangePicture = (e) => {
-        console.log(e.target.files[0]);
-        // this.setState({
-        //     insert: e.target.files[0].name,
-        //     image: URL.createObjectURL(e.target.files[0]),
-        //     selectedFile: e.target.files[0]
-        // })
-    }
+const NewProduct = () => {
+  const { getProduct } = useSelector((state) => state.productAdmin);
+  const history = useHistory();
+  const location = useLocation();
+  const id = location.state.id;
+  const handleClickFavourite = (event) => {
+    history.push("/product-cust");
+  };
 
-    return (
-        <Fragment>
-            <div className="container">
-                <div className={style['product-detail']}>
-                    {/* Ini untuk info navigasi */}
-                    <p className={style['title-route']}>Favorite & Product <span>/Edit Product </span> </p>
-                    <div className="row">
-                        <div className="col-lg-5 pt-5">
-                            <AsideLeft
-                                changePicture={handleChangePicture}
-                            />
+  const handleClickTitle = (event) => {
+    history.push(`/product-detail/${id}`);
+  };
 
-                        </div>
-                        <div className="col-lg-7 pt-5">
-                            <AsideRight />
-
-                        </div>
-                    </div>
-                </div>
-
+  return (
+    <Fragment>
+      <div className="container">
+        <div className={style["product-detail"]}>
+          {/* Ini untuk info navigasi */}
+          <p className={style["title-route"]}>
+            <span className={style["main"]} onClick={handleClickFavourite}>
+              {" "}
+              Favorite & Product{" "}
+            </span>
+            <span onClick={handleClickTitle}>
+              {`/${getProduct.name}`}{" "}
+            </span>{" "}
+            <span>/Edit Product</span>{" "}
+          </p>
+          <div className="row">
+            <div className="col-lg-5 pt-5">
+              <AsideLeft />
             </div>
-
-        </Fragment>
-    );
-}
+            <div className="col-lg-7 pt-5">
+              <AsideRight />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+export default NewProduct;

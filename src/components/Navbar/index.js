@@ -84,17 +84,15 @@ function Navbar() {
               <div className="navbar-nav m-lg-auto ">
                 <Link
                   className={[Style["nav-item"], ["active"]].join(" ")}
-                  to="#"
+                  to="/"
                 >
                   Home <span className="sr-only">(current)</span>
                 </Link>
                 <Link className={Style["nav-item"]} to="/product-cust">
                   Product
                 </Link>
-                <Link className={Style["nav-item"]} to="#">
-                  Your Cart
-                </Link>
-                <Link className={Style["nav-item"]} to="#">
+                <div className={Style["nav-item"]}>Your Cart</div>
+                <Link className={Style["nav-item"]} to="/history">
                   History
                 </Link>
               </div>
@@ -152,10 +150,8 @@ function Navbar() {
               <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
-              <Link className={Style["nav-item"]} to="#">
-                Your Cart
-              </Link>
-              <Link className={Style["nav-item"]} to="#">
+              <div className={Style["nav-item"]}>Your Cart</div>
+              <Link className={Style["nav-item"]} to="/history">
                 History
               </Link>
             </div>
@@ -180,9 +176,8 @@ function Navbar() {
                 </Link>
               </div>
               <div className="col">
-                <Link
+                <div
                   className=""
-                  to="#"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -197,7 +192,7 @@ function Navbar() {
                   ) : (
                     ""
                   )}
-                </Link>
+                </div>
                 <div
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
