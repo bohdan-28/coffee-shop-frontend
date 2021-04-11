@@ -1,18 +1,22 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import style from "./asideleft.module.css";
-import Button from "../../../components/Button";
+import Button from "../Button/ButtonEditProduct";
 import { useDispatch, useSelector } from "react-redux";
-import { hazelnutlatte } from "../../../assets/images";
-import { Link } from "react-router-dom";
-
+import { deleteProductProcess } from "../../../configs/redux/actions/productAdmin";
+import Swal from "sweetalert2";
 const AsideLeft = (props) => {
+  const location = useLocation();
+  const id = location.state.id;
   const hiddenFileInput = React.useRef(null);
   const { getProduct } = useSelector((state) => state.productAdmin);
   const ImgUrl = process.env.REACT_APP_API_IMG;
   const dispatch = useDispatch();
-  const handleClick = (e) => {
-    hiddenFileInput.current.click();
-  };
+  const history = useHistory();
+  const [imageDisplay, setImageDisplay] = useState(
+    `${ImgUrl}${getProduct.image}`
+  );
+
   const optionsCategory = [
     {
       label: "Add-on",
@@ -37,6 +41,53 @@ const AsideLeft = (props) => {
       action: (getProduct[event.target.name] = event.target.value),
     });
   };
+  const onChangePicture = (event) => {
+    setImageDisplay(URL.createObjectURL(event.target.files[0]));
+    dispatch({
+      type: "ONCHANGE_GET_PRODUCT",
+      action: (getProduct.imageUpload = event.target.files[0]),
+    });
+  };
+
+  const handleDeleteProduct = (event) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteProductProcess(id))
+          .then((res) => {
+            Swal.fire({
+              title: "Success!",
+              text: res,
+              icon: "success",
+              confirmButtonColor: "#ffba33",
+            });
+            history.goBack();
+          })
+          .catch((err) => {
+            Swal.fire({
+              title: "Error!",
+              text: err.message,
+              icon: "error",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#6a4029",
+            });
+          });
+      }
+    });
+  };
+
+  useEffect(() => {
+    setImageDisplay(`${ImgUrl}${getProduct.image}`);
+    // dispatch(getProductProcess(id));
+  }, [ImgUrl, getProduct.image]);
+
   return (
     <Fragment>
       <div className={style["cards-profile"]}>
@@ -47,25 +98,19 @@ const AsideLeft = (props) => {
               <div className={style["product-box"]}>
                 <img
                   className={style["img-product"]}
-                  src={`${ImgUrl}${getProduct.image}`}
+                  src={imageDisplay}
                   alt="ImgProduct"
                 />
                 {/* </div> */}
-
-                <Button
-                  title=" "
-                  btn="btn-edit-pict"
-                  color="blue"
-                  onClick={handleClick}
+              </div>
+              <div className={`mt-5 ${style.formData}`}>
+                <input
+                  type="file"
+                  ref={hiddenFileInput}
+                  className={`${style["input-image"]}`}
+                  onChange={onChangePicture}
                 />
               </div>
-
-              <input
-                type="file"
-                ref={hiddenFileInput}
-                onChange={props.changePicture}
-                style={{ display: "none" }}
-              />
 
               <div className={`mt-5 ${style.formData}`}>
                 <label className={style["label-product"]} htmlFor="name">
@@ -113,9 +158,10 @@ const AsideLeft = (props) => {
               </label>
               <br />
               <select
-                className={`${style.formData}`}
+                className={`${style["input-product-code"]}`}
                 name="categoryID"
                 onChange={handleChangeUpdate}
+                value={getProduct.categoryID}
               >
                 {optionsCategory.map((option, index) => (
                   <option
@@ -127,6 +173,11 @@ const AsideLeft = (props) => {
                   </option>
                 ))}
               </select>
+              <Button
+                title="Delete Product"
+                btn="btn-delete"
+                onClick={handleDeleteProduct}
+              />
             </div>
 
             {/* <div className="col-12 col-lg-6">

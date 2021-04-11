@@ -17,7 +17,17 @@
   box-sizing: border-box;
   border-radius: 20px;
 }
-
+.formData textarea {
+  width: 594px;
+  min-height: 76px;
+  padding-left: 30px;
+  padding-top: 30px;
+  margin-bottom: auto;
+  background: #ffffff;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
 .size {
   margin-bottom: 40px;
 }

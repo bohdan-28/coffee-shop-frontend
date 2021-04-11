@@ -18,6 +18,18 @@
   border-right: none;
 }
 
+.formData textarea {
+  width: 594px;
+  min-height: 76px;
+  line-height: 30px;
+  margin-bottom: 50px;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
 .size {
   margin-bottom: 40px;
 }
