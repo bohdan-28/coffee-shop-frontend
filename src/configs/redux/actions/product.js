@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const getProduct = (data) => (dispatch) => {
   const Url = process.env.REACT_APP_API_URL;
@@ -31,16 +32,19 @@ export const getProduct = (data) => (dispatch) => {
 
 export const getProductById = (id) => (dispatch) => {
   const Url = process.env.REACT_APP_API_URL;
-  return (resolve, reject) => {
-    axios
-      .get(`${Url}/products/${id}`)
-      .then((res) => {
-        const oneProduct = res.data.data[0];
-        dispatch({ type: "GET_PRODUCT_ID", payload: oneProduct });
-        resolve(res.data.data[0]);
-      })
-      .catch((err) => {
-        reject(new Error(err.response.data.message));
+  axios
+    .get(`${Url}/products/${id}`)
+    .then((res) => {
+      const oneProduct = res.data.data[0];
+      dispatch({ type: "GET_PRODUCT_DETAIL", payload: oneProduct });
+    })
+    .catch((err) => {
+      Swal.fire({
+        title: "Error!",
+        text: err.response.data.message,
+        icon: "error",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#6a4029",
       });
-  };
+    });
 };
