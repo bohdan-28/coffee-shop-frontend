@@ -356,36 +356,28 @@ function Main(props) {
             <div className="col">
               <div className={style2["order-card"]}>
                 <h5 className={style2["title-sum"]}>Order Summary</h5>
-                <div
-                  className={[["row"], ["mb-lg-5"], style2["map-card"]].join(
-                    " "
-                  )}
-                >
-                  <div className={[["col"], style2["column"]].join(" ")}>
-                    <img src={hazelnutlatte} alt="" />
-                  </div>
-                  <div className={[["col"], style2["column-title"]].join(" ")}>
-                    <h5 className={style2["product-name"]}>Hazelnut Latte</h5>
-                    <h5 className={style2["qty"]}>x 1</h5>
-                    <h5 className={style2["size"]}>Large</h5>
-                  </div>
-                  <div className="col">
-                    <h5 className={style2["price"]}>IDR 24000</h5>
-                  </div>
-                </div>
-                <div className="row mb-lg-5">
-                  <div className={[["col"], style2["column"]].join(" ")}>
-                    <img src={hazelnutlatte} alt="" />
-                  </div>
-                  <div className={[["col"], style2["column-title"]].join(" ")}>
-                    <h5 className={style2["product-name"]}>Hazelnut Latte</h5>
-                    <h5 className={style2["qty"]}>x 1</h5>
-                    <h5 className={style2["size"]}>Large</h5>
-                  </div>
-                  <div className="col">
-                    <h5 className={style2["price"]}>IDR 24000</h5>
-                  </div>
-                </div>
+                {cart.map((data, index) => {
+                  arrCart.push(data.id);
+                  return (
+                    <div className="row mb-lg-5" key={index}>
+                      <div className={[["col"], style2["column"]].join(" ")}>
+                        <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                      </div>
+                      <div
+                        className={[["col"], style2["column-title"]].join(" ")}
+                      >
+                        <h5 className={style2["product-name"]}>
+                          {data.productName}
+                        </h5>
+                        <h5 className={style2["qty"]}>x {data.amount}</h5>
+                        <h5 className={style2["size"]}>{data.size}</h5>
+                      </div>
+                      <div className="col">
+                        <h5 className={style2["price"]}>IDR {data.price}</h5>
+                      </div>
+                    </div>
+                  );
+                })}
 
                 <div className={style2["bottom-detail"]}>
                   <div className={style2["line"]}></div>
@@ -399,9 +391,9 @@ function Main(props) {
                     </div>
                     <div className="col">
                       <div className={style2["payment-value"]}>
-                        <h6>IDR 120000</h6>
-                        <h6>IDR 20000</h6>
-                        <h6>IDR 10000</h6>
+                        <h6>IDR {subTotal}</h6>
+                        <h6>IDR {tax}</h6>
+                        <h6>IDR {shipping}</h6>
                       </div>
                     </div>
                   </div>
@@ -410,7 +402,7 @@ function Main(props) {
                       <h4 className={style2["total"]}>Total</h4>
                     </div>
                     <div className="col">
-                      <h4 className={style2["total-price"]}>IDR 150000</h4>
+                      <h4 className={style2["total-price"]}>IDR {total}</h4>
                     </div>
                   </div>
                 </div>
@@ -435,13 +427,8 @@ function Main(props) {
                   </Link>
                   <div className={style2["card-address"]}>
                     <h5 className={style2["deliver-teks"]}>Delivery to</h5>
-                    <h5 className={style2["address"]}>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Numquam fuga voluptatibus expedita ex sapiente, quidem
-                      necessitatibus deleniti debitis vel ullam, hic rem
-                      corrupti.
-                    </h5>
-                    <h5 className={style2["phone"]}>+62 89523 2322</h5>
+                    <h5 className={style2["address"]}>{user.address}</h5>
+                    <h5 className={style2["phone"]}>{user.phoneNumber}</h5>
                   </div>
                 </div>
               </div>
