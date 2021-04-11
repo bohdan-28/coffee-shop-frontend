@@ -1,0 +1,119 @@
+.history {
+    background: url(../../../assets/images/bgHistory.png);
+    height: 1300px;
+    padding-top: 50px;
+}
+.head-section{
+    display: none;
+}
+
+.head-section h5{
+    padding-left: 5em;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+}
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+.title-history {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.sub-title-history {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 47px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* .selectAll {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    text-align: end;
+    cursor: pointer;
+} */
+.checkbox{
+    display: flex;
+    justify-content: flex-end;
+}
+.checkbox input[type="checkbox"]{
+     display: none;
+}
+.checkbox label{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    text-align: end;
+    cursor: pointer;
+}
+.body-section{
+    display: none;
+}
+.arr:hover{
+    cursor: pointer;
+}
+.handimg{
+    display: none;
+}
+
+
+@media (max-width: 575.98px) {
+    .history{
+        background: #F5F5F8;
+    }
+    .head-section{
+        display:flex;
+        margin-bottom: 2em;
+    }
+    .title-history{
+        display: none;
+    }
+    .sub-title-history{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        color: #000000;
+        text-shadow: none;
+    }
+    .checkbox{
+        display: none;
+    }
+    .body-section{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 .5em;
+        margin-top: 3em;
+    }
+    .handimg{
+        display: inline-block;
+    }
+
+}

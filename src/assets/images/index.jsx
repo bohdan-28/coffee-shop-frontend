@@ -15,6 +15,11 @@ import navuser from "./nav-user.png";
 import more from "./more.png";
 import adminIMG from "./admin-img.png";
 import product from "./default_image.png";
+import handClick from './handclick.png'
+import paypallogo from './paypallogo.png'
+import truckicon from './truckicon.png'
+import visalogo from './visalogo.png'
+import walleticon from './walleticon.png'
 
 export {
   product,
@@ -34,4 +39,9 @@ export {
   navuser,
   more,
   adminIMG,
+  handClick,
+  paypallogo,
+  truckicon,
+  visalogo,
+  walleticon
 };
