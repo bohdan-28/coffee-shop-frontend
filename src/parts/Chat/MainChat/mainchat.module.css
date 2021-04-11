@@ -1,5 +1,6 @@
 /* MOBILE ONLY */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) { */
+  @media (max-width: 575.98px) {
   div.chat-bg{
     background-color: rgba(245, 245, 248, 1);
   }
@@ -24,6 +25,7 @@
     margin-left: auto;
     margin-top: auto;
     padding-left: 35px;
+    display: block;
   }
 
   h5.chat-title{
@@ -50,7 +52,7 @@
 
 
 /* DESKTOP ONLY */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) { */
   div.chat-bg{
     background-image: url(../../../assets/images/chat-bg.png);
     height: 1184px;
@@ -146,4 +148,4 @@
   }
 
 
-}  
+/* }   */
