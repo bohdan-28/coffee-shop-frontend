@@ -7,6 +7,8 @@ import style3 from "./aside.module.css";
 import style4 from "./CardCheckout.module.css";
 import Button from "./Button/Button";
 import { getProductById } from "../../configs/redux/actions/product";
+import { getUser } from "../../configs/redux/actions/user";
+import { insertCart } from "../../configs/redux/actions/cart";
 import Swal from "sweetalert2";
 
 export default function DetailProduct(props) {
@@ -20,9 +22,10 @@ export default function DetailProduct(props) {
   const [cart] = useState([]);
   const [size, setSize] = useState(null);
   const [delivery, setDelivery] = useState(null);
-  const [dataDetails, setDataDetails] = useState(null);
+  const [dataTime, setDataTime] = useState("");
 
   const { product } = useSelector((state) => state.product);
+  const { user } = useSelector((state) => state.user);
 
   const increment = () => {
     setCount(count + 1);
@@ -75,7 +78,28 @@ export default function DetailProduct(props) {
         });
       } else {
         setCount(0);
-        cart.push(`x${count} (${size})`);
+        let tempCart = {
+          size: size,
+          amount: count,
+        };
+        if (cart.length > 0) {
+          cart.map((data, index) => {
+            if (data.size === size) {
+              const spliceCart = cart.indexOf(data);
+              cart.splice(spliceCart, 1);
+              tempCart = {
+                size: size,
+                amount: data.amount + count,
+              };
+              cart.push(tempCart);
+            } else {
+              cart.push(tempCart);
+            }
+            return true;
+          });
+        } else {
+          cart.push(tempCart);
+        }
       }
     }
   };
@@ -89,8 +113,16 @@ export default function DetailProduct(props) {
     setSize(params);
   };
 
-  const handleChangeDetails = (event) => {
-    setDataDetails(event.target.value);
+  const handleChangeTime = (event) => {
+    setDataTime(event.target.value);
+  };
+
+  const handleChangeNow = (event) => {
+    if (event.target.value === "yes") {
+      setDataTime(`${new Date().getHours()}:${new Date().getMinutes()}`);
+    } else {
+      setDataTime("");
+    }
   };
 
   const routeChange = () => {
@@ -103,16 +135,48 @@ export default function DetailProduct(props) {
         confirmButtonColor: "#ffba33",
       });
     } else {
-      if (delivery === null || dataDetails === null) {
+      if (delivery === null || dataTime === "") {
         Swal.fire({
           title: "Info!",
-          text: "Please choose delivery and order details!",
+          text: "Please choose delivery and time!",
           icon: "info",
           confirmButtonText: "Ok",
           confirmButtonColor: "#ffba33",
         });
       } else {
-        history.push("/payment-delivery");
+        const data = {
+          userName: user.username,
+          orderType: delivery,
+          orderDetails: dataTime,
+          orderPhone: user.phoneNumber,
+          productName: product.name,
+          productImage: product.image,
+          price: product.price,
+          cart: cart,
+        };
+        dispatch(insertCart(data)).then((res) => {
+          Swal.fire({
+            title: "Success!",
+            text: res,
+            icon: "success",
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#ffba33",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              history.push("/payment-delivery", {
+                cart: cart,
+                price: product.price,
+                idProduct: product.id,
+              });
+            } else {
+              history.push("/payment-delivery", {
+                cart: cart,
+                price: product.price,
+                idProduct: product.id,
+              });
+            }
+          });
+        });
       }
     }
   };
@@ -120,6 +184,7 @@ export default function DetailProduct(props) {
   useEffect(() => {
     const id = props.idUser;
     dispatch(getProductById(id));
+    dispatch(getUser());
   }, [dispatch, props.idUser]);
 
   return (
@@ -188,17 +253,45 @@ export default function DetailProduct(props) {
                       <label htmlFor="pickUp">Pick Up</label>
                     </div>
                   </div>
+                  <div
+                    className={[
+                      ["row"],
+                      ["flex-nowrap"],
+                      ["pt-5"],
+                      style2["div-flex"],
+                    ].join(" ")}
+                  >
+                    <p className={style2["subtitle-card-delivery"]}>Now</p>
+                    <div className={style2["radio"]}>
+                      <input
+                        type="radio"
+                        id="yes"
+                        name="time"
+                        value="yes"
+                        onChange={handleChangeNow}
+                      />
+                      <label htmlFor="yes">Yes</label>
+                    </div>
+                    <div className={style2["radio"]}>
+                      <input
+                        type="radio"
+                        id="no"
+                        name="time"
+                        value="no"
+                        onChange={handleChangeNow}
+                      />
+                      <label htmlFor="no">No</label>
+                    </div>
+                  </div>
                   <div className="row flex-nowrap pt-5">
-                    <p className={style2["subtitle-card-delivery"]}>
-                      Order details
-                    </p>
+                    <p className={style2["subtitle-card-delivery"]}>Set time</p>
                     <input
-                      id="order-details"
+                      id="time"
                       type="text"
-                      name="order-details"
-                      placeholder="Enter your order details"
-                      value={dataDetails}
-                      onChange={handleChangeDetails}
+                      name="time"
+                      placeholder="Enter time for reservation"
+                      value={dataTime}
+                      onChange={handleChangeTime}
                     ></input>
                   </div>
                 </div>
@@ -280,7 +373,7 @@ export default function DetailProduct(props) {
                               className={style4["subtitle-checkout"]}
                               key={index}
                             >
-                              {data}
+                              {`x${data.amount} (${data.size})`}
                             </p>
                           );
                         })

@@ -91,9 +91,7 @@ function Navbar() {
                 <Link className={Style["nav-item"]} to="/product-cust">
                   Product
                 </Link>
-                <Link className={Style["nav-item"]} to="/payment-delivery">
-                  Your Cart
-                </Link>
+                <div className={Style["nav-item"]}>Your Cart</div>
                 <Link className={Style["nav-item"]} to="/history">
                   History
                 </Link>
@@ -152,9 +150,7 @@ function Navbar() {
               <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
-              <Link className={Style["nav-item"]} to="/payment-delivery">
-                Your Cart
-              </Link>
+              <div className={Style["nav-item"]}>Your Cart</div>
               <Link className={Style["nav-item"]} to="/history">
                 History
               </Link>
@@ -180,9 +176,8 @@ function Navbar() {
                 </Link>
               </div>
               <div className="col">
-                <Link
+                <div
                   className=""
-                  to="#"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -197,7 +192,7 @@ function Navbar() {
                   ) : (
                     ""
                   )}
-                </Link>
+                </div>
                 <div
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
