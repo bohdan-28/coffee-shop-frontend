@@ -91,9 +91,9 @@ function Navbar() {
                 <Link className={Style["nav-item"]} to="/product-cust">
                   Product
                 </Link>
-                <Link className={Style["nav-item"]} to="/payment-delivery">
+                <Link className={Style["nav-item"]} to="#">
                   Your Cart
-                </Link>
+              </Link>
                 <Link className={Style["nav-item"]} to="/history">
                   History
                 </Link>
@@ -152,7 +152,7 @@ function Navbar() {
               <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
-              <Link className={Style["nav-item"]} to="/payment-delivery">
+              <Link className={Style["nav-item"]} to="#">
                 Your Cart
               </Link>
               <Link className={Style["nav-item"]} to="/history">
@@ -175,14 +175,13 @@ function Navbar() {
                   <img
                     className={Style["navchat"]}
                     src={navchat}
-                    alt="NavSearch"
+                    alt="NavChat"
                   />
                 </Link>
               </div>
               <div className="col">
-                <Link
+                <div
                   className=""
-                  to="#"
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -197,7 +196,7 @@ function Navbar() {
                   ) : (
                     ""
                   )}
-                </Link>
+                </div>
                 <div
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"

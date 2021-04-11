@@ -1,0 +1,233 @@
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 324px;
+    background: #F2F2F2;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.37);
+    border-radius: 0px 30px 30px 0px;
+    position: fixed;
+    top: 0;
+    height: 120vh;
+    z-index: 999;
+    color: rgb(126, 23, 23);
+    transition: all 0.3s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #6A4029;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #6A4029;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: -20px;
+    left: 400px;
+}
+
+
+/* fix */
+.side-profiles {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 70px;
+    background-image: url(../../assets/images/bgSide.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    width: 324px;
+    height: 300px;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.title-sidebar {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 86.84%;
+    letter-spacing: -0.03em;
+    color: #000000;
+    margin-top: 160px;
+}
+
+.subtitle-sidebar {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+    text-align: left;
+    color: #000000;
+}
+
+.side-profile {
+    width: 324px;
+    height: 288px;
+    background: #6A4029;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.btn-side {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+button.nav-btn-signup-side {
+    background: #ffba33;
+    border-radius: 50px;
+    width: 150px;
+    height: 45px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6a4029;
+}
+
+button.nav-signin-sidebar {
+    background: #6A4029;
+    border-radius: 50px;
+    width: 150px;
+    height: 45px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.username-side {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.email-side {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.navbar-side {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.navbar-side hr {
+    width: 195.02px;
+    height: 0px;
+    border: 0.1px solid #6A4029 !important;
+}
+
+.dropdown-item-sidebar {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 25px;
+    margin-left: 60px;
+    color: #6A4029;
+}
+
+.dropdown-item-logout {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 25px;
+    margin-top: 50px;
+    margin-left: 40px;
+    color: #6A4029;
+}
+
+.navbar-side i {
+    margin-left: -25px;
+    margin-right: 10px;
+}
+
+@media (max-width:768px) {
+    #content {
+        display: inline;
+        width: 100%;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.3s;
+        position: absolute;
+        top: 50px;
+        left: 350px;
+    }
+}

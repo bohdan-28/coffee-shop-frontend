@@ -9,6 +9,8 @@ import Logo from "../../assets/images/logo.png";
 import Facebook from "../../assets/images/facebook.png";
 import Twitter from "../../assets/images/twitter.png";
 import Instagram from "../../assets/images/instagram.png";
+import BgMobile from "../../assets/images/bgForgotMobile.png";
+
 
 export default function Index() {
   const useQuery = () => new URLSearchParams(useLocation().search);
@@ -114,23 +116,24 @@ export default function Index() {
 
   return (
     <div>
-      <main>
-        <section className={style["auth"]}></section>
-        <aside className={[["m-5"], style["auth"]].join(" ")}>
+      <main className={style.forgot}>
+        <section className={style["auth-forgots"]}></section>
+        <aside className={[["m-5"], style["auth-forgot"]].join(" ")}>
           <div className="d-flex justify-content-center">
             <div>
-              <img src={Logo} alt="LogoCoffee" width="30" />
+              <img className={style.logoCoffe} src={Logo} alt="LogoCoffee" width="30" />
             </div>
             <div className="mt-2 ml-3">
               <p className={style["coffee"]}>Coffee Shop</p>
             </div>
           </div>
-          <div
-            className={[["text-center"], style["forgot-password"]].join(" ")}
-          >
+
+          <div className={[["text-center"], style["forgot-password"]].join(" ")}>
             <h1>Forgot your password?</h1>
             <p>Don’t worry, we got your back!</p>
           </div>
+          <img className={style.bgMobile} src={BgMobile} alt="LogoCoffee" />
+
           <div className="d-flex justify-content-center mt-3">
             <form className="mt-5">
               <div className="form-group">

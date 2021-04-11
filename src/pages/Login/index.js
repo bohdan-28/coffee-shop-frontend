@@ -62,11 +62,11 @@ export default function Index() {
 
   return (
     <main>
-      <section className={style["auth"]}></section>
-      <aside className={[["m-5"], style["auth"]].join(" ")}>
+      <section className={style["auth-logins"]}></section>
+      <aside className={[["m-5"], style["auth-login"]].join(" ")}>
         <div className="d-flex">
           <div>
-            <img src={Logo} alt="LogoCoffee" width="30" />
+            <img className={style.logoCoffe} src={Logo} alt="LogoCoffee" width="30" />
           </div>
           <div className="mt-2 ml-3">
             <p className={style["coffee"]}>Coffee Shop</p>
@@ -112,7 +112,7 @@ export default function Index() {
             </div>
             <div>
               <Link to="/forgot-password" className={style["forgot"]}>
-                Forgot Password
+                Forgot Password?
               </Link>
             </div>
             <button

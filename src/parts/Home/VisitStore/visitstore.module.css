@@ -1,3 +1,13 @@
+/* MOBILE ONLY */
+@media (max-width: 992px) {
+  
+  div.jumbotron-visit-store{
+    display: none;
+  }
+  
+}
+
+
 div.jumbotron-visit-store{
   background-color: white;
   margin-top: -33px;

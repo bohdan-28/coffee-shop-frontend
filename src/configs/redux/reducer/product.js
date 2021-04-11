@@ -1,6 +1,7 @@
 const initialState = {
   product: [],
   allProducts: [],
+  loading: false,
 };
 
 const productReducer = (state = initialState, action) => {
@@ -9,6 +10,17 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         allProducts: action.payload,
+        loading: false,
+      };
+    case "GET_PRODUCT_REQUEST":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "GET_PRODUCT_FAILURE":
+      return {
+        ...state,
+        loading: false,
       };
     case "GET_PRODUCT_DETAIL":
       return {

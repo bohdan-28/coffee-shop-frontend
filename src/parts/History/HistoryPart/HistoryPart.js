@@ -85,15 +85,22 @@ const HistoryPart = (props) => {
     <Fragment>
       <div className={style.history}>
         <div className="container">
-          <div className={style['head-section']}>
+          <div className={style["head-section"]}>
             <div className="arr">
               <i className={`${style.arrow} ${style.left}`}></i>
             </div>
             <h5>Order History</h5>
           </div>
           <div className="classtitle">
-            <p className={style['title-history']}>Let’s see what you have bought!</p>
-            <p className={style['sub-title-history']}><span className={style.handimg}><img src={handClick} alt="" /></span> Select item to delete</p>
+            <p className={style["title-history"]}>
+              Let’s see what you have bought!
+            </p>
+            <p className={style["sub-title-history"]}>
+              <span className={style.handimg}>
+                <img src={handClick} alt="" />
+              </span>{" "}
+              Select item to delete
+            </p>
           </div>
           {/* {!isSelected ?
             <p className={style.selectAll}>Select All</p> :
@@ -116,7 +123,7 @@ const HistoryPart = (props) => {
             <label htmlFor="selectall">Select All</label>
             <button onClick={() => deleteHistoryById()}> Delete</ button>
           </div>
-          <div className={style['body-section']}>
+          <div className={style["body-section"]}>
             <h6>Last Week</h6>
             <p>Select</p>
           </div>
@@ -144,7 +151,7 @@ const HistoryPart = (props) => {
           </div>
         </div>
       </div>
-    </Fragment >
+    </Fragment>
   );
 };
 
