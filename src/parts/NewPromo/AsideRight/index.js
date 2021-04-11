@@ -39,7 +39,14 @@ const AsideRight = (props) => {
                             ></input>
 
                             <label htmlFor="description">Input product size :</label>
-                            <p className={style.textSize}>Click size you want to use for this promo</p>
+                            <br />
+                            <input
+                                id="description"
+                                type="text"
+                                name="description"
+                                placeholder="Input product size"
+                            ></input>
+                            {/* <p className={style.textSize}>Click size you want to use for this promo</p>
 
                             <div className={style.size}>
                                 <div className="d-flex pl-5">
@@ -50,15 +57,22 @@ const AsideRight = (props) => {
                                     <button className={style['circle-size-litle']}>300 gr</button>
                                     <button className={style['circle-size-litle']}>500 gr</button>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <label htmlFor="description">Input delivery methods :</label>
-                            <p className={style.textSize}>Click methods you want to use for this promo</p>
+                            <br />
+                            <input
+                                id="description"
+                                type="text"
+                                name="description"
+                                placeholder="Input delivery methods here"
+                            ></input>
+                            {/* <p className={style.textSize}>Click methods you want to use for this promo</p>
                             <div className="row flex-nowrap">
                                 <Button title="Home Delivery" btn="btn-HomeDelivery" onClick="" />
                                 <Button title="Dine In" btn="btn-dineIn" onClick="" />
                                 <Button title="Take Away" btn="btn-pickUp" onClick="" />
-                            </div>
+                            </div> */}
 
                             <Button title="Save Promo" btn="btn-save" onClick="" />
                             <Button title="Cancel" btn="btn-cancel" onClick="" />

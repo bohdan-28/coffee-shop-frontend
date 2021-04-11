@@ -23,7 +23,7 @@
   background-color: #ffba33;
 }
 
-.nav-item {
+a.nav-item {
   font-family: Rubik;
   font-style: normal;
   font-weight: normal;
@@ -31,6 +31,12 @@
   line-height: 19px;
   color: #4f5665;
   margin-left: 40px;
+  text-decoration: none;
+}
+
+a.nav-item:hover,
+a.nav-item:active {
+  color: #6A4029 !important;
 }
 
 .nav-signin {
@@ -69,4 +75,31 @@ img.profile-img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width:768px) {
+
+  .navbar-brand,
+  .coffee-icon,
+  .nav-signin,
+  .nav-btn-signup {
+    display: none;
+  }
+
+  .navsearch {
+    position: absolute;
+    left: 20px;
+  }
+
+  .navchat {
+    position: absolute;
+    left: 80px;
+
+  }
+
+  .profile-img {
+    position: absolute;
+    left: 120px
+  }
 }

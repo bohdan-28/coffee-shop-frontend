@@ -10,25 +10,25 @@ main {
   height: 1628px;
 }
 
-main section.auth {
+main section.auth-logins {
   grid-area: section;
   background-image: url(../../assets/images/hero-auth.png);
   background-size: cover;
 }
 
-main aside.auth {
+main aside.auth-login {
   grid-area: aside;
   background-color: white;
 }
 
-main aside.auth p.coffee {
+main aside.auth-login p.coffee {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #0b132a;
 }
 
-main aside.auth a.auth {
+main aside.auth-login a.auth {
   font-weight: bold;
   font-size: 35px;
   line-height: 41px;
@@ -36,18 +36,18 @@ main aside.auth a.auth {
   text-decoration: none;
 }
 
-main aside.auth form label {
+main aside.auth-login form label {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #4f5665;
 }
 
-main aside.auth .form-container {
+main aside.auth-login .form-container {
   margin-top: 100px;
 }
 
-main aside.auth form input.form-control {
+main aside.auth-login form input.form-control {
   width: 505px;
   height: 75px;
   background-color: #fff;
@@ -61,14 +61,14 @@ main aside.auth form input.form-control {
   padding-left: 30px;
 }
 
-main aside.auth form input.form-control::-webkit-input-placeholder {
+main aside.auth-login form input.form-control::-webkit-input-placeholder {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #9f9f9f;
 }
 
-main aside.auth form button.btn-auth {
+main aside.auth-login form button.btn-auth {
   width: 505px;
   height: 75px;
   background-color: #ffba33;
@@ -80,7 +80,7 @@ main aside.auth form button.btn-auth {
   color: #6a4029;
 }
 
-main aside.auth form button.btn-google {
+main aside.auth-login form button.btn-google {
   width: 505px;
   height: 75px;
   background-color: #ffffff;
@@ -88,7 +88,7 @@ main aside.auth form button.btn-google {
   border-radius: 20px;
 }
 
-main aside.auth form button.btn-google span {
+main aside.auth-login form button.btn-google span {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 17px;
@@ -96,7 +96,7 @@ main aside.auth form button.btn-google span {
   color: #000000;
 }
 
-main aside.auth form p.already {
+main aside.auth-login form p.already {
   font-weight: 700;
   font-size: 16px;
   line-height: 30px;
@@ -104,12 +104,12 @@ main aside.auth form p.already {
   margin-top: 4px;
 }
 
-main aside.auth form hr {
+main aside.auth-login form hr {
   width: 136px;
   border: 2px solid #c4c4c4;
 }
 
-main aside.auth form button.btn-auth-here {
+main aside.auth-login form button.btn-auth-here {
   width: 505px;
   height: 75px;
   background-color: #6a4029;
@@ -121,7 +121,7 @@ main aside.auth form button.btn-auth-here {
   color: #ffffff;
 }
 
-main aside.auth form a.forgot {
+main aside.auth-login form a.forgot {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -130,18 +130,18 @@ main aside.auth form a.forgot {
   transform: translateY(30px) !important;
 }
 
-main aside.auth .footer-auth {
+main aside.auth-login .footer-auth {
   margin-top: 200px;
 }
 
-main aside.auth .footer-auth p.coffee-shop {
+main aside.auth-login .footer-auth p.coffee-shop {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #0b132a;
 }
 
-main aside.auth .footer-auth p.detail {
+main aside.auth-login .footer-auth p.detail {
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
@@ -150,19 +150,19 @@ main aside.auth .footer-auth p.detail {
   white-space: nowrap;
 }
 
-main aside.auth .footer-auth .social img:first-of-type {
+main aside.auth-login .footer-auth .social img:first-of-type {
   transform: translateX(-45px);
 }
 
-main aside.auth .footer-auth .social img:nth-of-type(2) {
+main aside.auth-login .footer-auth .social img:nth-of-type(2) {
   transform: translateX(-70px);
 }
 
-main aside.auth .footer-auth .social img:last-of-type {
+main aside.auth-login .footer-auth .social img:last-of-type {
   transform: translateX(-95px);
 }
 
-main aside.auth .footer-auth p.copyright {
+main aside.auth-login .footer-auth p.copyright {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
@@ -170,8 +170,8 @@ main aside.auth .footer-auth p.copyright {
   transform: translateX(-24px);
 }
 
-main aside.auth .footer-auth p.product,
-main aside.auth .footer-auth p.engage {
+main aside.auth-login .footer-auth p.product,
+main aside.auth-login .footer-auth p.engage {
   position: absolute;
   font-weight: 500;
   font-size: 18px;
@@ -179,11 +179,11 @@ main aside.auth .footer-auth p.engage {
   color: #0b132a;
 }
 
-main aside.auth .footer-auth nav {
+main aside.auth-login .footer-auth nav {
   margin-top: 50px;
 }
 
-main aside.auth .footer-auth nav a {
+main aside.auth-login .footer-auth nav a {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
@@ -191,6 +191,99 @@ main aside.auth .footer-auth nav a {
   white-space: nowrap;
 }
 
-main aside.auth .footer-auth .detail-footer {
+main aside.auth-login .footer-auth .detail-footer {
   margin-top: -35px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  main {
+    height: 1000px !important;
+  }
+
+  .logoCoffe,
+  main aside.auth-login p.coffee,
+  main aside.auth-login .footer-auth {
+    display: none !important;
+  }
+
+
+  main aside.auth-login {
+    width: 429px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    bottom: -450px;
+    padding-top: 100px;
+    background-image: url(../../assets/images/hero-auth.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  main aside.auth-login a.auth {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 65px;
+    line-height: 86.84%;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-left: 0px;
+    margin-right: 160px;
+  }
+
+  main aside.auth-login form {
+    padding-top: 50px;
+  }
+
+  main aside.auth-login form a.forgot {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 530px;
+    margin-left: 67px;
+  }
+
+  main aside.auth-login form input.form-control {
+    width: 352px;
+    background: transparent;
+    margin-left: 38px !important;
+    margin-right: 38px !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-bottom: 1px solid #FFFFFF;
+    color: #fff;
+  }
+
+  main aside.auth-login form input.form-control::-webkit-input-placeholder {
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+
+  main aside.auth-login form button.btn-auth,
+  main aside.auth-login form button.btn-google,
+  main aside.auth-login form button.btn-auth-here {
+    width: 352px;
+    margin-left: 38px !important;
+    margin-right: 38px !important;
+  }
+
+  main aside.auth-login form p.already,
+  main aside.auth-login form hr {
+    display: none;
+  }
+
+  main aside.auth-login form button.btn-auth-here {
+    margin-top: -45px;
+  }
 }

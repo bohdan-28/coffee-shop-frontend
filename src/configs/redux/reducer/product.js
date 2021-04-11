@@ -1,6 +1,7 @@
 const initialState = {
   product: [],
   allProducts: [],
+  searchProducts: [],
   loading: false,
 };
 
@@ -26,6 +27,11 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         product: action.payload,
+      };
+    case "SEARCH_PRODUCT":
+      return {
+        ...state,
+        searchProducts: action.payload,
       };
     default:
       return state;

@@ -6,11 +6,13 @@ import PeopleFavorite from "../../parts/Home/Favorite";
 import VisitStore from "../../parts/Home/VisitStore";
 import Testimony from "../../parts/Home/Testimony/index";
 import Footer from "../../components/Footer";
+import Sidebar from "../../components/Navbar/Sidebar";
 
 function Home() {
   return (
     <div>
       <Navbar />
+      <Sidebar />
       <HomeGetStarted />
       <TeamWork />
       <PeopleFavorite />
