@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./productcard.module.css";
+import { withRouter } from "react-router";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -11,15 +12,19 @@ function ProductCard({ image, title, price, discount, idProduct }) {
     history.push(`/product-detail/${idProduct}`);
   };
   const routeChangeToUpdate = (idProduct) => {
-    history.push(`/edit-product/${idProduct}`);
+    history.push({
+      pathname: `/edit-product/${idProduct}`,
+      state: { id: idProduct },
+    });
   };
   return (
-    <div
-      onClick={(e) => routeChangeToDetail(idProduct)}
-      className={style["card-disc"]}
-    >
+    <div className={style["card-disc"]}>
       <div className={style.disc}></div>
-      <img src={`${ImgUrl}${image}`} alt="product" />
+      <img
+        onClick={(e) => routeChangeToDetail(idProduct)}
+        src={`${ImgUrl}${image}`}
+        alt="product"
+      />
       <h4>{title}</h4>
       <h5 className="pb-2">IDR {price}</h5>
       {role === 1 ? (
@@ -37,4 +42,4 @@ function ProductCard({ image, title, price, discount, idProduct }) {
   );
 }
 
-export default ProductCard;
+export default withRouter(ProductCard);
