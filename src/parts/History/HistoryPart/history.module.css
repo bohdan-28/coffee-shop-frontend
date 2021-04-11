@@ -61,7 +61,7 @@
     justify-content: flex-end;
 }
 .checkbox input[type="checkbox"]{
-     display: none;
+     visibility: hidden;
 }
 .checkbox label{
     font-family: Poppins;
@@ -82,6 +82,20 @@
 }
 .handimg{
     display: none;
+}
+.checkbox > button{
+    text-decoration: underline;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.checkbox > button:hover{
+    color: red;
 }
 
 
