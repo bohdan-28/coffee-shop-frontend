@@ -1,6 +1,6 @@
 /* MOBILE ONLY */
-/* @media (max-width: 992px) { */
-  @media (max-width: 575.98px) {
+@media (max-width: 992px) {
+
   div.chat-bg{
     background-color: rgba(245, 245, 248, 1);
   }
@@ -8,12 +8,16 @@
   .main-chat{
     display: none;
   }
+  .side-chat{
+    display: none;
+  }
 
-  div.side-chat{
-
+  /* div.side-chat{
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   input.form-search{
@@ -22,6 +26,7 @@
     border: none;
     width: 348px;
     height: 60px;
+    align-items: center;
     margin-left: auto;
     margin-top: auto;
     padding-left: 35px;
@@ -37,22 +42,23 @@
     color: #000000;
   }
 
-  .icon-user{
+  img.icon-user{
     width: 80px;
     height: 80px;
     border-radius: 50%;
+
   }
 
   h5.username{
     font-size: 14px;
     color: #000000;
-  }
+  } */
 
 }
 
 
 /* DESKTOP ONLY */
-/* @media (min-width: 992px) { */
+@media (min-width: 992px) {
   div.chat-bg{
     background-image: url(../../../assets/images/chat-bg.png);
     height: 1184px;
@@ -148,4 +154,4 @@
   }
 
 
-/* }   */
+}  
