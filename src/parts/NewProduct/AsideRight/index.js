@@ -126,14 +126,14 @@ const AsideRight = (props) => {
 
               <label htmlFor="description">Description :</label>
               <br />
-              <input
+              <textarea
                 id="description"
                 type="text"
                 name="description"
                 value={insertProduct.description}
                 placeholder="Describe your product min. 150 characters."
                 onChange={handleFormChange}
-              ></input>
+              ></textarea>
 
               <label htmlFor="description">Input product size :</label>
               <p className={style.textSize}>
@@ -148,7 +148,7 @@ const AsideRight = (props) => {
                 onChange={handleFormChange}
               ></input>
 
-              <label htmlFor="description">Input delivery methods :</label>
+              <label htmlFor="deliveryMethod">Input delivery methods :</label>
               <p className={style.textSize}>
                 Write methods you want to use for this product
               </p>

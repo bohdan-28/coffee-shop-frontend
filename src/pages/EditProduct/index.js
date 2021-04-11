@@ -15,7 +15,7 @@ function EditProduct() {
   console.log(loading);
   useEffect(() => {
     dispatch(getProductProcess(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div>

@@ -23,6 +23,9 @@ const getProductSuccess = (data) => {
 const updateProductSuccess = (data) => {
   return { type: "UPDATE_PRODUCT_SUCCESS", payload: {} };
 };
+const deleteProductSuccess = (data) => {
+  return { type: "DELETE_PRODUCT_SUCCESS", payload: {} };
+};
 const productRequest = () => {
   return { type: "PRODUCT_REQUEST" };
 };
@@ -73,6 +76,23 @@ export const updateProductProcess = (id, data) => (dispatch) => {
       .put(`${Url}/products/${id}`, data)
       .then((res) => {
         dispatch(updateProductSuccess());
+        resolve(res.data.message);
+      })
+      .catch((err) => {
+        dispatch(productFailure);
+        reject(new Error(err.response.data.message));
+      });
+  });
+};
+
+export const deleteProductProcess = (id) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const Url = process.env.REACT_APP_API_URL;
+    dispatch(productRequest);
+    axiosApiInstance
+      .delete(`${Url}/products/${id}`)
+      .then((res) => {
+        dispatch(deleteProductSuccess());
         resolve(res.data.message);
       })
       .catch((err) => {

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
+import { isUndefined } from "util";
 import style from "./asideright.module.css";
 import Button from "../Button/ButtonEditProduct";
 <<<<<<< HEAD
@@ -23,19 +24,25 @@ const AsideRight = (props) => {
     history.goBack();
   };
 
-  const handleUpdateProduct = () => {
-    const data = {
-      name: getProduct.name,
-      price: getProduct.price,
-      stock: getProduct.stock,
-      description: getProduct.description,
-      size: getProduct.size,
-      deliveryMethod: getProduct.deliveryMethod,
-      hourStart: getProduct.hourStart,
-      hourEnd: getProduct.hourEnd,
-      categoryID: getProduct.categoryID,
-    };
-    dispatch(updateProductProcess(id, data))
+  const handleUpdateProduct = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", getProduct.name);
+    formData.append("price", getProduct.price);
+    if (!isUndefined(getProduct.imageUpload)) {
+      formData.append("image", getProduct.imageUpload);
+    }
+
+    formData.append("categoryID", getProduct.categoryID);
+    formData.append("deliveryMethod", getProduct.deliveryMethod);
+    formData.append("description", getProduct.description);
+    formData.append("hourEnd", getProduct.hourEnd);
+    formData.append("stock", getProduct.stock);
+    formData.append("size", getProduct.size);
+    formData.append("hourStart", getProduct.hourStart);
+
+    dispatch(updateProductProcess(id, formData))
       .then((res) => {
         Swal.fire({
           title: "Success!",
@@ -56,6 +63,7 @@ const AsideRight = (props) => {
         });
       });
   };
+
   console.log(getProduct);
   return (
     <Fragment>
@@ -115,7 +123,7 @@ const AsideRight = (props) => {
               <label htmlFor="description">Description :</label>
 >>>>>>> 198e1318198684449716d33b0bc3b0cbe0912f80
               <br />
-              <input
+              <textarea
                 id="description"
                 type="text"
                 name="description"
@@ -123,7 +131,7 @@ const AsideRight = (props) => {
                 value={getProduct.description}
                 onChange={handleChangeUpdate}
                 placeholder="Beef spagheti tapi gambar minuman"
-              ></input>
+              ></textarea>
 
               <label htmlFor="size">Edit product size :</label>
               <p className={style.textSize}>

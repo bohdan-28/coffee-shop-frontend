@@ -35,10 +35,16 @@ const productAdminReducer = (state = initialState, action) => {
         },
         loading: false,
       };
-    case "GET_PRODUCT_SUCCESS":
+    case "UPDATE_PRODUCT_SUCCESS":
       return {
         ...state,
-        getProduct: {},
+        getProduct: { ...state.getProduct, ...action.payload },
+        loading: false,
+      };
+    case "DELETE_PRODUCT_SUCCESS":
+      return {
+        ...state,
+        getProduct: { ...state.getProduct, ...action.payload },
         loading: false,
       };
     case "ONCHANGE_INSERT_PRODUCT":
