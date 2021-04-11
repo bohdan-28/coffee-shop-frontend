@@ -150,7 +150,9 @@ function Navbar() {
               <Link className={Style["nav-item"]} to="/product-cust">
                 Product
               </Link>
-              <div className={Style["nav-item"]}>Your Cart</div>
+              <Link className={Style["nav-item"]} to="#">
+                Your Cart
+              </Link>
               <Link className={Style["nav-item"]} to="/history">
                 History
               </Link>
