@@ -1,5 +1,5 @@
 import React from 'react'
-import { hazelnutlatte } from '../../../../assets/images'
+// import { hazelnutlatte } from '../../../../assets/images'
 import Style from './leftscrollpromo.module.css'
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { hazelnutlatte } from '../../../../assets/images'
+// import { hazelnutlatte } from '../../../../assets/images'
 import style from './favoriteproduct.module.css'
 
 function FavoriteProduct({img, productname, price}) {
@@ -14,7 +14,7 @@ function FavoriteProduct({img, productname, price}) {
                        <p className={style['product-name']}>{productname}</p>
                        <p className={style['price']}>{price}</p>
                        
-                   </div>
+                   </div> 
                </div>
                <div className="col-6">
                    <div className={style['product-bg']}>

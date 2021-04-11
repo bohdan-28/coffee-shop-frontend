@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from './leftscrollproduct.module.css'
-import { hazelnutlatte } from '../../../../assets/images'
+// import { hazelnutlatte } from '../../../../assets/images'
 
 
 function LeftScrollProduct({img, productname, price }) {

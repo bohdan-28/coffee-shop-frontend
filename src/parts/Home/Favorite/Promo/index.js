@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './promo.module.css'
-import { hazelnutlatte } from '../../../../assets/images'
+// import { hazelnutlatte } from '../../../../assets/images'
 
 function Promo({imgproduct, productname, pricewithdisc, normalprice }) {
     return (
