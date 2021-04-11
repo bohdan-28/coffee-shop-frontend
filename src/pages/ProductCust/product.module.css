@@ -1,51 +1,71 @@
-
-.side-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: 1px solid #9F9F9F;
-    padding: 2em 0;
+.side-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid #9f9f9f;
+  padding: 2em 0;
 }
-.main-section{
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid #9F9F9F;
-    border-left: 1px solid #9F9F9F;
-    padding: 2em 4em;
+.main-section {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #9f9f9f;
+  border-left: 1px solid #9f9f9f;
+  padding: 2em 4em;
 }
-.cardSection{
-    padding: 4em 2em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 50px;
-    display: none;
+.cardSection {
+  padding: 4em 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+  display: none;
 }
-.activeContent{
-    display: grid;
+.activeContent {
+  display: grid;
 }
 .main-section > p {
-    color: #6A4029;
-    font-size: 17px;
+  color: #6a4029;
+  font-size: 17px;
 }
-.tab-card{
-    display: flex;
-    justify-content: space-evenly;
+.tab-card {
+  display: flex;
+  justify-content: space-evenly;
 }
-.btn{
-    border: none ;
-    background-color: white ;
-    font-weight: 700 ;
-    color: #9F9F9F ;
-    flex-grow: 1 ;
-    padding: .5em ;
+.btn {
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  color: #9f9f9f;
+  flex-grow: 1;
+  padding: 0.5em;
 }
-.btnactive{
-    border: none;
-    background-color: white;
-    font-weight: 700;
-    color: #9F9F9F;
-    color: #6A4029;
-    border-bottom: 3px solid #6A4029;
+.btnactive {
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  color: #9f9f9f;
+  color: #6a4029;
+  border-bottom: 3px solid #6a4029;
+}
+.bg1 {
+  background: #6a4029;
 }
 
+.color1 {
+  color: white;
+  font-weight: 700;
+  height: 70px;
+  border-radius: 30px;
+}
 
+.btn-pagination {
+  background: #ffba33;
+  color: #6a4029;
+  box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+}
+.btn-pagination:hover {
+  background: #ffba33;
+}
+
+.btn-pagination:focus {
+  background: white;
+}
