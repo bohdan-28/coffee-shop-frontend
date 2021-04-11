@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./favorite.module.css";
 import FavoriteProduct from './FavoriteProduct'
 import Promo from './Promo'
 import LeftScrollProduct from './LeftScrollProduct'
 import LeftScrollPromo from './LeftScrollPromo'
 import { hazelnutlatte } from "../../../assets/images";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function PeopleFavorite() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   const [show, setShow] = useState(false)
   const [showPromo, setShowPromo] = useState(false)
   return (
@@ -20,59 +24,74 @@ function PeopleFavorite() {
         ].join(" ")}
       >
         <div className={[['container'], Style['mobile-contain']].join(' ')}>
-          <h4 className={Style["favorite-title"]}>Here is People's Favorite</h4>
-          <p className={Style["favorite-description"]}>
+          <h4 data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="0"
+            data-aos-once="true" className={Style["favorite-title"]}>Here is People's Favorite</h4>
+          <p data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="0"
+            data-aos-once="true"
+            className={Style["favorite-description"]}>
             Let’s choose and have a bit taste of poeple’s favorite. It might be
             yours too!
           </p>
-          
+
           {/*======== Mobile ONLY ======== */}
           <div className="favorite-product-list">
-            <h4 className={Style["title-mobile"]}>A good coffee is <br/> a good day</h4>
+            <h4 className={Style["title-mobile"]}>A good coffee is <br /> a good day</h4>
             <p className={Style['favorite-teks-mobile']}>Favorite Products</p>
-            <button className={Style['seemore']} onClick={()=>setShow(!show)} >See more</button>
-              <>
-              {show ? 
-                <FavoriteProduct 
+            <button className={Style['seemore']} onClick={() => setShow(!show)} >See more</button>
+            <>
+              {show ?
+                <FavoriteProduct
                   img={`${hazelnutlatte}`}
                   productname="Coffee Whipped Cream"
                   price="IDR 44.000"
-                /> 
-                : 
-                <LeftScrollProduct 
+                />
+                :
+                <LeftScrollProduct
                   img={`${hazelnutlatte}`}
                   productname="Hazelnut Latte"
                   price="IDR 25.000"
                 />
               }
-              </>
+            </>
           </div>
           <div className="promo-for-you">
             <p className={Style['favorite-teks-mobile']}>Promo for you</p>
-            <button className={Style['seemore']} onClick={()=>setShowPromo(!showPromo)} >See more</button>
-              <>
-              {showPromo ? 
-                <Promo 
-                 imgproduct={`${hazelnutlatte}`}
-                 productname="Coffee Whipped Cream"
-                 pricewithdisc="24.000"
-                 normalprice="44.000"
-                /> 
-                : 
-                <LeftScrollPromo 
+            <button className={Style['seemore']} onClick={() => setShowPromo(!showPromo)} >See more</button>
+            <>
+              {showPromo ?
+                <Promo
                   imgproduct={`${hazelnutlatte}`}
                   productname="Coffee Whipped Cream"
                   pricewithdisc="24.000"
-                /> 
-              } 
-              </>
+                  normalprice="44.000"
+                />
+                :
+                <LeftScrollPromo
+                  imgproduct={`${hazelnutlatte}`}
+                  productname="Coffee Whipped Cream"
+                  pricewithdisc="24.000"
+                />
+              }
+            </>
           </div>
           {/*======= TUTUP MOBILE ONLY======== */}
 
 
 
           <div className={[['row'], Style['product-list']].join(' ')}>
-            <div className="col">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="3000"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="3"
+              data-aos-once="true"
+              className="col">
               <div className={Style["favorite-product"]}>
                 <div className={Style["img-product"]}></div>
                 <h5 className={Style["product-title"]}>Hazelnut Latte</h5>
@@ -95,7 +114,13 @@ function PeopleFavorite() {
                 </button>
               </div>
             </div>
-            <div className="col">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="6"
+              data-aos-once="true"
+              className="col">
               <div className={Style["favorite-product"]}>
                 <div className={Style["img-product-2"]}></div>
                 <h5 className={Style["product-title"]}>Pinky Promise</h5>
@@ -122,7 +147,13 @@ function PeopleFavorite() {
                 </button>
               </div>
             </div>
-            <div className="col">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="3000"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="9"
+              data-aos-once="true"
+              className="col">
               <div className={Style["favorite-product"]}>
                 <div className={Style["img-product-3"]}></div>
                 <h5 className={Style["product-title"]}>Chicken Wings</h5>
