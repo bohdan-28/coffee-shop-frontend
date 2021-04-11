@@ -2,10 +2,8 @@ import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
-import { isUndefined } from "util";
 import style from "./asideright.module.css";
 import Button from "../Button/ButtonEditProduct";
-<<<<<<< HEAD
 import { updateProductProcess } from "../../../configs/redux/actions/productAdmin";
 const AsideRight = (props) => {
   const { getProduct } = useSelector((state) => state.productAdmin);
@@ -24,25 +22,19 @@ const AsideRight = (props) => {
     history.goBack();
   };
 
-  const handleUpdateProduct = (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.append("name", getProduct.name);
-    formData.append("price", getProduct.price);
-    if (!isUndefined(getProduct.imageUpload)) {
-      formData.append("image", getProduct.imageUpload);
-    }
-
-    formData.append("categoryID", getProduct.categoryID);
-    formData.append("deliveryMethod", getProduct.deliveryMethod);
-    formData.append("description", getProduct.description);
-    formData.append("hourEnd", getProduct.hourEnd);
-    formData.append("stock", getProduct.stock);
-    formData.append("size", getProduct.size);
-    formData.append("hourStart", getProduct.hourStart);
-
-    dispatch(updateProductProcess(id, formData))
+  const handleUpdateProduct = () => {
+    const data = {
+      name: getProduct.name,
+      price: getProduct.price,
+      stock: getProduct.stock,
+      description: getProduct.description,
+      size: getProduct.size,
+      deliveryMethod: getProduct.deliveryMethod,
+      hourStart: getProduct.hourStart,
+      hourEnd: getProduct.hourEnd,
+      categoryID: getProduct.categoryID,
+    };
+    dispatch(updateProductProcess(id, data))
       .then((res) => {
         Swal.fire({
           title: "Success!",
@@ -63,7 +55,6 @@ const AsideRight = (props) => {
         });
       });
   };
-
   console.log(getProduct);
   return (
     <Fragment>
@@ -82,30 +73,10 @@ const AsideRight = (props) => {
                 placeholder="Beef Spagehetti"
               ></input>
 
-=======
-
-const AsideRight = (props) => {
-  return (
-    <Fragment>
-      <div className={style["cards-product"]}>
-        <div className="container">
-          <div className="row">
-            <div className={style.formData}>
-              <label htmlFor="name">Name :</label>
-              <br />
-              <input
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Beef Spagehetti"
-              ></input>
-
->>>>>>> 198e1318198684449716d33b0bc3b0cbe0912f80
               <label htmlFor="price">Price :</label>
               <br />
               <input
                 id="price"
-<<<<<<< HEAD
                 type="number"
                 name="price"
                 value={getProduct.price}
@@ -114,24 +85,15 @@ const AsideRight = (props) => {
               ></input>
 
               <label htmlFor="description">Edit description :</label>
-=======
-                type="text"
-                name="price"
-                placeholder="70.000"
-              ></input>
-
-              <label htmlFor="description">Description :</label>
->>>>>>> 198e1318198684449716d33b0bc3b0cbe0912f80
               <br />
-              <textarea
+              <input
                 id="description"
                 type="text"
                 name="description"
-<<<<<<< HEAD
                 value={getProduct.description}
                 onChange={handleChangeUpdate}
                 placeholder="Beef spagheti tapi gambar minuman"
-              ></textarea>
+              ></input>
 
               <label htmlFor="size">Edit product size :</label>
               <p className={style.textSize}>
@@ -164,51 +126,6 @@ const AsideRight = (props) => {
                 onClick={handleUpdateProduct}
               />
               <Button title="Cancel" btn="btn-cancel" onClick={handleCancel} />
-=======
-                placeholder="Beef spagheti tapi gambar minuman"
-              ></input>
-
-              <label htmlFor="description">Edit product size :</label>
-              <p className={style.textSize}>
-                Click size you want to edit for this product
-              </p>
-
-              <div className={style.size}>
-                <div className="d-flex pl-5">
-                  <button className={style["circle-size"]}>R</button>
-                  <button className={style["circle-size"]}>L</button>
-                  <button className={style["circle-size"]}>XL</button>
-                  <button className={style["circle-size-litle"]}>250 gr</button>
-                  <button className={style["circle-size-litle"]}>300 gr</button>
-                  <button className={style["circle-size-litle"]}>500 gr</button>
-                </div>
-              </div>
-
-              <label htmlFor="description">Edit delivery methods :</label>
-              <p className={style.textSize}>
-                Click methods you want to use for this product
-              </p>
-              <div className="row flex-nowrap">
-                <Button
-                  title="Home Delivery"
-                  btn="btn-HomeDelivery"
-                  onClick=""
-                />
-                <Button title="Dine In" btn="btn-dineIn" onClick="" />
-                <Button title="Take Away" btn="btn-pickUp" onClick="" />
-              </div>
-
-              {/* <p className={style.titleExpire}>Enter the discount:</p>
-                            <button className={style['btn-enter-disc']} type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">20% == 63.000</button>
-                            <div className={[['dropdown-menu'], style['dropdown-disc']].join(' ')}>
-                                <Link className="dropdown-item" to="#">10 % ?</Link>
-                                <Link className="dropdown-item" to="#">20 % ?</Link>
-                                <Link className="dropdown-item" to="#">30 % ?</Link>
-                            </div> */}
-
-              <Button title="Save Edited Product" btn="btn-save" onClick="" />
-              <Button title="Cancel" btn="btn-cancel" onClick="" />
->>>>>>> 198e1318198684449716d33b0bc3b0cbe0912f80
             </div>
           </div>
         </div>
