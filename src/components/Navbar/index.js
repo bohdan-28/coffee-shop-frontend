@@ -191,7 +191,7 @@ function Navbar() {
                   {user.image ? (
                     <img
                       className={Style["profile-img"]}
-                      src={`${ImgUrl}${user.image}`}
+                      src={`${ImgUrl}/${user.image}`}
                       alt="ImgUser"
                     />
                   ) : (
