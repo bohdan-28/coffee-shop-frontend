@@ -125,12 +125,12 @@ function Testimony() {
                 </div>
               </div>
             </div>
-            <Link className={[ Style['pagination-left']]} to="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a className={[ Style['pagination-left']]} href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span className="sr-only">Previous</span>
-            </Link>
-            <Link className={Style['pagination-right']} to="#carouselExampleIndicators" role="button" data-slide="next">
+            </a>
+            <a className={Style['pagination-right']} href="#carouselExampleIndicators" role="button" data-slide="next">
               <span className="sr-only">Next</span>
-            </Link>
+            </a>
           </div>
           <div className={Style['pagination-button']}></div>
           {/*======== AKHIR CARD REVIEW ========= */}
