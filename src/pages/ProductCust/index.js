@@ -23,7 +23,7 @@ function ProductCustomer() {
   const [togglestate, setToggleState] = useState(1);
   const [toggleKey, setToggleKey] = useState("favourite");
   const [product, setProduct] = useState([]);
-  let [queryLimit, setQueryLimit] = useState("1");
+  let [queryLimit, setQueryLimit] = useState("4");
   let [queryPage, setQueryPage] = useState("1");
   let [queryOrder, setQueryOrder] = useState("asc");
   let [querySort, setQuerySort] = useState("name");
@@ -71,7 +71,7 @@ function ProductCustomer() {
     },
     {
       label: "Limit 16",
-      value: "6",
+      value: "16",
     },
   ];
 
@@ -140,7 +140,7 @@ function ProductCustomer() {
           <TermCondition />
         </div>
         <div className={[["col-8"], style["main-section"]].join(" ")}>
-          <div className="bg-white" style={{ height: "500px" }}>
+          <div className="bg-white overflow-auto" style={{ height: "600px" }}>
             <div className={style["tab-card"]}>
               <button
                 type="button"
@@ -293,40 +293,37 @@ function ProductCustomer() {
                 );
               })}
             </div>
-
-            {/* Paginasi */}
-            <div className="row pl-2 pl-lg-0 mt-5">
-              <div className="col-12 d-flex justify-content-center">
-                {parseInt(totalPage) > 1 ? (
-                  <Pagination aria-label="Page navigation example">
-                    <PaginationItem>
-                      <PaginationLink first onClick={(e) => setQueryPage(1)} />
-                    </PaginationItem>
-                    {Array.from(Array(totalPage).keys()).map((data, index) => {
-                      return (
-                        <PaginationItem active={currentPage === index + 1}>
-                          <PaginationLink
-                            onClick={(e) => handleClickPage(index)}
-                          >
-                            {index + 1}
-                          </PaginationLink>
-                        </PaginationItem>
-                      );
-                    })}
-                    <PaginationItem>
-                      <PaginationLink
-                        last
-                        onClick={(e) => setQueryPage(totalPage)}
-                      />
-                    </PaginationItem>
-                  </Pagination>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-            {/* Akhir Pagnisai */}
           </div>
+          {/* Paginasi */}
+          <div className="row pl-2 pl-lg-0 mt-5">
+            <div className="col-12 d-flex justify-content-center">
+              {parseInt(totalPage) > 1 ? (
+                <Pagination aria-label="Page navigation example">
+                  <PaginationItem>
+                    <PaginationLink first onClick={(e) => setQueryPage(1)} />
+                  </PaginationItem>
+                  {Array.from(Array(totalPage).keys()).map((data, index) => {
+                    return (
+                      <PaginationItem active={currentPage === index + 1}>
+                        <PaginationLink onClick={(e) => handleClickPage(index)}>
+                          {index + 1}
+                        </PaginationLink>
+                      </PaginationItem>
+                    );
+                  })}
+                  <PaginationItem>
+                    <PaginationLink
+                      last
+                      onClick={(e) => setQueryPage(totalPage)}
+                    />
+                  </PaginationItem>
+                </Pagination>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          {/* Akhir Pagnisai */}
           <div className="row mt-5 justify-content-center">
             <div className="col-3">
               <select

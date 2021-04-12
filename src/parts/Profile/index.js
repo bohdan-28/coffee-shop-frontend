@@ -12,6 +12,8 @@ import style from "./profile.module.css";
 import Button from "../../components/Button";
 import btnProfile from "../../assets/images/btnProfile.png";
 import backPage from "../../assets/images/backProfile.png";
+import { hazelnutlatte } from "../../assets/images";
+
 
 const PartProfile = () => {
   const ImgUrl = process.env.REACT_APP_API_IMG;
@@ -219,6 +221,8 @@ const PartProfile = () => {
                   </div>
                   <h2 className={style["name-profile"]}>{data.username}</h2>
                   <h2 className={style["email-profile"]}>{data.email}</h2>
+                  <h2 className={style["phone-number-new"]}>{data.phoneNumber}</h2>
+                  <h2 className={style["address-mobile"]}>{data.address}</h2>
                   <Button
                     title="Choose photo"
                     btn="btn-choose-picture"
@@ -268,7 +272,65 @@ const PartProfile = () => {
                   />
                 </div>
                 <div className="col-12 col-lg-9">
-                  <div className={style["card-profile-right"]}>
+                  <div className={style["card-profile-right"]}  >
+                    {/*==== Mobile==== */}
+                    <p className={style["order-mobile"]}>Order History</p>
+                    <p className={style["see-more"]}>See more</p>
+                    <div className={style['boxs']}>
+                      <div className={style['box']}>
+                        <div className="row">
+                            <div className="col">
+                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
+                            </div>
+                        </div>
+                      </div>
+                      <div className={style['box']}>
+                        <div className="row">
+                            <div className="col">
+                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
+                            </div>
+                        </div>
+                      </div>
+                      <div className={style['box']}>
+                        <div className="row">
+                            <div className="col">
+                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
+                            </div>
+                        </div>
+                      </div>
+                      <div className={style['box']}>
+                        <div className="row">
+                            <div className="col">
+                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                    title="Edit Password"
+                    btn="btn-outline-pass"
+                    color="white"
+                    toggle="modal"
+                    target="#exampleModal"
+                    />
+                    <Button
+                      title="FAQ"
+                      btn="btn-outline-pass"
+                      color="white"
+                    />
+                    <Button
+                      title="Help"
+                      btn="btn-outline-pass"
+                      color="white"
+                    />
+                    <Button
+                    title="Save Changes"
+                    btn="btn-fill-mobile"
+                    color="chocolate"
+                    onClick={handleSubmit}
+                  />
+                    {/*======TUTUP MOBILE=== */}
+
                     <p className={style["text-title-right"]}>Contact</p>
                     <div className={style["circle-btnProfile"]}>
                       <img

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Style from "./home.module.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import CountUp from 'react-countup'
 
 function HomeGetStarted() {
   const history = useHistory();
@@ -13,6 +16,10 @@ function HomeGetStarted() {
   const handleClickStartedProduct = () => {
     history.push("/product-cust");
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <div>
@@ -56,24 +63,38 @@ function HomeGetStarted() {
               Get Started
             </button>
           )}
-          <div className={Style["card-staff-store"]}>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="0"
+            data-aos-once="true"
+            className={Style["card-staff-store"]}>
             <div className={Style["card-shadow"]}></div>
             <div className="row">
               <div className="col-lg-4">
                 <div className={Style["icon-user"]}></div>
-                <h5 className={Style["staff-quantity"]}>90+</h5>
+                <h5 className={Style["staff-quantity"]}>
+                  <CountUp delay={3} end={90} duration={8} />
+                </h5>
                 <h5 className={Style["staff-title"]}>Staff</h5>
                 <div className={Style["vertical-line"]}></div>
               </div>
               <div className="col-lg-4">
                 <div className={Style["icon-store"]}></div>
-                <h5 className={Style["staff-quantity"]}>30+</h5>
+                <h5 className={Style["staff-quantity"]}>
+                  <CountUp delay={3} end={30} duration={8} />
+
+                </h5>
                 <h5 className={Style["staff-title"]}>Stores</h5>
                 <div className={Style["vertical-line"]}></div>
               </div>
               <div className="col-lg-4">
                 <div className={Style["icon-customer"]}></div>
-                <h5 className={Style["staff-quantity"]}>800+</h5>
+                <h5 className={Style["staff-quantity"]}>
+                  <CountUp delay={3} end={800} duration={8} />
+
+                </h5>
                 <h5 className={Style["staff-title"]}>Customers</h5>
               </div>
             </div>

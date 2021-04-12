@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Style from "./teamwork.module.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function TeamWork() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <div>
       <div
@@ -14,9 +20,23 @@ function TeamWork() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <div className={Style["img-team-work"]}></div>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="2500"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="5"
+                data-aos-once="true"
+                className={Style["img-team-work"]}>
+
+              </div>
             </div>
-            <div className="col">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="2500"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="6"
+              data-aos-once="true"
+              className="col">
               <h5 className={Style["teamwork-title"]}>
                 We Provide Good Coffee and Healthy Meals
               </h5>

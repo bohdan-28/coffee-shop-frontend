@@ -1,7 +1,8 @@
 import React from 'react'
 import Style from './testimony.module.css'
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Testimony() {
   return (
@@ -10,7 +11,7 @@ function Testimony() {
         <div className="container">
           <h4 className={Style['testimony-title']}>Loved by Thousands of Happy Customer</h4>
           <h5 className={Style['testimony-teks']}>These are the stories of our customers who have visited us with great pleasure.</h5>
-          
+
           {/* ========= AWAL CARD REVIEW ===== */}
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
@@ -21,38 +22,38 @@ function Testimony() {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 {/* <img className="d-block w-100" src="../../" alt="First slide"/> */}
-                  <div className="row" aria-label="First slide">
-                    <div className="col">
-                      <div className={Style['testimony-box']}>
-                        <div className={Style['img-testi-1']}></div>
-                        <h5 className={Style['user-name']}>Viezh Robert</h5>
-                        <h5 className={Style['user-from']}>Warsaw, Poland</h5>
-                        <p className={Style['user-review']}>“Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!</p>
-                        <div className={Style['img-star']}></div>
-                        <h5 className={Style['star-number']}>4.5</h5>
-                      </div>
+                <div className="row" aria-label="First slide">
+                  <div className="col">
+                    <div className={Style['testimony-box']}>
+                      <div className={Style['img-testi-1']}></div>
+                      <h5 className={Style['user-name']}>Viezh Robert</h5>
+                      <h5 className={Style['user-from']}>Warsaw, Poland</h5>
+                      <p className={Style['user-review']}>“Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!</p>
+                      <div className={Style['img-star']}></div>
+                      <h5 className={Style['star-number']}>4.5</h5>
                     </div>
-                    <div className="col">
-                      <div className={Style['testimony-box']}>
-                        <div className={Style['img-testi-2']}></div>
-                        <h5 className={Style['user-name']}>Yessica Cristy</h5>
-                        <h5 className={Style['user-from']}>Shanxi, China</h5>
-                        <p className={Style['user-review']}>“I like it because I like to travel far and still can make my day better just by drinking their Hazelnut Latte</p>
-                        <div className={Style['img-star']}></div>
-                        <h5 className={Style['star-number']}>4.5</h5>
-                      </div>
+                  </div>
+                  <div className="col">
+                    <div className={Style['testimony-box']}>
+                      <div className={Style['img-testi-2']}></div>
+                      <h5 className={Style['user-name']}>Yessica Cristy</h5>
+                      <h5 className={Style['user-from']}>Shanxi, China</h5>
+                      <p className={Style['user-review']}>“I like it because I like to travel far and still can make my day better just by drinking their Hazelnut Latte</p>
+                      <div className={Style['img-star']}></div>
+                      <h5 className={Style['star-number']}>4.5</h5>
                     </div>
-                    <div className="col">
-                      <div className={Style['testimony-box']}>
+                  </div>
+                  <div className="col">
+                    <div className={Style['testimony-box']}>
                       <div className={Style['img-testi-3']}></div>
                       <h5 className={Style['user-name']}>Kim Joung Ju</h5>
                       <h5 className={Style['user-from']}>Seoul, Korea</h5>
                       <p className={Style['user-review']}>“This is very unusual for my taste, I haven’t liked coffee before but their coffee is the best! and yup, you have to order the chicken wings, the best in town!</p>
                       <div className={Style['img-star']}></div>
                       <h5 className={Style['star-number']}>4.5</h5>
-                      </div>
                     </div>
                   </div>
+                </div>
               </div>
               <div className="carousel-item">
                 {/* <img className="d-block w-100" src="..." alt="Second slide"/> */}
@@ -79,12 +80,12 @@ function Testimony() {
                   </div>
                   <div className="col">
                     <div className={Style['testimony-box']}>
-                    <div className={Style['img-testi-3']}></div>
-                    <h5 className={Style['user-name']}>Kim Joung Ju</h5>
-                    <h5 className={Style['user-from']}>Seoul, Korea</h5>
-                    <p className={Style['user-review']}>“This is very unusual for my taste, I haven’t liked coffee before but their coffee is the best! and yup, you have to order the chicken wings, the best in town!</p>
-                    <div className={Style['img-star']}></div>
-                    <h5 className={Style['star-number']}>4.5</h5>
+                      <div className={Style['img-testi-3']}></div>
+                      <h5 className={Style['user-name']}>Kim Joung Ju</h5>
+                      <h5 className={Style['user-from']}>Seoul, Korea</h5>
+                      <p className={Style['user-review']}>“This is very unusual for my taste, I haven’t liked coffee before but their coffee is the best! and yup, you have to order the chicken wings, the best in town!</p>
+                      <div className={Style['img-star']}></div>
+                      <h5 className={Style['star-number']}>4.5</h5>
                     </div>
                   </div>
                 </div>
@@ -114,18 +115,18 @@ function Testimony() {
                   </div>
                   <div className="col">
                     <div className={Style['testimony-box']}>
-                    <div className={Style['img-testi-3']}></div>
-                    <h5 className={Style['user-name']}>Kim Joung Ju</h5>
-                    <h5 className={Style['user-from']}>Seoul, Korea</h5>
-                    <p className={Style['user-review']}>“This is very unusual for my taste, I haven’t liked coffee before but their coffee is the best! and yup, you have to order the chicken wings, the best in town!</p>
-                    <div className={Style['img-star']}></div>
-                    <h5 className={Style['star-number']}>4.5</h5>
+                      <div className={Style['img-testi-3']}></div>
+                      <h5 className={Style['user-name']}>Kim Joung Ju</h5>
+                      <h5 className={Style['user-from']}>Seoul, Korea</h5>
+                      <p className={Style['user-review']}>“This is very unusual for my taste, I haven’t liked coffee before but their coffee is the best! and yup, you have to order the chicken wings, the best in town!</p>
+                      <div className={Style['img-star']}></div>
+                      <h5 className={Style['star-number']}>4.5</h5>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <Link className={[ Style['pagination-left']]} to="#carouselExampleIndicators" role="button" data-slide="prev">
+            <Link className={[Style['pagination-left']]} to="#carouselExampleIndicators" role="button" data-slide="prev">
               <span className="sr-only">Previous</span>
             </Link>
             <Link className={Style['pagination-right']} to="#carouselExampleIndicators" role="button" data-slide="next">
@@ -134,7 +135,7 @@ function Testimony() {
           </div>
           <div className={Style['pagination-button']}></div>
           {/*======== AKHIR CARD REVIEW ========= */}
-          
+
           {/* <div className="row">
             <div className="col">
               <div className={Style["testimony-box"]}>
@@ -200,7 +201,13 @@ function Testimony() {
         </div>
       </div>
 
-      <div className={Style['card-check-promo']}>
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="3"
+        data-aos-once="true"
+        className={Style['card-check-promo']}>
         <h4 className={Style['promo-title']}>Check our promo today!</h4>
         <h5 className={Style['promo-teks']}>Let's see the deals and pick yours!</h5>
         <button type="button" className={Style['btn-promo']}>See Promo</button>
