@@ -1,32 +1,32 @@
 import React, { Fragment, useState, useEffect } from "react";
 import style from "./history.module.css";
 import { withRouter } from "react-router-dom";
-import axios from 'axios'
-import Swal from 'sweetalert2'
-import CardHistory from '../CardHistory/CardHistory'
-import { handClick } from '../../../assets/images'
+import axios from "axios";
+import Swal from "sweetalert2";
+import CardHistory from "../CardHistory/CardHistory";
+import { handClick } from "../../../assets/images";
 
 const HistoryPart = (props) => {
-
   const Url = process.env.REACT_APP_API_URL;
   const Urlimg = process.env.REACT_APP_API_IMG;
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
 
-  const [history, setHistory] = useState([])
-  const [toggle, setToggle] = useState([0])
+  const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    getHistory(Url, token)
-
-  }, []);
+    getHistory(Url, token);
+  }, [Url, token]);
 
   const getHistory = (Url, token) => {
     return new Promise((resolve, reject) => {
-      axios.get(`${Url}/orders/history/byid`, { headers: { authorization: `Bearer ${token}` } })
+      axios
+        .get(`${Url}/orders/history/byid`, {
+          headers: { authorization: `Bearer ${token}` },
+        })
         .then((res) => {
-          const newData = res.data.data.body
+          const newData = res.data.data.body;
           setHistory(
-            newData.map(d => {
+            newData.map((d) => {
               return {
                 select: false,
                 id: d.id,
@@ -34,15 +34,16 @@ const HistoryPart = (props) => {
                 image: d.image,
                 price: d.price,
                 product: d.product,
-                size: d.size
+                size: d.size,
               };
             })
           );
-          resolve(res.data.message)
-        }).catch((err) => {
-          reject(err)
+          resolve(res.data.message);
         })
-    })
+        .catch((err) => {
+          reject(err);
+        });
+    });
   };
   const deleteHistoryById = () => {
     Swal.fire({
@@ -56,18 +57,20 @@ const HistoryPart = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         let arrayids = [];
-        history.forEach(d => {
+        history.forEach((d) => {
           if (d.select) {
-            arrayids.push(d.id)
+            arrayids.push(d.id);
           }
         });
         console.log(arrayids);
         axios
-          .delete(`${Url}/orders/history/byid/${arrayids}`, { headers: { authorization: `Bearer ${token}` } })
-          .then(data => {
+          .delete(`${Url}/orders/history/byid/${arrayids}`, {
+            headers: { authorization: `Bearer ${token}` },
+          })
+          .then((data) => {
             window.location.reload();
           })
-          .catch(err => alert(err));
+          .catch((err) => alert(err));
       } else {
         Swal.fire({
           title: "delete canceled",
@@ -79,7 +82,7 @@ const HistoryPart = (props) => {
       }
     });
   };
-    
+
   console.log(history);
   return (
     <Fragment>
@@ -111,17 +114,18 @@ const HistoryPart = (props) => {
             <input
               type="checkbox"
               id="selectall"
-              onChange={e => {
+              onChange={(e) => {
                 let checked = e.target.checked;
                 setHistory(
-                  history.map(d => {
+                  history.map((d) => {
                     d.select = checked;
                     return d;
                   })
-                )
-              }} />
+                );
+              }}
+            />
             <label htmlFor="selectall">Select All</label>
-            <button onClick={() => deleteHistoryById()}> Delete</ button>
+            <button onClick={() => deleteHistoryById()}> Delete</button>
           </div>
           <div className={style["body-section"]}>
             <h6>Last Week</h6>
@@ -129,24 +133,27 @@ const HistoryPart = (props) => {
           </div>
           <div className="row flex-wrap">
             {history.map((item, index) => {
-              return <CardHistory
-                image={`${Urlimg}${item.image}`}
-                name={item.product}
-                price={item.price}
-                size={item.size}
-                checked={item.select}
-                onChange={(e) => {
-                  let checked = e.target.checked;
-                  setHistory(
-                    history.map(data => {
-                      if (item.id === data.id) {
-                        data.select = checked;
-                      }
-                      return data;
-                    })
-                  );
-                }}
-                key={index} />
+              return (
+                <CardHistory
+                  image={`${Urlimg}${item.image}`}
+                  name={item.product}
+                  price={item.price}
+                  size={item.size}
+                  checked={item.select}
+                  onChange={(e) => {
+                    let checked = e.target.checked;
+                    setHistory(
+                      history.map((data) => {
+                        if (item.id === data.id) {
+                          data.select = checked;
+                        }
+                        return data;
+                      })
+                    );
+                  }}
+                  key={index}
+                />
+              );
             })}
           </div>
         </div>
