@@ -39,3 +39,8 @@ Anda dapat login setelah melakukan aktivasi email yang didaftarkan, cek folder s
 Horeee, kamu berhasil login !!!
 Happy Shoping!!!!!!!!!
 ![success-login](https://user-images.githubusercontent.com/74039235/114307417-b6ded580-9b09-11eb-8195-66ebd5d1754c.jpg)
+
+
+## Link: 
+- [Backend](https://github.com/bohdan-28/coffee-shop-backend)
+- [Visit Project](https://bohdan-coffee-shop.netlify.app/)
