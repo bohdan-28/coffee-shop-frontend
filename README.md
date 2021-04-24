@@ -43,4 +43,4 @@ Happy Shoping!!!!!!!!!
 ## Link:
 
 - [Backend](https://github.com/bohdan-28/coffee-shop-backend)
-- [Visit Project](https://bohdan-coffee-shop.netlify.app/)
+- [Visit Project](https://coffee-shop-bohdan.netlify.app/)
