@@ -7,7 +7,7 @@ Bohdan Coffee adalah aplikasi layanan pesan makanan yang memberi keluasaan penuh
 Web aplikasi ini dikembangkan oleh Bohdan Developer, sebuah tim yang beranggotakan 5 orang.
 
 1. [Herza Paramayudhanto](https://github.com/herzaparam) - Backend - PM
-2. [Chaerul Marwan](https://github.com/chaerulmarwan20) - Backend - Member
+2. [Chaerul Marwan](https://github.com/chaerulmarwan20) - Full Stack - Member
 3. [Abu Dzar Al-ghifari](https://github.com/abudzr) - Frontend - Member
 4. [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda) - Backend - Member
 5. [Kevin Farid Alpharisy](https://github.com/kevinfaridap) - Frontend -Member
