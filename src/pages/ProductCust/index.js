@@ -23,7 +23,7 @@ function ProductCustomer() {
   const [togglestate, setToggleState] = useState(1);
   const [toggleKey, setToggleKey] = useState("favourite");
   const [product, setProduct] = useState([]);
-  let [queryLimit, setQueryLimit] = useState("8");
+  let [queryLimit, setQueryLimit] = useState("4");
   let [queryPage, setQueryPage] = useState("1");
   let [queryOrder, setQueryOrder] = useState("asc");
   let [querySort, setQuerySort] = useState("name");
