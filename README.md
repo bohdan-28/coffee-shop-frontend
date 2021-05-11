@@ -39,30 +39,24 @@ Horeee, kamu berhasil login !!!
 
 ### `#5 Product Page`
 
-Kamu bisa memilih produk yang kamu pesan di sini.
+Kamu bisa memilih produk yang ingin kamu pesan di halaman sini.
 ![screencapture-coffee-shop-bohdan-netlify-app-product-cust-2021-05-11-11_26_03](https://user-images.githubusercontent.com/55057008/117759159-7def6900-b24d-11eb-9677-9b07225ef996.png)
 
 ### `#6 Detail Product`
 
-Kemudian masukkan jumlah dan metode pengantaran yang kamu inginkan !!!
+Kemudian masukkan jumlah dan metode pengantaran yang kamu inginkan di sini!!!
 ![screencapture-coffee-shop-bohdan-netlify-app-product-detail-20-2021-05-11-11_26_42](https://user-images.githubusercontent.com/55057008/117759274-b7c06f80-b24d-11eb-973e-b4c07cb61a6a.png)
 
 ### `#7 Payment Page`
 
-Selanjutnya pilih metode pembayaran yang kamu inginkan.
-![screencapture-coffee-shop-bohdan-netlify-app-profile-2021-05-11-11_25_04](https://user-images.githubusercontent.com/55057008/117759676-58af2a80-b24e-11eb-86f0-b133710700b4.png)
-
-### `#8 Payment Page`
-
-Pesanan berhasil dibuat, silahkan tunggu konfirmasi dari admin dan pesanan kamu segera diantar.
+Pesanan berhasil dibuat, silahkan tunggu konfirmasi dari admin dan pesanan kamu akan segera diantar.
 ![screencapture-coffee-shop-bohdan-netlify-app-history-2021-05-11-11_28_33](https://user-images.githubusercontent.com/55057008/117759910-c8bdb080-b24e-11eb-986e-2ab88b3b1db2.png)
 
-### `#9 Profile Page`
+### `#8 Profile Page`
 
 Jika kamu ingin mengubah data diri kamu, itu bisa dilakukan dihalamn profile ya.
 ![screencapture-coffee-shop-bohdan-netlify-app-profile-2021-05-11-11_25_04](https://user-images.githubusercontent.com/55057008/117759676-58af2a80-b24e-11eb-86f0-b133710700b4.png)
 
-### `Selamat Berbelanja ....`
 
 
 
