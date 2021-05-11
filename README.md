@@ -50,7 +50,7 @@ Kemudian masukkan jumlah dan metode pengantaran yang kamu inginkan di sini!!!
 ### `#7 Payment Page`
 
 Pilih metode pembayaran yang kamu inginkan.
-![screencapture-coffee-shop-bohdan-netlify-app-history-2021-05-11-11_28_33](https://user-images.githubusercontent.com/55057008/117759910-c8bdb080-b24e-11eb-986e-2ab88b3b1db2.png)
+![screencapture-coffee-shop-bohdan-netlify-app-payment-delivery-2021-05-11-11_27_23](https://user-images.githubusercontent.com/55057008/117760579-1555bb80-b250-11eb-9c99-655d6e70fafa.png)
 
 ### `#8 History Page`
 
