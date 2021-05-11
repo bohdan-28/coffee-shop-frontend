@@ -19,8 +19,7 @@ function ProductCustomer() {
   const history = useHistory();
   const { role } = useSelector((state) => state.user);
   const { loading, allProducts } = useSelector((state) => state.product);
-  const { currentPage, perPage, totalData, totalPage } = allProducts;
-  console.log(allProducts);
+  const { currentPage, totalPage } = allProducts;
   const [togglestate, setToggleState] = useState(1);
   const [toggleKey, setToggleKey] = useState("favourite");
   const [product, setProduct] = useState([]);

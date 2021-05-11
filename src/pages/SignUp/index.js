@@ -21,6 +21,12 @@ export default function Index() {
   let email = query.get("email");
   let token = query.get("token");
 
+  const setDate = (params) => {
+    const date = new Date(params);
+
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  };
+
   const dispatch = useDispatch();
 
   const { loading } = useSelector((state) => state.user);
@@ -34,7 +40,7 @@ export default function Index() {
     lastname: "your lastname",
     address: "your address",
     gender: "male",
-    dateOfBirth: new Date(),
+    dateOfBirth: setDate(new Date()),
   });
 
   const handleFormChange = (event) => {
@@ -55,7 +61,7 @@ export default function Index() {
           lastname: "your lastname",
           address: "your address",
           gender: "male",
-          dateOfBirth: new Date(),
+          dateOfBirth: setDate(new Date()),
         });
         Swal.fire({
           title: "Success!",
@@ -116,7 +122,12 @@ export default function Index() {
       <aside className={[["m-5"], style["auth"]].join(" ")}>
         <div className="d-flex">
           <div>
-            <img className={style.logoCoffe} src={Logo} alt="LogoCoffee" width="30" />
+            <img
+              className={style.logoCoffe}
+              src={Logo}
+              alt="LogoCoffee"
+              width="30"
+            />
           </div>
           <div className="mt-2 ml-3">
             <p className={style["coffee"]}>Coffee Shop</p>

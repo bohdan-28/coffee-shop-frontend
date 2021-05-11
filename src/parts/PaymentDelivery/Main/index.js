@@ -10,7 +10,6 @@ import style2 from "./paymentcard.module.css";
 import style3 from "./paymentcardresp.module.css";
 import {
   checklistIcon,
-  hazelnutlatte,
   paypallogo,
   truckicon,
   walleticon,

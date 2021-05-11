@@ -15,7 +15,6 @@ const AsideRight = (props) => {
 
   const handleFormChange = (event) => {
     insertProduct[event.target.name] = event.target.value;
-    // this.setState(state.product.insertProduct)
     dispatch({
       type: "ONCHANGE_INSERT_PRODUCT",
       action: (insertProduct[event.target.name] = event.target.value),
@@ -60,8 +59,6 @@ const AsideRight = (props) => {
       formData.append("stock", insertProduct.stock);
       formData.append("size", insertProduct.size);
       formData.append("hourStart", insertProduct.hourStart);
-      console.log(insertProduct);
-      //   dispatch(insertProductProcess());
       dispatch(insertProductProcess(formData))
         .then((res) => {
           Swal.fire({

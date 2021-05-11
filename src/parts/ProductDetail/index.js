@@ -82,24 +82,7 @@ export default function DetailProduct(props) {
           size: size,
           amount: count,
         };
-        if (cart.length > 0) {
-          cart.map((data, index) => {
-            if (data.size === size) {
-              const spliceCart = cart.indexOf(data);
-              cart.splice(spliceCart, 1);
-              tempCart = {
-                size: size,
-                amount: data.amount + count,
-              };
-              cart.push(tempCart);
-            } else {
-              cart.push(tempCart);
-            }
-            return true;
-          });
-        } else {
-          cart.push(tempCart);
-        }
+        cart.push(tempCart);
       }
     }
   };
