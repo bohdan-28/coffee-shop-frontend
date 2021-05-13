@@ -211,8 +211,22 @@
   .btn-com-pay{
     display: none;
   }
+  .carts-content-overflow {
+    overflow: auto;
+    width: 100%;
+    height: 18em;
+  }
+  @media (max-width: 991.98px) {
+    .order-card {
+      margin-left: 3em;
 
+    }
+    
+  }
   @media (max-width: 575.98px) {
+    .or-display-none{
+      display: none;
+    }
     .order-card{
       height: min-content;
       margin: 0;
@@ -294,4 +308,8 @@
     .btn-com-pay:hover{
       cursor: pointer;
     }
+    .card-cart {
+      margin: 1em 0;
+    }
+    
   }
