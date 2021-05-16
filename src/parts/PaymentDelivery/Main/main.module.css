@@ -92,7 +92,18 @@ h5.titleline{
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
-
+@media (max-width: 1199.98px) {
+ .payment-bg {
+   padding-right: 2em;
+   width: min-content;
+ }
+  .title-checkout{
+   margin-left: 2em;
+ }
+  .row-resp-1 {
+  flex-wrap: nowrap;
+ }   
+}
 @media (max-width: 575.98px) {
  div.payment-bg{
    display: none;

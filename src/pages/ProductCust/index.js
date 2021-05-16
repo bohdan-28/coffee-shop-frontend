@@ -107,9 +107,9 @@ function ProductCustomer() {
   };
 
   return (
-    <div className="container-fluid">
+    <div className={[style["cont-fluid"],["container-fluid"]].join(" ")}>
       <Navbar />
-      <div className="row">
+      <div className={[style["row"],["row"]].join(" ")}>
         <div className={[["col-4"], style["side-section"]].join(" ")}>
           <SideArticle />
           <CouponCard
@@ -140,7 +140,7 @@ function ProductCustomer() {
           <TermCondition />
         </div>
         <div className={[["col-8"], style["main-section"]].join(" ")}>
-          <div className="bg-white overflow-auto" style={{ height: "600px" }}>
+          <div className={[style["bg-white"],["bg-white"]].join(" ")} style={{ height: "600px" }}>
             <div className={style["tab-card"]}>
               <button
                 type="button"

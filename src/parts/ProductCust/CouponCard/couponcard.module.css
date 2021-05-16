@@ -1,5 +1,5 @@
 .card-green{
-    width: 300px;
+    width: 19em;
     background-color: #88B788;
     display: flex;
     border-radius: 20px;
@@ -7,7 +7,7 @@
     padding: 0 3px;
 }
 .card-yellow{
-    width: 300px;
+    width: 19em;
     background-color: #F5C361;
     display: flex;
     border-radius: 20px;
@@ -15,15 +15,15 @@
     padding: 0 3px;
 }
 .card-pink{
-    width: 300px;
+    width: 19em;
     background-color: #C59378;
     display: flex;
     border-radius: 20px;
     margin: 7px auto;
     padding: 0 3px;
 }
-.card > img {
-    max-height: 150px;
+.card-green > img, .card-yellow > img, .card-pink > img {
+    max-height: 10em;
     object-fit: contain;
 }
 .card-text > h5 {
@@ -31,7 +31,19 @@
     margin-top: 17px;
 }
 .card-text > p{
-    margin: 0;
+    margin-bottom: 10px;
     font-size: 14px;
     font-weight: 500;
+}
+@media (max-width: 767.98px) {
+    .card-green, .card-pink, .card-yellow {
+        width: 14em;
+    }
+    .card-text > h5 {
+        font-size: 1rem;
+    }
+    .card-text > p{
+        font-size: .7rem;
+        
+    }
 }
