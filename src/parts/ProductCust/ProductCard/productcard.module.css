@@ -106,3 +106,13 @@ span.icon-edit-menus {
 .icon-edit-menus:hover {
   background: #8a563a;
 }
+@media (max-width: 575.98px) {
+  .card-disc {
+    height: 190px;
+    width: 120px;
+  }
+  .card-disc > img {
+    width: 100px;
+    height: 100px;
+  }
+}

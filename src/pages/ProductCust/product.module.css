@@ -69,3 +69,46 @@
 .btn-pagination:focus {
   background: white;
 }
+@media (max-width: 1199.98px) {
+ .cont-fluid {
+   margin: 0;
+ }
+  .side-section{
+    padding: 1em 0;
+  }
+  .main-section {
+    padding: 2em;
+  }
+  .cardSection {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .row{
+    display: block;
+  }
+  .cont-fluid {
+    padding: 0;
+  }
+  .tab-card {
+    flex-wrap: wrap;
+  }
+  .side-section {
+    display: none;
+  }
+  
+  .main-section {
+    max-width: 100%;
+    border-left: none;
+    
+  }
+  .cardSection {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    padding: 4em 0;
+  }
+  .tab-card > button {
+    display: block;
+  }
+}
