@@ -5,46 +5,43 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import CardHistory from "../CardHistory/CardHistory";
 import { handClick } from "../../../assets/images";
+import axiosApiInstance from "../../../helpers/axios";
 
-const HistoryPart = (props) => {
+const HistoryPart = () => {
   const Url = process.env.REACT_APP_API_URL;
   const Urlimg = process.env.REACT_APP_API_IMG;
   const token = localStorage.getItem("token");
 
   const [history, setHistory] = useState([]);
+  const [empty, setEmpty] = useState(false);
 
   useEffect(() => {
-    getHistory(Url, token);
+    axios
+      .get(`${Url}/orders/history/byid`, {
+        headers: { authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        const newData = res.data.data.body;
+        setEmpty(false);
+        setHistory(
+          newData.map((d) => {
+            return {
+              select: false,
+              id: d.id,
+              amount: d.amount,
+              image: d.image,
+              price: d.price,
+              product: d.product,
+              size: d.size,
+            };
+          })
+        );
+      })
+      .catch((err) => {
+        setEmpty(true);
+      });
   }, [Url, token]);
 
-  const getHistory = (Url, token) => {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(`${Url}/orders/history/byid`, {
-          headers: { authorization: `Bearer ${token}` },
-        })
-        .then((res) => {
-          const newData = res.data.data.body;
-          setHistory(
-            newData.map((d) => {
-              return {
-                select: false,
-                id: d.id,
-                amount: d.amount,
-                image: d.image,
-                price: d.price,
-                product: d.product,
-                size: d.size,
-              };
-            })
-          );
-          resolve(res.data.message);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
-  };
   const deleteHistoryById = () => {
     Swal.fire({
       title: "Are you sure you want to delete this?",
@@ -62,19 +59,55 @@ const HistoryPart = (props) => {
             arrayids.push(d.id);
           }
         });
-        console.log(arrayids);
-        axios
-          .delete(`${Url}/orders/history/byid/${arrayids}`, {
-            headers: { authorization: `Bearer ${token}` },
+        axiosApiInstance
+          .delete(`${Url}/orders/history/byid`, { data: { order: arrayids } })
+          .then((res) => {
+            Swal.fire({
+              title: "Success!",
+              text: res.data.message,
+              icon: "success",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#6a4029",
+            }).then(() => {
+              axios
+                .get(`${Url}/orders/history/byid`, {
+                  headers: { authorization: `Bearer ${token}` },
+                })
+                .then((res) => {
+                  const newData = res.data.data.body;
+                  setEmpty(false);
+                  setHistory(
+                    newData.map((d) => {
+                      return {
+                        select: false,
+                        id: d.id,
+                        amount: d.amount,
+                        image: d.image,
+                        price: d.price,
+                        product: d.product,
+                        size: d.size,
+                      };
+                    })
+                  );
+                })
+                .catch((err) => {
+                  setEmpty(true);
+                });
+            });
           })
-          .then((data) => {
-            window.location.reload();
-          })
-          .catch((err) => alert(err));
+          .catch((err) =>
+            Swal.fire({
+              title: "Delete canceled",
+              text: err.response.data.message,
+              icon: "info",
+              confirmButtonText: "Ok",
+              confirmButtonColor: "#6a4029",
+            })
+          );
       } else {
         Swal.fire({
-          title: "delete canceled",
-          text: "",
+          title: "Delete canceled",
+          text: "Your order safe :)",
           icon: "info",
           confirmButtonText: "Ok",
           confirmButtonColor: "#6a4029",
@@ -83,7 +116,6 @@ const HistoryPart = (props) => {
     });
   };
 
-  console.log(history);
   return (
     <Fragment>
       <div className={style.history}>
@@ -132,29 +164,37 @@ const HistoryPart = (props) => {
             <p>Select</p>
           </div>
           <div className="row flex-wrap">
-            {history.map((item, index) => {
-              return (
-                <CardHistory
-                  image={`${Urlimg}${item.image}`}
-                  name={item.product}
-                  price={item.price}
-                  size={item.size}
-                  checked={item.select}
-                  onChange={(e) => {
-                    let checked = e.target.checked;
-                    setHistory(
-                      history.map((data) => {
-                        if (item.id === data.id) {
-                          data.select = checked;
-                        }
-                        return data;
-                      })
-                    );
-                  }}
-                  key={index}
-                />
-              );
-            })}
+            {empty === false &&
+              history.map((item, index) => {
+                return (
+                  <CardHistory
+                    image={`${Urlimg}${item.image}`}
+                    name={item.product}
+                    price={item.price}
+                    size={item.size}
+                    checked={item.select}
+                    onChange={(e) => {
+                      let checked = e.target.checked;
+                      setHistory(
+                        history.map((data) => {
+                          if (item.id === data.id) {
+                            data.select = checked;
+                          }
+                          return data;
+                        })
+                      );
+                    }}
+                    key={index}
+                  />
+                );
+              })}
+            {empty === true && (
+              <div className="text-center w-100 mt-5">
+                <p className={style["title-empty"]}>
+                  You don't have any order history.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
