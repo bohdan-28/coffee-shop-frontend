@@ -59,51 +59,60 @@ const HistoryPart = () => {
             arrayids.push(d.id);
           }
         });
-        axiosApiInstance
-          .delete(`${Url}/orders/history/byid`, { data: { order: arrayids } })
-          .then((res) => {
-            Swal.fire({
-              title: "Success!",
-              text: res.data.message,
-              icon: "success",
-              confirmButtonText: "Ok",
-              confirmButtonColor: "#6a4029",
-            }).then(() => {
-              axios
-                .get(`${Url}/orders/history/byid`, {
-                  headers: { authorization: `Bearer ${token}` },
-                })
-                .then((res) => {
-                  const newData = res.data.data.body;
-                  setEmpty(false);
-                  setHistory(
-                    newData.map((d) => {
-                      return {
-                        select: false,
-                        id: d.id,
-                        amount: d.amount,
-                        image: d.image,
-                        price: d.price,
-                        product: d.product,
-                        size: d.size,
-                      };
-                    })
-                  );
-                })
-                .catch((err) => {
-                  setEmpty(true);
-                });
-            });
-          })
-          .catch((err) =>
-            Swal.fire({
-              title: "Delete canceled",
-              text: err.response.data.message,
-              icon: "info",
-              confirmButtonText: "Ok",
-              confirmButtonColor: "#6a4029",
+        if (arrayids.length < 1) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "No order history is selected",
+            confirmButtonColor: "#6a4029",
+          });
+        } else {
+          axiosApiInstance
+            .delete(`${Url}/orders/history/byid`, { data: { order: arrayids } })
+            .then((res) => {
+              Swal.fire({
+                title: "Success!",
+                text: res.data.message,
+                icon: "success",
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#6a4029",
+              }).then(() => {
+                axios
+                  .get(`${Url}/orders/history/byid`, {
+                    headers: { authorization: `Bearer ${token}` },
+                  })
+                  .then((res) => {
+                    const newData = res.data.data.body;
+                    setEmpty(false);
+                    setHistory(
+                      newData.map((d) => {
+                        return {
+                          select: false,
+                          id: d.id,
+                          amount: d.amount,
+                          image: d.image,
+                          price: d.price,
+                          product: d.product,
+                          size: d.size,
+                        };
+                      })
+                    );
+                  })
+                  .catch((err) => {
+                    setEmpty(true);
+                  });
+              });
             })
-          );
+            .catch((err) =>
+              Swal.fire({
+                title: "Error!",
+                text: err.response.data.message,
+                icon: "error",
+                confirmButtonText: "Ok",
+                confirmButtonColor: "#6a4029",
+              })
+            );
+        }
       } else {
         Swal.fire({
           title: "Delete canceled",
