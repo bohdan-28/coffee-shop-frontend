@@ -79,6 +79,10 @@ img.profile-img {
 }
 
 @media (max-width:768px) {
+  .navbar-style {
+    height: 129px;
+    background-color: #F2F2F2;
+  }
 
   .navbar-brand,
   .coffee-icon,

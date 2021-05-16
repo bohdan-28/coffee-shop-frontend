@@ -12,7 +12,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <HomeGetStarted />
       <TeamWork />
       <PeopleFavorite />

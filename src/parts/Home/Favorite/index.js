@@ -46,17 +46,9 @@ function PeopleFavorite() {
             <button className={Style['seemore']} onClick={() => setShow(!show)} >See more</button>
             <>
               {show ?
-                <FavoriteProduct
-                  img={`${hazelnutlatte}`}
-                  productname="Coffee Whipped Cream"
-                  price="IDR 44.000"
-                />
+                <FavoriteProduct/>
                 :
-                <LeftScrollProduct
-                  img={`${hazelnutlatte}`}
-                  productname="Hazelnut Latte"
-                  price="IDR 25.000"
-                />
+                <LeftScrollProduct/>
               }
             </>
           </div>
@@ -65,18 +57,9 @@ function PeopleFavorite() {
             <button className={Style['seemore']} onClick={() => setShowPromo(!showPromo)} >See more</button>
             <>
               {showPromo ?
-                <Promo
-                  imgproduct={`${hazelnutlatte}`}
-                  productname="Coffee Whipped Cream"
-                  pricewithdisc="24.000"
-                  normalprice="44.000"
-                />
+                <Promo/>
                 :
-                <LeftScrollPromo
-                  imgproduct={`${hazelnutlatte}`}
-                  productname="Coffee Whipped Cream"
-                  pricewithdisc="24.000"
-                />
+                <LeftScrollPromo/>
               }
             </>
           </div>

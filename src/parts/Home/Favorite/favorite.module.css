@@ -6,7 +6,7 @@
   }
 
   .jumbotron-favorite{
-    background-color: rgba(239, 238, 238, 1);
+    background-color: #F2F2F2;
     width: 100%;
   }
 
@@ -53,7 +53,7 @@
     border: none;
     margin-bottom: 40px;
     display: block;
-   
+    
   }
   
 
