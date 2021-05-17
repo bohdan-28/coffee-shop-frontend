@@ -202,7 +202,7 @@ label {
 @media only screen and (max-width: 600px) {
   .cards-profile {
     background: #f5f5f8;
-    width: 100%;
+    /* width: 80%; */
     height: 1100px;
     padding-top: 40px;
     padding-right: 20px;
@@ -211,7 +211,7 @@ label {
 
   .card-profile,
   .card-profile-right {
-    width: 350px;
+    width: 100%;
     background: #f5f5f8 !important;
   }
 
@@ -248,6 +248,12 @@ label {
   .img-user {
     height: 132px;
     width: 132px;
+    margin-bottom: 30px;
+    /* margin-top: -20px; */
+  }
+
+  .big-circle {
+    margin-top: -30px;
   }
 
   .circle-btnProfile {
@@ -306,7 +312,8 @@ label {
   }
 
   .card-profile-right {
-    height: 200px;
+    height: 350px;
+    padding-top: 45px;
   }
   
   .order-mobile{
@@ -322,10 +329,50 @@ label {
   }
 
   label {
-    display: none;
+    display: block;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    background-color: transparent;
+    line-height: 0px;
+    margin-top: -5px;
   }
 
   input {
+    display: block;
+  }
+
+  .card-profile-right input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    background-color: transparent;
+    line-height: 0px;
+    color: #000000;
+    margin-top: 15px;
+  }
+
+  label.delmobile{
+    display: none;
+  }
+  
+  h2.name-profile{
+    display: none;
+  }
+  h2.email-profile{
+    display: none;
+  }
+  h2.phone-number-new{
+    display: none;
+  }
+  h2.address-mobile{
     display: none;
   }
 
@@ -366,13 +413,30 @@ label {
   }
   
   .box{
-    display: inline-flex;
+    display: none;
+    /* display: inline-flex;
     min-width: 100px;
     height: 120px;
     box-sizing: border-box;
     border-radius: 40px;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 20px; */
+  }
+
+  p.order-mobile{
+    display: none;
+  }
+
+  p.see-more{
+    display: none;
+  }
+
+  br.remove-mobile{
+    display: none;
+  }
+
+  input.gender{
+    display: none;
   }
 
   .fav-img-mobile{

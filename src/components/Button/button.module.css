@@ -203,11 +203,15 @@
 
 @media only screen and (max-width: 600px) {
   .btn-outline-pass {
-    display: block;    
-    margin-top: 30px;
+    display: block;
+    position: relative;
+    top: 30px;
+    left: -15px;    
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 100%; 
+    width: 100%;
+     
   }
 
   .btn-fill-mobile{
@@ -222,5 +226,20 @@
     border-radius: 20px;
     border: none;
     margin-top: 30px;
+    position: relative;
+    top: 30px;
+    left: -15px; 
+  }
+
+  .btn-choose-picture{
+    display: block;
+    font-size: 3vw;
+    /* color: transparent; */
+    /* width: 30px; */
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+    margin-bottom: 30px;
   }
 }

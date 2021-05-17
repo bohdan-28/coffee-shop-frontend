@@ -273,8 +273,132 @@ const PartProfile = () => {
                 </div>
                 <div className="col-12 col-lg-9">
                   <div className={style["card-profile-right"]}  >
+
+                    <p className={style["text-title-right"]}>Contact</p>
+                    <div className={style["circle-btnProfile"]}>
+                      <img
+                        src={btnProfile}
+                        alt="ImgProfile"
+                        onClick={() => handleDisabledFalse()}
+                      />
+                    </div>
+                    <label htmlFor="email">Email address :</label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="zulaikha@gmail.com"
+                      value={data.email}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <label
+                      className={style["mobile-number"]}
+                      htmlFor="phoneNumber"
+                    >
+                      Mobile number :
+                    </label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      className={style["input-mobile-number"]}
+                      id="phoneNumber"
+                      type="text"
+                      name="phoneNumber"
+                      placeholder="08392391319"
+                      value={data.phoneNumber}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <label htmlFor="address">Delivery address :</label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      id="address"
+                      type="text"
+                      name="address"
+                      placeholder="Iskandar Street no. 67 Block A Near Bus Stop"
+                      value={data.address}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <p className={style["text-title-right"]}>Details</p>
+                    <label htmlFor="username">Display name :</label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      id="username"
+                      type="text"
+                      name="username"
+                      placeholder="zulaikha"
+                      value={data.username}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <label
+                      className={style["dateOfBirth"]}
+                      htmlFor="dateOfBirth"
+                    >
+                      DD/MM/YY
+                    </label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      className={style["input-dateOfBirth"]}
+                      id="dateOfBirth"
+                      type="date"
+                      name="dateOfBirth"
+                      placeholder="2000-05-20"
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <label htmlFor="firstname">First name :</label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      id="firstname"
+                      type="text"
+                      name="firstname"
+                      placeholder="zulaikha"
+                      value={data.firstname}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <br className={style['remove-mobile']}/>
+                    <label htmlFor="lastname">Last name :</label>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      id="lastname"
+                      type="text"
+                      name="lastname"
+                      placeholder="Nirmala"
+                      value={data.lastname}
+                      onChange={handleFormChange}
+                      disabled={disabled}
+                    ></input>
+                    <br className={style['remove-mobile']}/>
+                    <input
+                      className={style.gender}
+                      id="gendermale"
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      onChange={handleFormChange}
+                      checked={data.gender === "male" && true}
+                      disabled={disabled}
+                    ></input>
+                    <label htmlFor="gendermale" className={style.delmobile}>Male</label>
+                    <input
+                      className={style.gender}
+                      id="genderfemale"
+                      type="radio"
+                      name="gender"
+                      value="female"
+                      checked={data.gender === "female" && true}
+                      disabled={disabled}
+                      onChange={handleFormChange}
+                    ></input>
+                    <label htmlFor="genderfemale" className={style.delmobile}>Female</label>
+                    <div className={style["card-footer"]}></div>
+
                     {/*==== Mobile==== */}
-                    <p className={style["order-mobile"]}>Order History</p>
+                    {/* <p className={style["order-mobile"]}>Order History</p>
                     <p className={style["see-more"]}>See more</p>
                     <div className={style['boxs']}>
                       <div className={style['box']}>
@@ -284,28 +408,8 @@ const PartProfile = () => {
                             </div>
                         </div>
                       </div>
-                      <div className={style['box']}>
-                        <div className="row">
-                            <div className="col">
-                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
-                            </div>
-                        </div>
-                      </div>
-                      <div className={style['box']}>
-                        <div className="row">
-                            <div className="col">
-                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
-                            </div>
-                        </div>
-                      </div>
-                      <div className={style['box']}>
-                        <div className="row">
-                            <div className="col">
-                              <img className={style['fav-img-mobile']} src={hazelnutlatte} alt=""/>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
+                      
+                    </div> */}
                     <Button
                     title="Edit Password"
                     btn="btn-outline-pass"
@@ -329,130 +433,7 @@ const PartProfile = () => {
                     color="chocolate"
                     onClick={handleSubmit}
                   />
-                    {/*======TUTUP MOBILE=== */}
-
-                    <p className={style["text-title-right"]}>Contact</p>
-                    <div className={style["circle-btnProfile"]}>
-                      <img
-                        src={btnProfile}
-                        alt="ImgProfile"
-                        onClick={() => handleDisabledFalse()}
-                      />
-                    </div>
-                    <label htmlFor="email">Email address :</label>
-                    <br />
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="zulaikha@gmail.com"
-                      value={data.email}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <label
-                      className={style["mobile-number"]}
-                      htmlFor="phoneNumber"
-                    >
-                      Mobile number :
-                    </label>
-                    <br />
-                    <input
-                      className={style["input-mobile-number"]}
-                      id="phoneNumber"
-                      type="text"
-                      name="phoneNumber"
-                      placeholder="08392391319"
-                      value={data.phoneNumber}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <label htmlFor="address">Delivery address :</label>
-                    <br />
-                    <input
-                      id="address"
-                      type="text"
-                      name="address"
-                      placeholder="Iskandar Street no. 67 Block A Near Bus Stop"
-                      value={data.address}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <p className={style["text-title-right"]}>Details</p>
-                    <label htmlFor="username">Display name :</label>
-                    <br />
-                    <input
-                      id="username"
-                      type="text"
-                      name="username"
-                      placeholder="zulaikha"
-                      value={data.username}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <label
-                      className={style["dateOfBirth"]}
-                      htmlFor="dateOfBirth"
-                    >
-                      DD/MM/YY
-                    </label>
-                    <br />
-                    <input
-                      className={style["input-dateOfBirth"]}
-                      id="dateOfBirth"
-                      type="date"
-                      name="dateOfBirth"
-                      placeholder="2000-05-20"
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <label htmlFor="firstname">First name :</label>
-                    <br />
-                    <input
-                      id="firstname"
-                      type="text"
-                      name="firstname"
-                      placeholder="zulaikha"
-                      value={data.firstname}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <br />
-                    <label htmlFor="lastname">Last name :</label>
-                    <br />
-                    <input
-                      id="lastname"
-                      type="text"
-                      name="lastname"
-                      placeholder="Nirmala"
-                      value={data.lastname}
-                      onChange={handleFormChange}
-                      disabled={disabled}
-                    ></input>
-                    <br />
-                    <input
-                      className={style.gender}
-                      id="gendermale"
-                      type="radio"
-                      name="gender"
-                      value="male"
-                      onChange={handleFormChange}
-                      checked={data.gender === "male" && true}
-                      disabled={disabled}
-                    ></input>
-                    <label htmlFor="gendermale">Male</label>
-                    <input
-                      className={style.gender}
-                      id="genderfemale"
-                      type="radio"
-                      name="gender"
-                      value="female"
-                      checked={data.gender === "female" && true}
-                      disabled={disabled}
-                      onChange={handleFormChange}
-                    ></input>
-                    <label htmlFor="genderfemale">Female</label>
-                    <div className={style["card-footer"]}></div>
+                  {/*======TUTUP MOBILE=== */}
                   </div>
                 </div>
               </div>
