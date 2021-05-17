@@ -27,7 +27,9 @@ export const getUserCart = (user) => (dispatch) => {
         resolve(res.data.data);
       })
       .catch((err) => {
-        reject(new Error(err.response.data.message));
+        dispatch({
+          type: "GET_CART_FAILED",
+        });
       });
   });
 };

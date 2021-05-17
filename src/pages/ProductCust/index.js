@@ -28,6 +28,8 @@ function ProductCustomer() {
   let [queryOrder, setQueryOrder] = useState("asc");
   let [querySort, setQuerySort] = useState("name");
 
+
+
   const sort = [
     {
       label: "Name",
@@ -82,6 +84,10 @@ function ProductCustomer() {
   };
 
   useEffect(() => {
+    dispatch({ type: "GET_CART_AFTER_FAILED" })
+  }, [])
+
+  useEffect(() => {
     dispatch(
       getProduct(toggleKey, queryPage, queryLimit, querySort, queryOrder)
     )
@@ -107,9 +113,9 @@ function ProductCustomer() {
   };
 
   return (
-    <div className={[style["cont-fluid"],["container-fluid"]].join(" ")}>
+    <div className={[style["cont-fluid"], ["container-fluid"]].join(" ")}>
       <Navbar />
-      <div className={[style["row"],["row"]].join(" ")}>
+      <div className={[style["row"], ["row"]].join(" ")}>
         <div className={[["col-4"], style["side-section"]].join(" ")}>
           <SideArticle />
           <CouponCard
@@ -140,7 +146,7 @@ function ProductCustomer() {
           <TermCondition />
         </div>
         <div className={[["col-8"], style["main-section"]].join(" ")}>
-          <div className={[style["bg-white"],["bg-white"]].join(" ")} style={{ height: "600px" }}>
+          <div className={[style["bg-white"], ["bg-white"]].join(" ")} style={{ height: "600px" }}>
             <div className={style["tab-card"]}>
               <button
                 type="button"

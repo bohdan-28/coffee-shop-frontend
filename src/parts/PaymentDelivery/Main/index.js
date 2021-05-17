@@ -35,7 +35,7 @@ function Main(props) {
   });
 
   const { user } = useSelector((state) => state.user);
-  const { cart } = useSelector((state) => state.cart);
+  const { cart, failed } = useSelector((state) => state.cart);
 
   const [subTotal] = useState(totalAmount * price);
   const [tax] = useState(20000);
@@ -43,7 +43,7 @@ function Main(props) {
   const [total] = useState(totalAmount * price + (tax + shipping));
   const [payment, setPayment] = useState(null);
   const [arrCart] = useState([]);
-  console.log(payment);
+
   const handleClickPayment = (event) => {
     const data = event.target.getAttribute("data-content");
     setPayment(data);
@@ -103,11 +103,28 @@ function Main(props) {
     dispatch(getUser());
   }, [dispatch]);
 
+
   useEffect(() => {
     if (user.username !== undefined) {
-      dispatch(getUserCart(user.username));
+      dispatch(getUserCart(user.username))
+
     }
+
   }, [dispatch, user.username]);
+
+  useEffect(() => {
+    if (failed === true) {
+      Swal.fire(
+        'Already ordered?',
+        'You need to order something berfore do payment',
+        'please comeback again :)'
+      ).then((result)=>{
+        if (result.isConfirmed) {
+          history.push("/product-cust");
+        }
+      })
+    }
+  }, [failed])
 
   return (
     <>
