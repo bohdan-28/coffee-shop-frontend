@@ -35,3 +35,15 @@
     font-size: 14px;
     font-weight: 500;
 }
+@media (max-width: 767.98px) {
+    .card-green, .card-pink, .card-yellow {
+        width: 14em;
+    }
+    .card-text > h5 {
+        font-size: 1rem;
+    }
+    .card-text > p{
+        font-size: .7rem;
+        
+    }
+}

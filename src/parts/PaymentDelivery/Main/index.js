@@ -43,7 +43,7 @@ function Main(props) {
   const [total] = useState(totalAmount * price + (tax + shipping));
   const [payment, setPayment] = useState(null);
   const [arrCart] = useState([]);
-
+  console.log(payment);
   const handleClickPayment = (event) => {
     const data = event.target.getAttribute("data-content");
     setPayment(data);
@@ -110,7 +110,7 @@ function Main(props) {
   }, [dispatch, user.username]);
 
   return (
-    <div>
+    <>
       <div
         className={[
           ["jumbotron"],
@@ -150,32 +150,34 @@ function Main(props) {
             </div>
           </div>
           <h5 className={style["title-checkout"]}>Checkout your item now!</h5>
-          <div className="row">
+          <div className={[style["row-resp-1"], ["row"]].join(" ")}>
             <div className="col">
               <div className={style2["order-card"]}>
                 <h5 className={style2["title-sum"]}>Order Summary</h5>
-                {cart.map((data, index) => {
-                  arrCart.push(data.id);
-                  return (
-                    <div className="row mb-lg-5" key={index}>
-                      <div className={[["col"], style2["column"]].join(" ")}>
-                        <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                <div className={style2["carts-content-overflow"]}>
+                  {cart.map((data, index) => {
+                    arrCart.push(data.id);
+                    return (
+                      <div className="row mb-lg-5" key={index}>
+                        <div className={[["col"], style2["column"]].join(" ")}>
+                          <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                        </div>
+                        <div
+                          className={[["col"], style2["column-title"]].join(" ")}
+                        >
+                          <h5 className={style2["product-name"]}>
+                            {data.productName}
+                          </h5>
+                          <h5 className={style2["qty"]}>x {data.amount}</h5>
+                          <h5 className={style2["size"]}>{data.size}</h5>
+                        </div>
+                        <div className="col">
+                          <h5 className={style2["price"]}>IDR {data.price}</h5>
+                        </div>
                       </div>
-                      <div
-                        className={[["col"], style2["column-title"]].join(" ")}
-                      >
-                        <h5 className={style2["product-name"]}>
-                          {data.productName}
-                        </h5>
-                        <h5 className={style2["qty"]}>x {data.amount}</h5>
-                        <h5 className={style2["size"]}>{data.size}</h5>
-                      </div>
-                      <div className="col">
-                        <h5 className={style2["price"]}>IDR {data.price}</h5>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
                 <div className={style2["bottom-detail"]}>
                   <div className={style2["line"]}></div>
                   <div className="row">
@@ -204,7 +206,7 @@ function Main(props) {
                   </div>
                 </div>
                 <div className={style2["btn-com-pay"]}>
-                  <h3>Complete Payment</h3>
+                  <h3>Complete Payment </h3>
                 </div>
               </div>
             </div>
@@ -326,64 +328,124 @@ function Main(props) {
           </div>
           <div className={style["pay-bot"]}>
             <p>Choose another method</p>
-            <div className={style3.card}>
-              <img src={walleticon} alt="" />
-              <div className={style3["card-title"]}>
-                <p className={style3.ptitle}>Credit or Debit card</p>
-                <p>Pay with Visa or Mastercard</p>
+            <div className={style3.card}
+              data-content="Credit Card"
+              onClick={(event) => handleClickPayment(event)}
+            >
+              <img src={walleticon} alt=""
+                data-content="Credit Card"
+                onClick={(event) => handleClickPayment(event)} />
+              <div className={style3["card-title"]}
+                data-content="Credit Card"
+                onClick={(event) => handleClickPayment(event)}>
+                <p className={style3.ptitle}
+                  data-content="Credit Card"
+                  onClick={(event) => handleClickPayment(event)}>Credit or Debit card</p>
+                <p
+                  data-content="Credit Card"
+                  onClick={(event) => handleClickPayment(event)}>Pay with Visa or Mastercard</p>
               </div>
-              <div className={style3["arrow-right"]}></div>
+              <div className={style3["arrow-right"]}
+                data-content="Credit Card"
+                onClick={(event) => handleClickPayment(event)}></div>
             </div>
-            <div className={style3.card}>
-              <img src={truckicon} alt="" />
-              <div className={style3["card-title"]}>
-                <p className={style3.ptitle}>Cash on Delivery</p>
-                <p>Pay when the food arrived</p>
+            <div className={style3.card}
+              data-content="Cash on Delivery"
+              onClick={(event) => handleClickPayment(event)}>
+              <img src={truckicon} alt=""
+                data-content="Cash on Delivery"
+                onClick={(event) => handleClickPayment(event)} />
+              <div className={style3["card-title"]}
+                data-content="Cash on Delivery"
+                onClick={(event) => handleClickPayment(event)}>
+                <p className={style3.ptitle}
+                  data-content="Cash on Delivery"
+                  onClick={(event) => handleClickPayment(event)}>Cash on Delivery</p>
+                <p
+                  data-content="Cash on Delivery"
+                  onClick={(event) => handleClickPayment(event)}>Pay when the food arrived</p>
               </div>
-              <div className={style3["arrow-right"]}></div>
+              <div className={style3["arrow-right"]}
+                data-content="Cash on Delivery"
+                onClick={(event) => handleClickPayment(event)}></div>
             </div>
-            <div className={style3.card}>
-              <img src={paypallogo} alt="" />
-              <div className={style3["card-title"]}>
-                <p className={style3.ptitle}>Paypal</p>
+            <div className={style3.card}
+              data-content="Bank Account"
+              onClick={(event) => handleClickPayment(event)}
+            >
+              <img src={paypallogo} alt=""
+                data-content="Bank Account"
+                onClick={(event) => handleClickPayment(event)} />
+              <div className={style3["card-title"]}
+                data-content="Bank Account"
+                onClick={(event) => handleClickPayment(event)}>
+                <p className={style3.ptitle}
+                  data-content="Bank Account"
+                  onClick={(event) => handleClickPayment(event)}>Paypal</p>
                 <p></p>
               </div>
-              <div className={style3["arrow-right"]}></div>
+              <div className={style3["arrow-right"]}
+                data-content="Bank Account"
+                onClick={(event) => handleClickPayment(event)}></div>
             </div>
           </div>
           <div className="row">
             <div className="col">
               <div className={style2["order-card"]}>
                 <h5 className={style2["title-sum"]}>Order Summary</h5>
-                {cart.map((data, index) => {
-                  arrCart.push(data.id);
-                  return (
-                    <div className="row mb-lg-5" key={index}>
-                      <div className={[["col"], style2["column"]].join(" ")}>
-                        <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                <div className={style2["or-display-none"]}>
+                  {cart.map((data, index) => {
+                    arrCart.push(data.id);
+                    return (
+                      <div className="row mb-lg-5" key={index}>
+                        <div className={[["col"], style2["column"]].join(" ")}>
+                          <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                        </div>
+                        <div
+                          className={[["col"], style2["column-title"]].join(" ")}
+                        >
+                          <h5 className={style2["product-name"]}>
+                            {data.productName}
+                          </h5>
+                          <h5 className={style2["qty"]}>x {data.amount}</h5>
+                          <h5 className={style2["size"]}>{data.size}</h5>
+                        </div>
+                        <div className="col">
+                          <h5 className={style2["price"]}>IDR {data.price}</h5>
+                        </div>
                       </div>
-                      <div
-                        className={[["col"], style2["column-title"]].join(" ")}
-                      >
-                        <h5 className={style2["product-name"]}>
-                          {data.productName}
-                        </h5>
-                        <h5 className={style2["qty"]}>x {data.amount}</h5>
-                        <h5 className={style2["size"]}>{data.size}</h5>
-                      </div>
-                      <div className="col">
-                        <h5 className={style2["price"]}>IDR {data.price}</h5>
-                      </div>
-                    </div>
-                  );
-                })}
-
+                    );
+                  })}
+                </div>
                 <div className={style2["bottom-detail"]}>
+                  {cart.map((data, index) => {
+
+                    arrCart.push(data.id);
+                    return (
+                      <div className={[["row"], ["mb-lg-5"], style2["card-cart"]].join(" ")} key={index}>
+                        <div className={[["col"], style2["column"]].join(" ")}>
+                          <img src={`${ImgUrl}${data.productImage}`} alt="" />
+                        </div>
+                        <div
+                          className={[["col"], style2["column-title"]].join(" ")}
+                        >
+                          <h5 className={style2["product-name"]}>
+                            {data.productName}
+                          </h5>
+                          <h5 className={style2["qty"]}>x {data.amount}</h5>
+                          <h5 className={style2["size"]}>{data.size}</h5>
+                        </div>
+                        <div className="col">
+                          <h5 className={style2["price"]}>IDR {data.price}</h5>
+                        </div>
+                      </div>
+                    );
+                  })}
                   <div className={style2["line"]}></div>
                   <div className="row">
                     <div className="col">
                       <div className={style2["payment-title"]}>
-                        <h6>SUBTOTAL</h6>
+                        <h6>SUBTOTAL </h6>
                         <h6>TAX & FEES </h6>
                         <h6>SHIPING</h6>
                       </div>
@@ -405,7 +467,7 @@ function Main(props) {
                     </div>
                   </div>
                 </div>
-                <div className={style2["btn-com-pay"]}>
+                <div className={style2["btn-com-pay"]} onClick={() => handleClickConfirm()}>
                   <h3>Complete Payment</h3>
                 </div>
               </div>
@@ -475,7 +537,7 @@ function Main(props) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
