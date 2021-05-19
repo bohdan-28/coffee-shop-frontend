@@ -36,3 +36,25 @@
   opacity: 0.8;
   cursor: pointer;
 }
+
+@media (max-width: 1299px) {
+  .product-detail {
+    height: 1050px;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-detail {
+    height: 2000px;
+  }
+}
+@media (max-width: 768px) {
+  .product-detail {
+    height: 2100px;
+  }
+}
+@media (max-width: 576px) {
+  .product-detail {
+    height: 2000px;
+  }
+}

@@ -1,6 +1,5 @@
 .size {
   padding-top: 10px;
-  position: absolute;
   top: 80px;
   width: 362px;
   height: 168px;
@@ -41,13 +40,11 @@
 }
 
 .checkout {
-  position: absolute;
   top: 80px;
   padding-top: 20px;
   padding-left: 40px;
-  margin-left: 20px;
-  width: 725px;
-  /* height: 168px; */
+  /* width: 725px; */
+  height: 168px;
   background: #ffffff;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.34);
   border-radius: 20px;
@@ -124,4 +121,28 @@
   margin: 0;
   opacity: 1;
   transition: 0s;
+}
+
+@media (max-width: 1200px) {
+  .checkout {
+    width: 100%;
+  }
+  .size {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1299px) {
+  .img-product {
+    display: none;
+  }
+  .checkout {
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding-left: 0px;
+  }
 }

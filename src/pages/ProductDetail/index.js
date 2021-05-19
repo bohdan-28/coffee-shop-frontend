@@ -8,7 +8,7 @@ function ProductDetail(props) {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Main idUser={id}></Main>
       <Footer />
     </div>

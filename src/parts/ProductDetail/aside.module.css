@@ -1,46 +1,43 @@
 .title-product {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 65px;
-    line-height: 97px;
-    color: #000000;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 65px;
+  line-height: 97px;
+  color: #000000;
 }
 
 .subtitle-product {
-    font-family: Poppins;
-    font-size: 22px;
-    text-align: left;
-    color: #6A4029;
-    margin-bottom: 20px;
+  font-family: Poppins;
+  font-size: 22px;
+  text-align: left;
+  color: #6a4029;
+  margin-bottom: 20px;
 }
 
 .info-delivery {
-    font-family: Poppins;
-    color: #6A4029 !important;
-    font-size: 20px;
-
+  font-family: Poppins;
+  color: #6a4029 !important;
+  font-size: 20px;
 }
 
-
 .info-delivery span {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 138.84%;
-    letter-spacing: 0.02em;
-    color: #6A4029 !important;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 138.84%;
+  letter-spacing: 0.02em;
+  color: #6a4029 !important;
 }
 
 .text-price {
-    position: absolute;
-    right: 0;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 35px;
-    line-height: 52px;
+  right: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 52px;
 
-    color: #000000;
+  color: #000000;
 }

@@ -1,164 +1,181 @@
 .btn-dineIn {
-    width: 97px;
-    height: 42px;
-    border: none;
-    background: #F4F4F8;
-    border-radius: 10px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
-    color: #9F9F9F;
-    border: 1px solid rgba(186, 186, 186, 0.35);
-    margin-right: 15px;
+  width: 97px;
+  height: 42px;
+  border: none;
+  background: #f4f4f8;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  color: #9f9f9f;
+  border: 1px solid rgba(186, 186, 186, 0.35);
+  margin-right: 15px;
 }
 
 .btn-dineIn:focus {
-    background: #6A4029;
-    color: #FFFFFF;
-    box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+  background: #6a4029;
+  color: #ffffff;
+  box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
 }
 
 .btn-DoorDelivery {
-    width: 190px;
-    height: 42px;
-    background: #F4F4F8;
-    border: 1px solid rgba(186, 186, 186, 0.35);
-    box-sizing: border-box;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 15px;
-    color: #9F9F9F;
-    border-radius: 10px;
-    margin-right: 15px;
-
+  width: 190px;
+  height: 42px;
+  background: #f4f4f8;
+  border: 1px solid rgba(186, 186, 186, 0.35);
+  box-sizing: border-box;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 15px;
+  color: #9f9f9f;
+  border-radius: 10px;
+  margin-right: 15px;
 }
 
 .btn-DoorDelivery:focus {
-    background: #6A4029;
-    color: #FFFFFF;
-    box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+  background: #6a4029;
+  color: #ffffff;
+  box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
 }
 
 .btn-pickUp {
-    width: 102px;
-    height: 42px;
-    left: 455px;
-    top: 789px;
-    background: #F4F4F8;
-    border: 1px solid rgba(186, 186, 186, 0.35);
-    box-sizing: border-box;
-    border-radius: 10px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    color: #9F9F9F;
-    margin-right: 15px;
+  width: 102px;
+  height: 42px;
+  left: 455px;
+  top: 789px;
+  background: #f4f4f8;
+  border: 1px solid rgba(186, 186, 186, 0.35);
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #9f9f9f;
+  margin-right: 15px;
 }
 
 .btn-pickUp:focus {
-    background: #6A4029;
-    color: #FFFFFF;
-    box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
+  background: #6a4029;
+  color: #ffffff;
+  box-shadow: 0px 6px 20px rgba(137, 85, 55, 0.4);
 }
 
 .btn-now {
-    background: #F4F4F8;
-    border: 1px solid rgba(186, 186, 186, 0.35);
-    box-sizing: border-box;
-    border-radius: 10px;
-    width: 85px;
-    height: 42px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    color: #9F9F9F;
-    margin-right: 20px;
+  background: #f4f4f8;
+  border: 1px solid rgba(186, 186, 186, 0.35);
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 85px;
+  height: 42px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #9f9f9f;
+  margin-right: 20px;
 }
 
 .btn-now:focus {
-    background: #6A4029;
-    color: #FFFFFF;
+  background: #6a4029;
+  color: #ffffff;
 }
 
 .btn-minus {
-    height: 63px;
-    background: #FFFFFF;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    border-radius: 10px 0px 0px 10px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 25px;
-    line-height: 37px;
-    text-align: center;
-    color: #6A4029;
+  height: 63px;
+  background: #ffffff;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  border-radius: 10px 0px 0px 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+  color: #6a4029;
 }
 
 .btn-number {
-    height: 63px;
-    width: 100px;
-    background: #FFFFFF;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 25px;
-    line-height: 37px;
-    text-align: center;
-    color: #6A4029;
+  height: 63px;
+  width: 100px;
+  background: #ffffff;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+  color: #6a4029;
 }
 
 .btn-plus {
-    height: 63px;
-    background: #FFFFFF;
-    border: 1px solid #9F9F9F;
-    box-sizing: border-box;
-    border-radius: 0px 10px 10px 0px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 25px;
-    line-height: 37px;
-    text-align: center;
-    color: #6A4029;
+  height: 63px;
+  background: #ffffff;
+  border: 1px solid #9f9f9f;
+  box-sizing: border-box;
+  border-radius: 0px 10px 10px 0px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+  color: #6a4029;
 }
 
 .btn-addCart {
-    width: 540px;
-    height: 85px;
-    background: #6A4029;
-    border-radius: 20px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 37px;
-    color: #FFFFFF;
-    border: none;
-    margin-bottom: 30px;
+  width: 100%;
+  height: 85px;
+  background: #6a4029;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+  color: #ffffff;
+  border: none;
+  margin-bottom: 30px;
+}
+.btn-addCart2 {
+  width: 100%;
+  height: 85px;
+  background: #6a4029;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+  color: #ffffff;
+  border: none;
 }
 
 .btn-askStaff {
-    width: 540px;
-    height: 85px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 37px;
-    color: #6A4029;
-    background: #FFBA33;
-    border-radius: 20px;
-    border: none;
+  width: 100%;
+  height: 85px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+  color: #6a4029;
+  background: #ffba33;
+  border-radius: 20px;
+  border: none;
+}
 
+@media (max-width: 3000px) {
+  button {
+    display: block !important;
+  }
 }

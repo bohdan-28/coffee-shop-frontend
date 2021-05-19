@@ -187,13 +187,32 @@ export default function DetailProduct(props) {
             </span>{" "}
           </p>
           <div className="row">
-            <div className="col-lg-6 pt-5">
-              <div className="container">
+            <div className="col-md-12 col-lg-6 pt-5">
+              <div className="d-flex flex-column justify-content-center align-items-center w-100">
                 <img
                   className={style2["img-product"]}
                   src={`${ImgUrl}${product.image}`}
                   alt="ProductImage"
                 />
+                <div className="d-block d-lg-none mt-5">
+                  <p className={style3["title-product"]}>{product.name}</p>
+                  <p className={style3["subtitle-product"]}>
+                    {product.description}
+                  </p>
+                  <p className={style3["info-delivery"]}>
+                    Delivery only on
+                    <span>
+                      {" "}
+                      Monday to
+                      <br /> Friday
+                    </span>{" "}
+                    at{" "}
+                    <span>
+                      {" "}
+                      {product.hourStart} - {product.hourEnd}
+                    </span>
+                  </p>
+                </div>
                 <div className={style2["card-delivery"]}>
                   <p className={style2["title-card-delivery"]}>
                     Delivery and Time
@@ -252,6 +271,7 @@ export default function DetailProduct(props) {
                         name="time"
                         value="yes"
                         onChange={handleChangeNow}
+                        className={style2["display-input"]}
                       />
                       <label htmlFor="yes">Yes</label>
                     </div>
@@ -280,50 +300,58 @@ export default function DetailProduct(props) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 pt-5">
+            <div className="col-md-12 col-lg-6 pt-5">
               <div className="container">
-                <p className={style3["title-product"]}>{product.name}</p>
-                <p className={style3["subtitle-product"]}>
-                  {product.description}
-                </p>
-                <p className={style3["info-delivery"]}>
-                  Delivery only on
-                  <span>
-                    {" "}
-                    Monday to
-                    <br /> Friday
-                  </span>{" "}
-                  at{" "}
-                  <span>
-                    {" "}
-                    {product.hourStart} - {product.hourEnd}
-                  </span>
-                </p>
-                <div className="d-flex pt-5 pb-5">
-                  <Button title="-" btn="btn-minus" onClick={decrement} />
-                  <Button title={count} btn="btn-number" />
-                  <Button title="+" btn="btn-plus" onClick={increment} />
+                <div className="d-none d-lg-block">
+                  <p className={style3["title-product"]}>{product.name}</p>
+                  <p className={style3["subtitle-product"]}>
+                    {product.description}
+                  </p>
+                  <p className={style3["info-delivery"]}>
+                    Delivery only on
+                    <span>
+                      {" "}
+                      Monday to
+                      <br /> Friday
+                    </span>{" "}
+                    at{" "}
+                    <span>
+                      {" "}
+                      {product.hourStart} - {product.hourEnd}
+                    </span>
+                  </p>
+                </div>
+
+                <div className="d-flex pt-5 pb-5 justify-content-between">
+                  <div className="d-flex">
+                    <Button title="-" btn="btn-minus" onClick={decrement} />
+                    <Button title={count} btn="btn-number" />
+                    <Button title="+" btn="btn-plus" onClick={increment} />
+                  </div>
+
                   <p className={style3["text-price"]}>IDR {product.price}</p>
                 </div>
-                <Button
-                  title="Add to Cart"
-                  btn="btn-addCart"
-                  onClick={() => handleClickCart()}
-                />
-                <Button
-                  title="Ask a Staff"
-                  btn="btn-askStaff"
-                  onClick={() => handleClickStaff()}
-                />
+                <div className="d-none d-lg-block">
+                  <Button
+                    title="Add to Cart"
+                    btn="btn-addCart"
+                    onClick={() => handleClickCart()}
+                  />
+                  <Button
+                    title="Ask a Staff"
+                    btn="btn-askStaff"
+                    onClick={() => handleClickStaff()}
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="container">
-            <div className="row">
-              <div className="col-lg-4">
+            <div className="row mt-5">
+              <div className="col-md-12 col-lg-4">
                 <div className={style4.size}>
                   <p className={style4["title-size"]}>Choose size</p>
-                  <div className="d-flex pl-5">
+                  <div className="d-flex justify-content-center">
                     {product.size !== undefined &&
                       product.size.split(" ").map((data, index) => {
                         return (
@@ -339,15 +367,31 @@ export default function DetailProduct(props) {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-8">
-                <div className={style4.checkout}>
+              <div className="mt-5 px-2 d-xs-block d-xs-block d-sm-block d-md-block d-lg-none w-100">
+                <Button
+                  title="Add to Cart"
+                  btn="btn-addCart2"
+                  onClick={() => handleClickCart()}
+                />
+              </div>
+
+              <div className=" mt-5 mt-lg-0 col-md-12 col-lg-8">
+                <div className={`ml-lg-3 ${style4.checkout}`}>
                   <div className="d-flex pb-4">
                     <img
                       className={style4["img-product"]}
                       src={`${ImgUrl}${product.image}`}
                       alt="ProductImage"
                     />
-                    <div className="pl-5">
+                    <div
+                      className="pl-5"
+                      style={{
+                        height: "120px",
+                        width: "250px",
+                        overflowY: "auto",
+                        marginRight: "20px",
+                      }}
+                    >
                       <p className={style4["title-checkout"]}>{product.name}</p>
                       {cart.length > 0 ? (
                         cart.map((data, index) => {
@@ -366,13 +410,15 @@ export default function DetailProduct(props) {
                         </p>
                       )}
                     </div>
-                    <p className={style4["title-btn-checkout"]}>Checkout</p>
-                    <button
-                      className={style4["circle-checkout"]}
-                      onClick={routeChange}
-                    >
-                      <i className="fa fa-arrow-right" />
-                    </button>
+                    <div className="">
+                      <p className={style4["title-btn-checkout"]}>Checkout</p>
+                      <button
+                        className={style4["circle-checkout"]}
+                        onClick={routeChange}
+                      >
+                        <i className="fa fa-arrow-right" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
