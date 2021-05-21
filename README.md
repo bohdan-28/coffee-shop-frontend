@@ -1,6 +1,6 @@
-# Bohdan Coffee Shop
+# Coffee Shop
 
-Bohdan Coffee adalah aplikasi layanan pesan makanan yang memberi keluasaan penuh kepada pelanggan untuk melakukan pemesanan menu di gadget masing-masing dengan pilihan pembayaran langsung yang terhubung ke aplikasi. Fitur premium untuk solusi cepat, efektif dan ekonomis.
+Coffee Shop adalah aplikasi layanan pesan makanan yang memberi keluasaan penuh kepada pelanggan untuk melakukan pemesanan menu di gadget masing-masing dengan pilihan pembayaran langsung yang terhubung ke aplikasi. Fitur premium untuk solusi cepat, efektif dan ekonomis.
 
 
 ## Tentang Bohdan Developer
