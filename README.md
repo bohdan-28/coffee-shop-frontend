@@ -35,13 +35,12 @@ npm install
 ## Screenshot
 <p align="center">
   <span>
-    <img width="400" height="300" src="https://user-images.githubusercontent.com/68935056/119052765-4a4fd400-b9ef-11eb-9764-b6eb03a51ec7.PNG">   
-    <img width="400" height="300" src="https://user-images.githubusercontent.com/74039235/114306979-e4c31a80-9b07-11eb-844d-2811ada73f9c.jpg">   
-    <img width="400" height="300" src="https://user-images.githubusercontent.com/74039235/114306973-e12f9380-9b07-11eb-997d-f60aec33fed8.jpg">   
-    <img width="400" height="300" src="https://user-images.githubusercontent.com/68935056/117751646-abcdb100-b23f-11eb-92fc-38b0e18352bc.png">
-    <img width="400" height="300" src="https://user-images.githubusercontent.com/68935056/117751659-aff9ce80-b23f-11eb-9093-9b6b6df4dc5d.png">
-   <img width="400" height="300" src="https://user-images.githubusercontent.com/68935056/117751666-b2f4bf00-b23f-11eb-8934-6f2b8c6d890a.png">
-   <img width="400" height="300" src="https://user-images.githubusercontent.com/68935056/117752918-d456aa80-b241-11eb-95be-28b374c260d9.png">
+    <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119052765-4a4fd400-b9ef-11eb-9764-b6eb03a51ec7.PNG">   
+    <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119112987-d6451880-ba4e-11eb-8a4c-a92f9a51e449.PNG">   
+    <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119113570-6d11d500-ba4f-11eb-9f77-7d755542586c.PNG">
+    <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119113746-9c284680-ba4f-11eb-89df-8958d1eff322.PNG">
+   <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119114291-3be5d480-ba50-11eb-9941-8d2a4f730050.PNG">
+   <img width="400" height="250" src="https://user-images.githubusercontent.com/68935056/119114933-cfb7a080-ba50-11eb-82d5-89d23de18dea.PNG">
   </span>
 </p>
 
