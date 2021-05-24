@@ -47,7 +47,7 @@ npm install
   </span>
 </p>
 
-### `#Link`
+### Link
 - [Link Backend](https://github.com/bohdan-28/coffee-shop-backend)
 - [Link Visit Project](https://coffee-shop-bohdan.netlify.app/)
 
