@@ -99,6 +99,6 @@ $ npm start
 
 1. [Herza Paramayudhanto](https://github.com/herzaparam) - Backend - PM
 2. [Chaerul Marwan](https://github.com/chaerulmarwan20) - Full Stack - Member
-3. [Abu Dzar Al-ghifari](https://github.com/abudzr) - Frontend - Member
-4. [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda) - Backend - Member
+3. [Nevalen Aginda Prasetyo](https://github.com/nevalenaginda) - Backend - Member
+4. [Abu Dzar Al-ghifari](https://github.com/abudzr) - Frontend - Member
 5. [Kevin Farid Alpharisy](https://github.com/kevinfaridap) - Frontend - Member
