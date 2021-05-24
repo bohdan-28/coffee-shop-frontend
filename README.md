@@ -1,4 +1,7 @@
-# Coffee Shop
+<h1 align="center">Coffee Shop</h1>
+<p align="center">
+  <a href="https://coffee-shop-bohdan.netlify.app/" target="_blank"><img height="140" src="https://user-images.githubusercontent.com/55057008/119323729-3afbaf80-bca9-11eb-85eb-b0d6b67a2c33.png" alt="Tickitz-2" border="0" /></a>
+</p>
 
 Coffee Shop adalah aplikasi layanan pesan makanan yang memberi keluasaan penuh kepada pelanggan untuk melakukan pemesanan menu di gadget masing-masing dengan pilihan pembayaran langsung yang terhubung ke aplikasi. Fitur premium untuk solusi cepat, efektif dan ekonomis.
 
