@@ -1,0 +1,125 @@
+div.payment-bg {
+  background-image: url(./../../../assets/images/payment-bg.png);
+  /* background-color: rgb(214, 214, 214); */
+  height: 1241px;
+}
+
+.title-empty {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 47px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+.circle-bg {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  margin: auto;
+}
+
+h5.titleline {
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.checklist-icon {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8px;
+}
+
+.checklist-icon-active {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 8px;
+  background-color: #6a4029;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.circle-1 {
+  margin-left: 337.5px;
+}
+
+.order-line {
+  width: 185px;
+  border: 1px solid #ffffff;
+  position: relative;
+  left: 118px;
+  top: -20px;
+}
+
+.title-checkout {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  color: #ffffff;
+  width: 316px;
+  margin-left: 166px;
+  margin-top: 30px;
+}
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.head-payment {
+  background-color: #362115;
+  height: 65vh;
+  display: none;
+}
+.pay-top > h5 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.pay-bot > p {
+  color: white;
+  font-weight: 400;
+  margin-left: 40px;
+}
+.arrow {
+  margin-top: 30px;
+  margin-left: 45px;
+  border: 3px solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+@media (max-width: 1199.98px) {
+  .payment-bg {
+    padding-right: 2em;
+    width: min-content;
+  }
+  .title-checkout {
+    margin-left: 2em;
+  }
+  .row-resp-1 {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 575.98px) {
+  div.payment-bg {
+    display: none;
+  }
+  .head-payment {
+    display: block;
+  }
+}

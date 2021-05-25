@@ -1,6 +1,6 @@
 <h1 align="center">Coffee Shop</h1>
 <p align="center">
-  <a href="https://coffee-shop-bohdan.netlify.app/" target="_blank"><img height="140" src="https://user-images.githubusercontent.com/55057008/119323729-3afbaf80-bca9-11eb-85eb-b0d6b67a2c33.png" alt="Coffee-Shop" border="0" /></a>
+  <a href="https://coffee-shop-bohdan.netlify.app/" target="_blank"><img height="140" src="https://user-images.githubusercontent.com/55057008/119323729-3afbaf80-bca9-11eb-85eb-b0d6b67a2c33.png" alt="Coffee Shop" border="0" /></a>
 </p>
 
 ## Table of Contents
@@ -43,7 +43,7 @@ Bohdan Coffee is a food ordering service application that gives full flexibility
 ## Prerequisites
 
 - [NodeJs](https://nodejs.org/en/download/)
-- [Backend Coffee Shop](https://github.com/bohdan-28/coffee-shop-backend)
+- [Backend Coffee Shop](https://github.com/chaerulmarwan20/coffee-shop-backend)
 
 ## Installation
 
@@ -92,7 +92,7 @@ $ npm start
 
 ## Link
 
-- :white_check_mark: [`Backend Coffee Shop`](https://github.com/bohdan-28/coffee-shop-backend)
+- :white_check_mark: [`Backend Coffee Shop`](https://github.com/chaerulmarwan20/coffee-shop-backend)
 - :rocket: [`Publication`](https://coffee-shop-bohdan.netlify.app/)
 
 ## Authors

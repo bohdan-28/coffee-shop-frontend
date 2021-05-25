@@ -1,0 +1,466 @@
+.cards-profile {
+  background: url(../../assets/images/bgCoffee.png);
+  opacity: 0.9;
+  height: 1200px;
+}
+
+.title-profile {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 6px 8px rgba(255, 255, 255, 0.26);
+}
+
+.card-profile {
+  height: 951px;
+  width: 1133px;
+  border-radius: 20px;
+  background: #f8f8f8;
+  border-radius: 20px;
+  padding-top: 40px;
+  padding-left: 15px;
+}
+
+.big-circle {
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  background: #ffba33;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-user {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.name-profile {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+  margin-left: 87px;
+}
+
+.email-profile {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 50px;
+  color: #000000;
+  text-align: center;
+}
+
+.text-left-profile {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #6a4029;
+  border: 0.5px solid #ffffff;
+  text-shadow: 0px 6px 9px rgba(255, 255, 255, 0.21);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.card-profile-right {
+  width: 785px;
+  height: 841px;
+  background: #ffffff;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.text-title-right {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+  color: #4f5665;
+}
+
+.circle-btnProfile {
+  position: absolute;
+  height: 49px;
+  width: 47px;
+  left: 715px;
+  top: 15px;
+  border-radius: 100%;
+  background: #6a4029;
+  padding-left: 13px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+label {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #9f9f9f;
+}
+
+.card-profile-right input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 340px;
+  margin-bottom: 30px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+}
+
+/* input [type:'number'] {} */
+
+.mobile-number {
+  position: absolute;
+  top: 70px;
+  left: 490px;
+}
+
+.card-profile-right .input-mobile-number {
+  width: 201.03px;
+  position: absolute;
+  top: 110px;
+  left: 490px;
+}
+
+.dateOfBirth {
+  position: absolute;
+  top: 370px;
+  left: 490px;
+}
+
+.card-profile-right .input-dateOfBirth {
+  width: 201.03px;
+  position: absolute;
+  top: 407px;
+  left: 490px;
+}
+
+.gender {
+  margin-right: -150px !important;
+}
+
+.card-footer {
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+  width: 785px;
+  height: 20px;
+  background: #6a4029;
+  box-shadow: 0px 6px 20px rgba(106, 64, 41, 0.7);
+  border-radius: 0px 0px 10px 10px;
+}
+
+/* mobile */
+.back-page,
+.title-profile-mobile {
+  display: none;
+}
+
+.phone-number-new{
+  display: none;
+}
+
+.address-mobile{
+  display: none;
+}
+
+.order-mobile{
+  display: none;
+}
+
+.boxs{
+  display: none;
+}
+
+.see-more{
+  display: none;    
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-profile {
+    background: #f5f5f8;
+    /* width: 80%; */
+    height: 1100px;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 30px;
+  }
+
+  .card-profile,
+  .card-profile-right {
+    width: 100%;
+    background: #f5f5f8 !important;
+  }
+
+  /* 
+    .card-profile-right {
+        background: #F5F5F8 !important;
+
+    } */
+
+  .back-page,
+  .title-profile-mobile {
+    display: inline;
+    text-align: center !important;
+  }
+
+  .title-profile-mobile {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #6a4029;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .back-page {
+    /* width: 15px; */
+    height: 20px;
+    margin-top: 8px;
+  }
+
+  .big-circle,
+  .img-user {
+    height: 132px;
+    width: 132px;
+    margin-bottom: 30px;
+    /* margin-top: -20px; */
+  }
+
+  .big-circle {
+    margin-top: -30px;
+  }
+
+  .circle-btnProfile {
+    top: -190px;
+    left: 210px;
+    width: 35px;
+    height: 35px;
+    padding-left: 8px;
+    padding-top: 5px;
+  }
+
+  .name-profile {
+    margin: 0;
+    text-align: center !important;
+    margin-top: 15px;
+  }
+
+  .email-profile {
+    margin-top: -20px;
+  }
+
+  .phone-number-new{
+    display: block;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+    text-align: center;
+    margin-top: -30px;
+  }
+
+  .address-mobile{
+    display: block;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+    text-align: center;
+    margin-top: -30px;
+  }
+
+  .title-profile {
+    display: none;
+  }
+
+  Button {
+    display: none;
+  }
+
+  .text-left-profile {
+    display: none;
+  }
+
+  .card-profile-right {
+    height: 350px;
+    padding-top: 45px;
+  }
+  
+  .order-mobile{
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #6A4029;
+  }
+
+  .text-title-right {
+    display: none;
+  }
+
+  label {
+    display: block;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    background-color: transparent;
+    line-height: 0px;
+    margin-top: -5px;
+  }
+
+  input {
+    display: block;
+  }
+
+  .card-profile-right input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    background-color: transparent;
+    line-height: 0px;
+    color: #000000;
+    margin-top: 15px;
+  }
+
+  label.delmobile{
+    display: none;
+  }
+  
+  h2.name-profile{
+    display: none;
+  }
+  h2.email-profile{
+    display: none;
+  }
+  h2.phone-number-new{
+    display: none;
+  }
+  h2.address-mobile{
+    display: none;
+  }
+
+  .mobile-number {
+    display: none;
+  }
+
+  .input-mobile-number {
+    display: none;
+  }
+
+  .dateOfBirth {
+    display: none;
+  }
+
+  .input-dateOfBirth {
+    display: none;
+  }
+
+  .gender {
+    display: none;
+  }
+
+  .card-footer {
+    display: none;
+  }
+
+  .boxs{
+    display: flex;
+    overflow-x: auto;
+  }
+  .boxs::-webkit-scrollbar{
+    border: transparent;
+    
+  }
+  .boxs::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+  .box{
+    display: none;
+    /* display: inline-flex;
+    min-width: 100px;
+    height: 120px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    margin-left: 20px;
+    margin-top: 20px; */
+  }
+
+  p.order-mobile{
+    display: none;
+  }
+
+  p.see-more{
+    display: none;
+  }
+
+  br.remove-mobile{
+    display: none;
+  }
+
+  input.gender{
+    display: none;
+  }
+
+  .fav-img-mobile{
+    width: 59px;
+    height: 64px;
+    border-radius: 40px;
+    
+  }
+
+  .see-more{
+    display: block;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6A4029;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: -40px;
+  }
+
+  
+
+  
+
+}

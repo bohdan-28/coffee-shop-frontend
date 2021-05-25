@@ -1,0 +1,157 @@
+/* MOBILE ONLY */
+@media (max-width: 992px) {
+
+  div.chat-bg{
+    background-color: rgba(245, 245, 248, 1);
+  }
+
+  .main-chat{
+    display: none;
+  }
+  .side-chat{
+    display: none;
+  }
+
+  /* div.side-chat{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input.form-search{
+    background: rgba(239, 238, 238, 1);
+    border-radius: 40px;
+    border: none;
+    width: 348px;
+    height: 60px;
+    align-items: center;
+    margin-left: auto;
+    margin-top: auto;
+    padding-left: 35px;
+    display: block;
+  }
+
+  h5.chat-title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+  }
+
+  img.icon-user{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+  }
+
+  h5.username{
+    font-size: 14px;
+    color: #000000;
+  } */
+
+}
+
+
+/* DESKTOP ONLY */
+@media (min-width: 992px) {
+  div.chat-bg{
+    background-image: url(../../../assets/images/chat-bg.png);
+    height: 1184px;
+  }
+  
+  .side-chat{
+    width: 448px;
+    height: 1011px;
+    background: #6A4029;
+    border-radius: 20px;
+  }
+  
+  .chat-bg .main-chat{
+    width: 607px;
+    height: 511px;
+    background: #FFFFFF;
+    border-radius: 20px;
+  }
+  
+  .main-chat h4{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 45px;
+    color: #4F5665;
+    margin-left: 46px;
+    padding-top: 28px;
+  }
+  
+  input.form-search{
+    background: #EFEEEE;
+    border-radius: 20px;
+    width: 348px;
+    height: 60px;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  
+  h5.chat-title{
+    font-family: Poppins;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin-top: 43px;
+    margin-left: 82px;
+    margin-bottom: 10px;
+  }
+  
+  img.icon-user{
+    margin-left: 47px;
+    border-radius: 50%;
+  }
+  
+  h5.username{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+  }
+  
+  h5.chat-value{
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+  }
+  
+  h5.username-2{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #4F5665;
+  }
+  
+  h5.chat-value-2{
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    color:  #4F5665;
+  }
+  
+  .line-chat{
+    width: 361px;
+    border: 1px solid #FFFFFF;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+}  

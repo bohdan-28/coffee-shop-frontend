@@ -1,0 +1,15 @@
+.btn-coupon{
+    background-color: #6A4029;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    margin: 30px auto;
+}
+@media (max-width: 767.98px) { 
+    .btn-coupon {
+        width: 90%;
+    }
+ }
