@@ -30,6 +30,7 @@ export const getUserCart = (user) => (dispatch) => {
         dispatch({
           type: "GET_CART_FAILED",
         });
+        reject(new Error(err.response.data.message));
       });
   });
 };

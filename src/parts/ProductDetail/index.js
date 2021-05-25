@@ -81,6 +81,7 @@ export default function DetailProduct(props) {
         let tempCart = {
           size: size,
           amount: count,
+          price: product.price,
         };
         cart.push(tempCart);
       }

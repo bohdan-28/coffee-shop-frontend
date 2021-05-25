@@ -44,7 +44,8 @@ function Main() {
   const [shipping] = useState(10000);
   const [total] = useState(totalAmount * price + (tax + shipping));
   const [payment, setPayment] = useState(null);
-  const [arrCart] = useState([]);
+  const [arrCart, setArrCart] = useState([]);
+  const [empty, setEmpty] = useState(false);
 
   const handleClickPayment = (event) => {
     const data = event.target.getAttribute("data-content");
@@ -83,7 +84,6 @@ function Main() {
       });
     } else {
       const data = {
-        arrOrders: stateCart,
         arrCart: arrCart,
         idProduct: idProduct,
         idUser: user.id,
@@ -94,9 +94,6 @@ function Main() {
         paymentType: payment,
         total: total,
         qty: totalAmount,
-        productName: cart[0].productName,
-        productImage: cart[0].productImage,
-        price: price,
       };
       dispatch(insertOrder(data)).then((res) => {
         localStorage.removeItem("cart");
@@ -125,7 +122,18 @@ function Main() {
 
   useEffect(() => {
     if (user.username !== undefined) {
-      dispatch(getUserCart(user.username));
+      dispatch(getUserCart(user.username))
+        .then((res) => {
+          setEmpty(false);
+          setArrCart(
+            res.map((item, index) => {
+              return item;
+            })
+          );
+        })
+        .catch((err) => {
+          setEmpty(true);
+        });
     }
   }, [dispatch, user.username]);
 
@@ -138,7 +146,7 @@ function Main() {
           style["payment-bg"],
         ].join(" ")}
       >
-        {stateCart !== null && (
+        {stateCart !== null && empty === false && (
           <div className="container-fluid">
             <div className={[["row"], style["row-resp"]].join(" ")}>
               <div className={[["col-2"], style["circle-1"]].join(" ")}>
@@ -177,7 +185,6 @@ function Main() {
                   <h5 className={style2["title-sum"]}>Order Summary</h5>
                   <div className={style2["carts-content-overflow"]}>
                     {cart.map((data, index) => {
-                      arrCart.push(data.id);
                       return (
                         <div className="row mb-lg-5" key={index}>
                           <div
@@ -339,14 +346,14 @@ function Main() {
             </div>
           </div>
         )}
-        {stateCart === null && (
+        {stateCart === null && empty === true && (
           <div className="text-center w-100">
             <p className={style["title-empty"]}>Your cart is empty.</p>
           </div>
         )}
       </div>
       <div className={style["head-payment"]}>
-        {stateCart !== null && (
+        {stateCart !== null && empty === false && (
           <div>
             <div className={[style["pay-bot"], ["pt-3"]].join(" ")}>
               <p>Choose another method</p>
@@ -460,7 +467,6 @@ function Main() {
                   <h5 className={style2["title-sum"]}>Order Summary</h5>
                   <div className={style2["or-display-none"]}>
                     {cart.map((data, index) => {
-                      arrCart.push(data.id);
                       return (
                         <div className="row mb-lg-5" key={index}>
                           <div
@@ -490,7 +496,6 @@ function Main() {
                   </div>
                   <div className={style2["bottom-detail"]}>
                     {cart.map((data, index) => {
-                      arrCart.push(data.id);
                       return (
                         <div
                           className={[
@@ -623,7 +628,7 @@ function Main() {
             </div>
           </div>
         )}
-        {stateCart === null && (
+        {stateCart === null && empty === true && (
           <div className="text-center w-100">
             <p className={style["title-empty"]}>Your cart is empty.</p>
           </div>
