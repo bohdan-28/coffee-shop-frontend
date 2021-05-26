@@ -92,7 +92,7 @@ $ npm start
 
 ## Link
 
-- :white_check_mark: [`Backend Coffee Shop`](https://github.com/chaerulmarwan20/coffee-shop-backend)
+- :white_check_mark: [`Backend Coffee Shop`](https://github.com/bohdan-28/coffee-shop-backend.git)
 - :rocket: [`Publication`](https://coffee-shop-bohdan.netlify.app/)
 
 ## Authors
