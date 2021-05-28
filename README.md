@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Bohdan Coffee is a food ordering service application that gives full flexibility to customers to place menu orders on their respective gadgets with direct payment options connected to the application. Premium features for a fast, effective and economical solution.
+Coffee Shop is a food ordering service application that gives full flexibility to customers to place menu orders on their respective gadgets with direct payment options connected to the application. Premium features for a fast, effective and economical solution.
 
 ## Features
 
